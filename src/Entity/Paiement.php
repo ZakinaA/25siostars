@@ -20,8 +20,8 @@ class Paiement
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $datePaiement = null;
 
-    #[ORM\ManyToOne(inversedBy: 'paiement')]
-    private ?Inscrption $inscrption = null;
+    #[ORM\ManyToOne(inversedBy: 'paiements')]
+    private ?inscription $inscription = null;
 
     public function getId(): ?int
     {
@@ -52,14 +52,14 @@ class Paiement
         return $this;
     }
 
-    public function getInscrption(): ?Inscrption
+    public function getInscription(): ?inscription
     {
-        return $this->inscrption;
+        return $this->inscription;
     }
 
-    public function setInscrption(?Inscrption $inscrption): static
+    public function setInscription(?inscription $inscription): static
     {
-        $this->inscrption = $inscrption;
+        $this->inscription = $inscription;
 
         return $this;
     }
