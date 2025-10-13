@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EleveRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EleveRepository::class)]
@@ -39,6 +41,20 @@ class Eleve
 
     #[ORM\ManyToOne(inversedBy: 'eleves')]
     private ?Tranche $tranche = null;
+
+    #[ORM\ManyToOne(inversedBy: 'eleves')]
+    private ?responsable $responsable = null;
+
+    /**
+     * @var Collection<int, inscription>
+     */
+    #[ORM\OneToMany(targetEntity: inscription::class, mappedBy: 'eleve')]
+    private Collection $inscription;
+
+    public function __construct()
+    {
+        $this->inscription = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -149,6 +165,48 @@ class Eleve
     public function setTranche(?Tranche $tranche): static
     {
         $this->tranche = $tranche;
+
+        return $this;
+    }
+
+    public function getResponsable(): ?responsable
+    {
+        return $this->responsable;
+    }
+
+    public function setResponsable(?responsable $responsable): static
+    {
+        $this->responsable = $responsable;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, inscription>
+     */
+    public function getInscription(): Collection
+    {
+        return $this->inscription;
+    }
+
+    public function addInscription(inscription $inscription): static
+    {
+        if (!$this->inscription->contains($inscription)) {
+            $this->inscription->add($inscription);
+            $inscription->setEleve($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscription(inscription $inscription): static
+    {
+        if ($this->inscription->removeElement($inscription)) {
+            // set the owning side to null (unless already changed)
+            if ($inscription->getEleve() === $this) {
+                $inscription->setEleve(null);
+            }
+        }
 
         return $this;
     }
