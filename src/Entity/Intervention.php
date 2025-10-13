@@ -29,6 +29,13 @@ class Intervention
     #[ORM\Column]
     private ?float $quotite = null;
 
+    #[ORM\Column]
+    private ?float $profressionnel = null;
+
+    #[ORM\ManyToOne(inversedBy: 'interventions')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?professionnel $professionnel = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -93,4 +100,18 @@ class Intervention
 
         return $this;
     }
+
+    public function getProfessionnel(): ?professionnel
+    {
+        return $this->professionnel;
+    }
+
+    public function setProfessionnel(?professionnel $professionnel): static
+    {
+        $this->professionnel = $professionnel;
+
+        return $this;
+    }
+
+   
 }
