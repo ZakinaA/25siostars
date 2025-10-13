@@ -29,6 +29,14 @@ class ContratPret
     #[ORM\Column(length: 100)]
     private ?string $etatdetailleRetour = null;
 
+    #[ORM\ManyToOne(inversedBy: 'idContratPret')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Instrument $instrument = null;
+
+    #[ORM\ManyToOne(inversedBy: 'contratPrets')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Eleve $idEleve = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +98,30 @@ class ContratPret
     public function setEtatdetailleRetour(string $etatdetailleRetour): static
     {
         $this->etatdetailleRetour = $etatdetailleRetour;
+
+        return $this;
+    }
+
+    public function getInstrument(): ?Instrument
+    {
+        return $this->instrument;
+    }
+
+    public function setInstrument(?Instrument $instrument): static
+    {
+        $this->instrument = $instrument;
+
+        return $this;
+    }
+
+    public function getIdEleve(): ?Eleve
+    {
+        return $this->idEleve;
+    }
+
+    public function setIdEleve(?Eleve $idEleve): static
+    {
+        $this->idEleve = $idEleve;
 
         return $this;
     }

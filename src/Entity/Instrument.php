@@ -51,10 +51,24 @@ class Instrument
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeInstrument $idTypeInstrument = null;
 
+    /**
+     * @var Collection<int, Intervention>
+     */
+    #[ORM\OneToMany(targetEntity: Intervention::class, mappedBy: 'instrument')]
+    private Collection $idIntervention;
+
+    /**
+     * @var Collection<int, ContratPret>
+     */
+    #[ORM\OneToMany(targetEntity: ContratPret::class, mappedBy: 'instrument')]
+    private Collection $idContratPret;
+
     public function __construct()
     {
         $this->idCouleur = new ArrayCollection();
         $this->idAccessoire = new ArrayCollection();
+        $this->idIntervention = new ArrayCollection();
+        $this->idContratPret = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -196,6 +210,66 @@ class Instrument
     public function setIdTypeInstrument(?TypeInstrument $idTypeInstrument): static
     {
         $this->idTypeInstrument = $idTypeInstrument;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Intervention>
+     */
+    public function getIdIntervention(): Collection
+    {
+        return $this->idIntervention;
+    }
+
+    public function addIdIntervention(Intervention $idIntervention): static
+    {
+        if (!$this->idIntervention->contains($idIntervention)) {
+            $this->idIntervention->add($idIntervention);
+            $idIntervention->setInstrument($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdIntervention(Intervention $idIntervention): static
+    {
+        if ($this->idIntervention->removeElement($idIntervention)) {
+            // set the owning side to null (unless already changed)
+            if ($idIntervention->getInstrument() === $this) {
+                $idIntervention->setInstrument(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ContratPret>
+     */
+    public function getIdContratPret(): Collection
+    {
+        return $this->idContratPret;
+    }
+
+    public function addIdContratPret(ContratPret $idContratPret): static
+    {
+        if (!$this->idContratPret->contains($idContratPret)) {
+            $this->idContratPret->add($idContratPret);
+            $idContratPret->setInstrument($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdContratPret(ContratPret $idContratPret): static
+    {
+        if ($this->idContratPret->removeElement($idContratPret)) {
+            // set the owning side to null (unless already changed)
+            if ($idContratPret->getInstrument() === $this) {
+                $idContratPret->setInstrument(null);
+            }
+        }
 
         return $this;
     }
