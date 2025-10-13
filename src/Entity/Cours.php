@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CoursRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +33,23 @@ class Cours
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTime $heureFin = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cours')]
+    private ?type $type = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cours')]
+    private ?jour $jour = null;
+
+    /**
+     * @var Collection<int, inscription>
+     */
+    #[ORM\OneToMany(targetEntity: inscription::class, mappedBy: 'cours')]
+    private Collection $inscription;
+
+    public function __construct()
+    {
+        $this->inscription = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,6 +124,60 @@ class Cours
     public function setHeureFin(\DateTime $heureFin): static
     {
         $this->heureFin = $heureFin;
+
+        return $this;
+    }
+
+    public function getType(): ?type
+    {
+        return $this->type;
+    }
+
+    public function setType(?type $type): static
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getJour(): ?jour
+    {
+        return $this->jour;
+    }
+
+    public function setJour(?jour $jour): static
+    {
+        $this->jour = $jour;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, inscription>
+     */
+    public function getInscription(): Collection
+    {
+        return $this->inscription;
+    }
+
+    public function addInscription(inscription $inscription): static
+    {
+        if (!$this->inscription->contains($inscription)) {
+            $this->inscription->add($inscription);
+            $inscription->setCours($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscription(inscription $inscription): static
+    {
+        if ($this->inscription->removeElement($inscription)) {
+            // set the owning side to null (unless already changed)
+            if ($inscription->getCours() === $this) {
+                $inscription->setCours(null);
+            }
+        }
 
         return $this;
     }
