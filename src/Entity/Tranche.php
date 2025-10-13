@@ -21,9 +21,6 @@ class Tranche
     #[ORM\Column]
     private ?float $quotientMini = null;
 
-    #[ORM\ManyToOne(inversedBy: 'tranches')]
-    private ?type $type = null;
-
     /**
      * @var Collection<int, responsable>
      */
@@ -35,6 +32,9 @@ class Tranche
      */
     #[ORM\OneToMany(targetEntity: eleve::class, mappedBy: 'tranche')]
     private Collection $eleves;
+
+    #[ORM\ManyToOne(inversedBy: 'Tranche')]
+    private ?Tarif $tarif = null;
 
     public function __construct()
     {
@@ -67,18 +67,6 @@ class Tranche
     public function setQuotientMini(float $quotientMini): static
     {
         $this->quotientMini = $quotientMini;
-
-        return $this;
-    }
-
-    public function getType(): ?type
-    {
-        return $this->type;
-    }
-
-    public function setType(?type $type): static
-    {
-        $this->type = $type;
 
         return $this;
     }
@@ -139,6 +127,18 @@ class Tranche
                 $elefe->setTranche(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTarif(): ?Tarif
+    {
+        return $this->tarif;
+    }
+
+    public function setTarif(?Tarif $tarif): static
+    {
+        $this->tarif = $tarif;
 
         return $this;
     }

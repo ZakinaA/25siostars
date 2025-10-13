@@ -24,11 +24,8 @@ class Type
     #[ORM\OneToMany(targetEntity: Cours::class, mappedBy: 'type')]
     private Collection $cours;
 
-    /**
-     * @var Collection<int, Tranche>
-     */
-    #[ORM\OneToMany(targetEntity: Tranche::class, mappedBy: 'type')]
-    private Collection $tranches;
+    #[ORM\ManyToOne(inversedBy: 'type')]
+    private ?Tarif $tarif = null;
 
     public function __construct()
     {
@@ -83,32 +80,14 @@ class Type
         return $this;
     }
 
-    /**
-     * @return Collection<int, Tranche>
-     */
-    public function getTranches(): Collection
+    public function getTarif(): ?Tarif
     {
-        return $this->tranches;
+        return $this->tarif;
     }
 
-    public function addTranch(Tranche $tranch): static
+    public function setTarif(?Tarif $tarif): static
     {
-        if (!$this->tranches->contains($tranch)) {
-            $this->tranches->add($tranch);
-            $tranch->setType($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTranch(Tranche $tranch): static
-    {
-        if ($this->tranches->removeElement($tranch)) {
-            // set the owning side to null (unless already changed)
-            if ($tranch->getType() === $this) {
-                $tranch->setType(null);
-            }
-        }
+        $this->tarif = $tarif;
 
         return $this;
     }
