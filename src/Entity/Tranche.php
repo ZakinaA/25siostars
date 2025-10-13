@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TrancheRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TrancheRepository::class)]
@@ -18,6 +20,27 @@ class Tranche
 
     #[ORM\Column]
     private ?float $quotientMini = null;
+
+    #[ORM\ManyToOne(inversedBy: 'tranches')]
+    private ?type $type = null;
+
+    /**
+     * @var Collection<int, responsable>
+     */
+    #[ORM\OneToMany(targetEntity: responsable::class, mappedBy: 'tranche')]
+    private Collection $responsable;
+
+    /**
+     * @var Collection<int, eleve>
+     */
+    #[ORM\OneToMany(targetEntity: eleve::class, mappedBy: 'tranche')]
+    private Collection $eleves;
+
+    public function __construct()
+    {
+        $this->responsable = new ArrayCollection();
+        $this->eleves = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -44,6 +67,78 @@ class Tranche
     public function setQuotientMini(float $quotientMini): static
     {
         $this->quotientMini = $quotientMini;
+
+        return $this;
+    }
+
+    public function getType(): ?type
+    {
+        return $this->type;
+    }
+
+    public function setType(?type $type): static
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, responsable>
+     */
+    public function getResponsable(): Collection
+    {
+        return $this->responsable;
+    }
+
+    public function addResponsable(responsable $responsable): static
+    {
+        if (!$this->responsable->contains($responsable)) {
+            $this->responsable->add($responsable);
+            $responsable->setTranche($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResponsable(responsable $responsable): static
+    {
+        if ($this->responsable->removeElement($responsable)) {
+            // set the owning side to null (unless already changed)
+            if ($responsable->getTranche() === $this) {
+                $responsable->setTranche(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, eleve>
+     */
+    public function getEleves(): Collection
+    {
+        return $this->eleves;
+    }
+
+    public function addElefe(eleve $elefe): static
+    {
+        if (!$this->eleves->contains($elefe)) {
+            $this->eleves->add($elefe);
+            $elefe->setTranche($this);
+        }
+
+        return $this;
+    }
+
+    public function removeElefe(eleve $elefe): static
+    {
+        if ($this->eleves->removeElement($elefe)) {
+            // set the owning side to null (unless already changed)
+            if ($elefe->getTranche() === $this) {
+                $elefe->setTranche(null);
+            }
+        }
 
         return $this;
     }

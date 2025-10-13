@@ -37,6 +37,9 @@ class Responsable
     #[ORM\Column(length: 100)]
     private ?string $mail = null;
 
+    #[ORM\ManyToOne(inversedBy: 'responsable')]
+    private ?Tranche $tranche = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +137,18 @@ class Responsable
     public function setMail(string $mail): static
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getTranche(): ?Tranche
+    {
+        return $this->tranche;
+    }
+
+    public function setTranche(?Tranche $tranche): static
+    {
+        $this->tranche = $tranche;
 
         return $this;
     }

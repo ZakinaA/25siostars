@@ -24,9 +24,16 @@ class Type
     #[ORM\OneToMany(targetEntity: Cours::class, mappedBy: 'type')]
     private Collection $cours;
 
+    /**
+     * @var Collection<int, Tranche>
+     */
+    #[ORM\OneToMany(targetEntity: Tranche::class, mappedBy: 'type')]
+    private Collection $tranches;
+
     public function __construct()
     {
         $this->cours = new ArrayCollection();
+        $this->tranches = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,6 +77,36 @@ class Type
             // set the owning side to null (unless already changed)
             if ($cour->getType() === $this) {
                 $cour->setType(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tranche>
+     */
+    public function getTranches(): Collection
+    {
+        return $this->tranches;
+    }
+
+    public function addTranch(Tranche $tranch): static
+    {
+        if (!$this->tranches->contains($tranch)) {
+            $this->tranches->add($tranch);
+            $tranch->setType($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTranch(Tranche $tranch): static
+    {
+        if ($this->tranches->removeElement($tranch)) {
+            // set the owning side to null (unless already changed)
+            if ($tranch->getType() === $this) {
+                $tranch->setType(null);
             }
         }
 
