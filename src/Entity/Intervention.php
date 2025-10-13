@@ -36,6 +36,10 @@ class Intervention
     #[ORM\JoinColumn(nullable: false)]
     private ?professionnel $professionnel = null;
 
+    #[ORM\ManyToOne(inversedBy: 'idIntervention')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Instrument $instrument = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -109,6 +113,18 @@ class Intervention
     public function setProfessionnel(?professionnel $professionnel): static
     {
         $this->professionnel = $professionnel;
+
+        return $this;
+    }
+
+    public function getInstrument(): ?Instrument
+    {
+        return $this->instrument;
+    }
+
+    public function setInstrument(?Instrument $instrument): static
+    {
+        $this->instrument = $instrument;
 
         return $this;
     }
