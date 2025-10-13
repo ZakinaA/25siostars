@@ -42,9 +42,16 @@ class Professionnel
     #[ORM\OneToMany(targetEntity: Intervention::class, mappedBy: 'professionnel')]
     private Collection $interventions;
 
+    /**
+     * @var Collection<int, metier>
+     */
+    #[ORM\ManyToMany(targetEntity: metier::class, inversedBy: 'professionnels')]
+    private Collection $metier;
+
     public function __construct()
     {
         $this->interventions = new ArrayCollection();
+        $this->metier = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -162,6 +169,30 @@ class Professionnel
                 $intervention->setProfessionnel(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, metier>
+     */
+    public function getMetier(): Collection
+    {
+        return $this->metier;
+    }
+
+    public function addMetier(metier $metier): static
+    {
+        if (!$this->metier->contains($metier)) {
+            $this->metier->add($metier);
+        }
+
+        return $this;
+    }
+
+    public function removeMetier(metier $metier): static
+    {
+        $this->metier->removeElement($metier);
 
         return $this;
     }
