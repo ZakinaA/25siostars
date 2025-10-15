@@ -28,7 +28,7 @@ class Professeur
     private ?string $rue = null;
 
     #[ORM\Column(length: 10, nullable: true)]
-    private ?int $cpos = null;
+    private ?string $cpos = null;
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $ville = null;
