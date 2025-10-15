@@ -106,12 +106,12 @@ class Responsable
         return $this;
     }
 
-    public function getcpos(): ?string
+    public function getCpos(): ?string
     {
         return $this->cpos;
     }
 
-    public function setcpos(string $cpos): static
+    public function setCpos(string $cpos): static
     {
         $this->cpos = $cpos;
 
