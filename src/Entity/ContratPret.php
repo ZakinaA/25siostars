@@ -27,7 +27,7 @@ class ContratPret
     private ?string $etatDetailleDebut = null;
 
     #[ORM\Column(length: 100)]
-    private ?string $etatdetailleRetour = null;
+    private ?string $etatDetailleRetour = null;
 
     #[ORM\ManyToOne(inversedBy: 'idContratPret')]
     #[ORM\JoinColumn(nullable: false)]
@@ -90,14 +90,14 @@ class ContratPret
         return $this;
     }
 
-    public function getEtatdetailleRetour(): ?string
+    public function getetatDetailleRetour(): ?string
     {
-        return $this->etatdetailleRetour;
+        return $this->etatDetailleRetour;
     }
 
-    public function setEtatdetailleRetour(string $etatdetailleRetour): static
+    public function setetatDetailleRetour(string $etatDetailleRetour): static
     {
-        $this->etatdetailleRetour = $etatdetailleRetour;
+        $this->etatDetailleRetour = $etatDetailleRetour;
 
         return $this;
     }

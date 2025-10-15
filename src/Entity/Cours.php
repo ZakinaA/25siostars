@@ -26,7 +26,7 @@ class Cours
     private ?float $ageMaxi = null;
 
     #[ORM\Column]
-    private ?int $nbPalces = null;
+    private ?int $nbPlaces = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTime $heureDebut = null;
@@ -100,14 +100,14 @@ class Cours
         return $this;
     }
 
-    public function getNbPalces(): ?int
+    public function getnbPlaces(): ?int
     {
-        return $this->nbPalces;
+        return $this->nbPlaces;
     }
 
-    public function setNbPalces(int $nbPalces): static
+    public function setnbPlaces(int $nbPlaces): static
     {
-        $this->nbPalces = $nbPalces;
+        $this->nbPlaces = $nbPlaces;
 
         return $this;
     }

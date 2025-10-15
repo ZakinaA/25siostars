@@ -24,14 +24,14 @@ class Professionnel
     #[ORM\Column(length: 150)]
     private ?string $rue = null;
 
-    #[ORM\Column]
-    private ?float $copos = null;
+    #[ORM\Column(length: 10)]
+    private ?string $cpos = null;
 
     #[ORM\Column(length: 100)]
     private ?string $ville = null;
 
-    #[ORM\Column]
-    private ?float $tel = null;
+    #[ORM\Column(length: 10)]
+    private ?string $tel = null;
 
     #[ORM\Column(length: 150)]
     private ?string $mail = null;
@@ -95,14 +95,14 @@ class Professionnel
         return $this;
     }
 
-    public function getCopos(): ?float
+    public function getcpos(): ?string
     {
-        return $this->copos;
+        return $this->cpos;
     }
 
-    public function setCopos(float $copos): static
+    public function setcpos(string $cpos): static
     {
-        $this->copos = $copos;
+        $this->cpos = $cpos;
 
         return $this;
     }
@@ -119,12 +119,12 @@ class Professionnel
         return $this;
     }
 
-    public function getTel(): ?float
+    public function getTel(): ?string
     {
         return $this->tel;
     }
 
-    public function setTel(float $tel): static
+    public function setTel(string $tel): static
     {
         $this->tel = $tel;
 
