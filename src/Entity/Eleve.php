@@ -27,8 +27,8 @@ class Eleve
     #[ORM\Column(length: 100)]
     private ?string $rue = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $copos = null;
+    #[ORM\Column(length: 10)]
+    private ?string $cpos = null;
 
     #[ORM\Column(length: 100)]
     private ?string $ville = null;
@@ -116,14 +116,14 @@ class Eleve
         return $this;
     }
 
-    public function getCopos(): ?string
+    public function getcpos(): ?string
     {
-        return $this->copos;
+        return $this->cpos;
     }
 
-    public function setCopos(string $copos): static
+    public function setcpos(string $cpos): static
     {
-        $this->copos = $copos;
+        $this->cpos = $cpos;
 
         return $this;
     }

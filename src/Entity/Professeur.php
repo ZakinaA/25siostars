@@ -27,7 +27,7 @@ class Professeur
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $rue = null;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(length: 10, nullable: true)]
     private ?int $cpos = null;
 
     #[ORM\Column(length: 100, nullable: true)]
@@ -110,12 +110,12 @@ class Professeur
         return $this;
     }
 
-    public function getCpos(): ?int
+    public function getCpos(): ?string
     {
         return $this->cpos;
     }
 
-    public function setCpos(?int $cpos): static
+    public function setCpos(?string $cpos): static
     {
         $this->cpos = $cpos;
 
