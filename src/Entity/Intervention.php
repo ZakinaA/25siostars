@@ -29,12 +29,12 @@ class Intervention
     #[ORM\Column]
     private ?float $quotite = null;
 
-    #[ORM\Column]
-    private ?float $profressionnel = null;
+#    #[ORM\Column]
+#    private ?float $professionnel = null;
 
     #[ORM\ManyToOne(inversedBy: 'interventions')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?professionnel $professionnel = null;
+    private ?Professionnel $professionnel = null;
 
     #[ORM\ManyToOne(inversedBy: 'idIntervention')]
     #[ORM\JoinColumn(nullable: false)]
