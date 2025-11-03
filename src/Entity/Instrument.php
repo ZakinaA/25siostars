@@ -63,6 +63,9 @@ class Instrument
     #[ORM\OneToMany(targetEntity: ContratPret::class, mappedBy: 'instrument')]
     private Collection $idContratPret;
 
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $code = null;
+
     public function __construct()
     {
         $this->idCouleur = new ArrayCollection();
@@ -270,6 +273,18 @@ class Instrument
                 $idContratPret->setInstrument(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(?string $code): static
+    {
+        $this->code = $code;
 
         return $this;
     }
