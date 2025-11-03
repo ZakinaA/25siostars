@@ -12,16 +12,24 @@
                 <td>{{ instrument.id }}</td>
             </tr>
             <tr>
-                <th>NumSerie</th>
+                <th>Type d'instrument</td>
+                <td>{{ instrument.idTypeInstrument.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Marque</td>
+                <td>{{ instrument.idMarque.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Numéro de série</th>
                 <td>{{ instrument.numSerie }}</td>
             </tr>
             <tr>
-                <th>DateAchat</th>
+                <th>Date d'achat</th>
                 <td>{{ instrument.dateAchat ? instrument.dateAchat|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>PrixAchat</th>
-                <td>{{ instrument.prixAchat }}</td>
+                <th>Prix d'achat</th>
+                <td>{{ instrument.prixAchat }}€</td>
             </tr>
             <tr>
                 <th>Utilisation</th>
