@@ -43,7 +43,7 @@ class Eleve
     private ?Tranche $tranche = null;
 
     #[ORM\ManyToOne(inversedBy: 'eleves')]
-    private ?responsable $responsable = null;
+    private ?Responsable $responsable = null;
 
     /**
      * @var Collection<int, inscription>
@@ -176,12 +176,12 @@ class Eleve
         return $this;
     }
 
-    public function getResponsable(): ?responsable
+    public function getResponsable(): ?Responsable
     {
         return $this->responsable;
     }
 
-    public function setResponsable(?responsable $responsable): static
+    public function setResponsable(?Responsable $responsable): static
     {
         $this->responsable = $responsable;
 
