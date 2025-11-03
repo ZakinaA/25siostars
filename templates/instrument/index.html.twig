@@ -13,7 +13,6 @@
                 <th>DateAchat</th>
                 <th>PrixAchat</th>
                 <th>Utilisation</th>
-                <th>CheminImage</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,7 +24,6 @@
                 <td>{{ instrument.dateAchat ? instrument.dateAchat|date('Y-m-d') : '' }}</td>
                 <td>{{ instrument.prixAchat }}</td>
                 <td>{{ instrument.utilisation }}</td>
-                <td>{{ instrument.cheminImage }}</td>
                 <td>
                     <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">show</a>
                     <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}">edit</a>
