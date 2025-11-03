@@ -36,11 +36,20 @@
                 <td>{{ instrument.utilisation }}</td>
             </tr>
             <tr>
-                <th>Image</th>
-                <td><img src="{{ instrument.cheminImage }}" /></td>
+                <th>Couleurs</th>
+                <table><tbody><td>|</td>
+                {% for couleur in instrument.idCouleur %}
+                    <td>{{ couleur.nom }} |</td>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Aucune couleur trouvée</td>
+                    </tr>
+                {% endfor %}
+                </tbody></table>
             </tr>
         </tbody>
     </table>
+    <img src="{{ instrument.cheminImage }}" /></br>
 
     <a href="{{ path('app_instrument_index') }}">back to list</a>
 
