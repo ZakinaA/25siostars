@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Instrument index{% endblock %}
+
+{% block body %}
+    <h1>Liste des instruments</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Type d'instrument</th>
+                <th>Marque</th>
+                <th>Numéro de série</th>
+                <th>Date d'achat</th>
+                <th>Prix d'achat</th>
+                <th>Utilisation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for instrument in instruments %}
+            <tr>
+                <td>{{ instrument.id }}</td>
+                <td>{{ instrument.code }}</td>
+                <td>{{ instrument.idTypeInstrument.libelle }}</td>
+                <td>{{ instrument.idMarque.libelle }}</td>
+                <td>{{ instrument.numSerie }}</td>
+                <td>{{ instrument.dateAchat ? instrument.dateAchat|date('Y-m-d') : '' }}</td>
+                <td>{{ instrument.prixAchat }}€</td>
+                <td>{{ instrument.utilisation }}</td>
+                <td>
+                    <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">show</a>
+                    <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_instrument_new') }}">Create new</a>
+{% endblock %}
