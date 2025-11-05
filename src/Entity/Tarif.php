@@ -19,21 +19,17 @@ class Tarif
     private ?float $montant = null;
 
     /**
-     * @var Collection<int, type>
+     * @var Collection<int, Type>
      */
-    #[ORM\OneToMany(targetEntity: type::class, mappedBy: 'tarif')]
-    private Collection $type;
+    #[ORM\ManyToOne(inversedBy: 'tarifs')]
+    private ?Tranche $tranche = null;
 
-    /**
-     * @var Collection<int, tranche>
-     */
-    #[ORM\OneToMany(targetEntity: tranche::class, mappedBy: 'tarif')]
-    private Collection $Tranche;
+    #[ORM\ManyToOne(inversedBy: 'tarifs')]
+    private ?Type $Type = null;
 
     public function __construct()
     {
         $this->type = new ArrayCollection();
-        $this->tranche = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -54,61 +50,28 @@ class Tarif
     }
 
     /**
-     * @return Collection<int, type>
+     * @return Collection<int, Type>
      */
-    public function getType(): Collection
-    {
-        return $this->type;
-    }
-
-    public function addType(type $type): static
-    {
-        if (!$this->type->contains($type)) {
-            $this->type->add($type);
-            $type->setTarif($this);
-        }
-
-        return $this;
-    }
-
-    public function removeType(type $type): static
-    {
-        if ($this->type->removeElement($type)) {
-            // set the owning side to null (unless already changed)
-            if ($type->getTarif() === $this) {
-                $type->setTarif(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, tranche>
-     */
-    public function getTranche(): Collection
+    public function getTranche(): ?Tranche
     {
         return $this->tranche;
     }
 
-    public function addTranche(tranche $tranche): static
+    public function setTranche(?Tranche $tranche): static
     {
-        if (!$this->tranche->contains($tranche)) {
-            $this->tranche->add($tranche);
-            $tranche->setTarif($this);
-        }
+        $this->tranche = $tranche;
 
         return $this;
     }
 
-    public function removeTranche(tranche $tranche): static
+    public function getType(): ?Type
     {
-        if ($this->tranche->removeElement($tranche)) {
-            // set the owning side to null (unless already changed)
-            if ($tranche->getTarif() === $this) {
-                $tranche->setTarif(null);
-            }
-        }
+        return $this->Type;
+    }
+
+    public function setType(?Type $Type): static
+    {
+        $this->Type = $Type;
 
         return $this;
     }

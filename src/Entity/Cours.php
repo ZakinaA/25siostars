@@ -35,10 +35,10 @@ class Cours
     private ?\DateTime $heureFin = null;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
-    private ?type $type = null;
+    private ?Type $type = null;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
-    private ?jour $jour = null;
+    private ?Jour $jour = null;
 
     /**
      * @var Collection<int, inscription>
@@ -48,11 +48,11 @@ class Cours
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Professeur $idProfesseur = null;
+    private ?Professeur $professeur = null;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?TypeInstrument $idTypeInstrument = null;
+    private ?TypeInstrument $typeInstrument = null;
 
     public function __construct()
     {
@@ -136,24 +136,24 @@ class Cours
         return $this;
     }
 
-    public function getType(): ?type
+    public function getType(): ?Type
     {
         return $this->type;
     }
 
-    public function setType(?type $type): static
+    public function setType(?Type $type): static
     {
         $this->type = $type;
 
         return $this;
     }
 
-    public function getJour(): ?jour
+    public function getJour(): ?Jour
     {
         return $this->jour;
     }
 
-    public function setJour(?jour $jour): static
+    public function setJour(?Jour $jour): static
     {
         $this->jour = $jour;
 
@@ -192,24 +192,24 @@ class Cours
 
     public function getIdProfesseur(): ?Professeur
     {
-        return $this->idProfesseur;
+        return $this->professeur;
     }
 
-    public function setIdProfesseur(?Professeur $idProfesseur): static
+    public function setIdProfesseur(?Professeur $professeur): static
     {
-        $this->idProfesseur = $idProfesseur;
+        $this->professeur = $professeur;
 
         return $this;
     }
 
     public function getIdTypeInstrument(): ?TypeInstrument
     {
-        return $this->idTypeInstrument;
+        return $this->typeInstrument;
     }
 
-    public function setIdTypeInstrument(?TypeInstrument $idTypeInstrument): static
+    public function setIdTypeInstrument(?TypeInstrument $typeInstrument): static
     {
-        $this->idTypeInstrument = $idTypeInstrument;
+        $this->typeInstrument = $typeInstrument;
 
         return $this;
     }

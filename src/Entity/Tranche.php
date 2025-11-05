@@ -33,13 +33,17 @@ class Tranche
     #[ORM\OneToMany(targetEntity: eleve::class, mappedBy: 'tranche')]
     private Collection $eleves;
 
-    #[ORM\ManyToOne(inversedBy: 'Tranche')]
-    private ?Tarif $tarif = null;
-
+    /**
+     * @var Collection<int, Tarif>
+     */
+    #[ORM\OneToMany(targetEntity: Tarif::class, mappedBy: 'tranche')]
+    private Collection $tarifs;
+    
     public function __construct()
     {
         $this->responsable = new ArrayCollection();
         $this->eleves = new ArrayCollection();
+        $this->tarifs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -131,14 +135,32 @@ class Tranche
         return $this;
     }
 
-    public function getTarif(): ?Tarif
+    /**
+     * @return Collection<int, Tarif>
+     */
+    public function getTarifs(): Collection
     {
-        return $this->tarif;
+        return $this->tarifs;
     }
 
-    public function setTarif(?Tarif $tarif): static
+    public function addTarif(Tarif $tarif): static
     {
-        $this->tarif = $tarif;
+        if (!$this->tarifs->contains($tarif)) {
+            $this->tarifs->add($tarif);
+            $tarif->setTranche($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTarif(Tarif $tarif): static
+    {
+        if ($this->tarifs->removeElement($tarif)) {
+            // set the owning side to null (unless already changed)
+            if ($tarif->getTranche() === $this) {
+                $tarif->setTranche(null);
+            }
+        }
 
         return $this;
     }
