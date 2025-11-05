@@ -15,6 +15,8 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/accueil' => [[['_route' => 'app_accueil_index', '_controller' => 'App\\Controller\\AccueilController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/accueil/new' => [[['_route' => 'app_accueil_new', '_controller' => 'App\\Controller\\AccueilController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/instrument' => [[['_route' => 'app_instrument_index', '_controller' => 'App\\Controller\\InstrumentController::index'], null, ['GET' => 0], null, false, false, null]],
         '/instrument/new' => [[['_route' => 'app_instrument_new', '_controller' => 'App\\Controller\\InstrumentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/intervention' => [[['_route' => 'app_intervention_index', '_controller' => 'App\\Controller\\InterventionController::index'], null, ['GET' => 0], null, false, false, null]],
@@ -40,16 +42,21 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/accueil/([^/]++)(?'
+                    .'|(*:222)'
+                    .'|/edit(*:235)'
+                    .'|(*:243)'
+                .')'
                 .'|/in(?'
                     .'|strument/([^/]++)(?'
-                        .'|(*:228)'
-                        .'|/edit(*:241)'
-                        .'|(*:249)'
+                        .'|(*:278)'
+                        .'|/edit(*:291)'
+                        .'|(*:299)'
                     .')'
                     .'|tervention/([^/]++)(?'
-                        .'|(*:280)'
-                        .'|/edit(*:293)'
-                        .'|(*:301)'
+                        .'|(*:330)'
+                        .'|/edit(*:343)'
+                        .'|(*:351)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -63,12 +70,15 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        228 => [[['_route' => 'app_instrument_show', '_controller' => 'App\\Controller\\InstrumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        241 => [[['_route' => 'app_instrument_edit', '_controller' => 'App\\Controller\\InstrumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        249 => [[['_route' => 'app_instrument_delete', '_controller' => 'App\\Controller\\InstrumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        280 => [[['_route' => 'app_intervention_show', '_controller' => 'App\\Controller\\InterventionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        293 => [[['_route' => 'app_intervention_edit', '_controller' => 'App\\Controller\\InterventionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        301 => [
+        222 => [[['_route' => 'app_accueil_show', '_controller' => 'App\\Controller\\AccueilController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        235 => [[['_route' => 'app_accueil_edit', '_controller' => 'App\\Controller\\AccueilController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        243 => [[['_route' => 'app_accueil_delete', '_controller' => 'App\\Controller\\AccueilController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        278 => [[['_route' => 'app_instrument_show', '_controller' => 'App\\Controller\\InstrumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        291 => [[['_route' => 'app_instrument_edit', '_controller' => 'App\\Controller\\InstrumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        299 => [[['_route' => 'app_instrument_delete', '_controller' => 'App\\Controller\\InstrumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        330 => [[['_route' => 'app_intervention_show', '_controller' => 'App\\Controller\\InterventionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        343 => [[['_route' => 'app_intervention_edit', '_controller' => 'App\\Controller\\InterventionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        351 => [
             [['_route' => 'app_intervention_delete', '_controller' => 'App\\Controller\\InterventionController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
