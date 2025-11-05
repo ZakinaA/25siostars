@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
-<<<<<<< HEAD
--- Généré le : lun. 03 nov. 2025 à 14:57
-=======
 -- Généré le : mer. 05 nov. 2025 à 09:46
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.2.18
 
@@ -107,36 +103,19 @@ CREATE TABLE IF NOT EXISTS `classe_instrument` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-=======
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Déchargement des données de la table `classe_instrument`
 --
 
 INSERT INTO `classe_instrument` (`id`, `libelle`) VALUES
-<<<<<<< HEAD
-(1, 'Cordes'),
-(2, 'Vent'),
-(3, 'Percussion'),
-(4, 'Clavier'),
-(5, 'Cuivres'),
-(6, 'Bois'),
-(7, 'Électronique'),
-(8, 'Cordes pincées'),
-(9, 'Cordes frottées'),
-(10, 'Batterie');
-=======
 (1, 'Clavier'),
 (2, 'Instrument amplifiés'),
 (3, 'Bois'),
 (4, 'Cuivre'),
 (5, 'Corde'),
 (6, 'Percussion');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -221,40 +200,18 @@ CREATE TABLE IF NOT EXISTS `couleur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-=======
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Déchargement des données de la table `couleur`
 --
 
 INSERT INTO `couleur` (`id`, `nom`) VALUES
-<<<<<<< HEAD
-(1, 'Rouge'),
-(2, 'Bleu'),
-(3, 'Vert'),
-(4, 'Jaune'),
-(5, 'Noir'),
-(6, 'Blanc'),
-(7, 'Orange'),
-(8, 'Violet'),
-(9, 'Rose'),
-(10, 'Gris'),
-(11, 'Marron'),
-(12, 'Turquoise'),
-(13, 'Cyan'),
-(14, 'Magenta'),
-(15, 'Beige');
-=======
 (1, 'Noir'),
 (2, 'Blanc'),
 (3, 'Rouge'),
 (4, 'Bleu'),
 (5, 'Naturel');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -448,67 +405,16 @@ CREATE TABLE IF NOT EXISTS `instrument` (
   `prix_achat` int(11) DEFAULT NULL,
   `utilisation` varchar(50) DEFAULT NULL,
   `chemin_image` varchar(200) DEFAULT NULL,
-<<<<<<< HEAD
-  `code` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_3CBF69DDC8120595` (`id_marque_id`),
-  KEY `IDX_3CBF69DDFF3E1806` (`id_type_instrument_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-=======
   `code` varchar(12) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_3CBF69DD4827B9B2` (`marque_id`),
   KEY `IDX_3CBF69DD7C1CAAA9` (`type_instrument_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Déchargement des données de la table `instrument`
 --
 
-<<<<<<< HEAD
-INSERT INTO `instrument` (`id`, `id_marque_id`, `id_type_instrument_id`, `num_serie`, `date_achat`, `prix_achat`, `utilisation`, `chemin_image`, `code`) VALUES
-(1, 1, 1, 10001, '2020-01-15', 1200, 'Local', '../../assets/images/instruments/1.jpg', 'GUI-1'),
-(2, 2, 1, 10002, '2021-03-22', 1250, 'Prêt', '../../assets/images/instruments/2.jpg', 'GUI-2'),
-(3, 3, 2, 20001, '2019-07-10', 900, 'Local', '../../assets/images/instruments/3.jpg', 'VIO-1'),
-(4, 4, 2, 20002, '2020-09-18', 950, 'Prêt', '../../assets/images/instruments/4.jpg', 'VIO-2'),
-(5, 5, 3, 30001, '2018-11-05', 600, 'Local', '../../assets/images/instruments/5.jpg', 'FLU-1'),
-(6, 6, 3, 30002, '2019-12-15', 620, 'Prêt', '../../assets/images/instruments/6.jpg', 'FLU-2'),
-(7, 7, 4, 40001, '2021-01-10', 1400, 'Local', '../../assets/images/instruments/7.jpg', 'CLA-1'),
-(8, 8, 4, 40002, '2022-02-20', 1450, 'Prêt', '../../assets/images/instruments/8.jpg', 'CLA-2'),
-(9, 9, 5, 50001, '2017-06-30', 300, 'Local', '../../assets/images/instruments/9.jpg', 'CAI-1'),
-(10, 10, 5, 50002, '2018-08-25', 320, 'Prêt', '../../assets/images/instruments/10.jpg', 'CAI-2'),
-(11, 1, 6, 60001, '2020-05-12', 700, 'Local', '../../assets/images/instruments/11.jpg', 'TAM-1'),
-(12, 2, 6, 60002, '2021-07-14', 730, 'Prêt', '../../assets/images/instruments/12.jpg', 'TAM-2'),
-(13, 3, 7, 70001, '2019-03-01', 850, 'Local', '../../assets/images/instruments/13.jpg', 'PIA-1'),
-(14, 4, 7, 70002, '2020-04-05', 870, 'Prêt', '../../assets/images/instruments/14.jpg', 'PIA-2'),
-(15, 5, 8, 80001, '2018-10-18', 1100, 'Local', '../../assets/images/instruments/15.jpg', 'SYN-1'),
-(16, 6, 8, 80002, '2019-11-20', 1150, 'Prêt', '../../assets/images/instruments/16.jpg', 'SYN-2'),
-(17, 7, 9, 90001, '2021-08-15', 1300, 'Local', '../../assets/images/instruments/17.jpg', 'TRO-1'),
-(18, 8, 9, 90002, '2022-09-25', 1350, 'Prêt', '../../assets/images/instruments/18.jpg', 'TRO-2'),
-(19, 9, 10, 100001, '2017-12-01', 1600, 'Local', '../../assets/images/instruments/19.jpg', 'TRO-1'),
-(20, 10, 10, 100002, '2018-01-10', 1650, 'Prêt', '../../assets/images/instruments/20.jpg', 'TRO-2'),
-(21, 1, 11, 110001, '2019-04-12', 750, 'Local', '../../assets/images/instruments/21.jpg', 'HAU-1'),
-(22, 2, 11, 110002, '2020-06-14', 780, 'Prêt', '../../assets/images/instruments/22.jpg', 'HAU-2'),
-(23, 3, 12, 120001, '2021-07-10', 820, 'Local', '../../assets/images/instruments/23.jpg', 'BAS-1'),
-(24, 4, 12, 120002, '2022-08-11', 850, 'Prêt', '../../assets/images/instruments/24.jpg', 'BAS-2'),
-(25, 5, 13, 130001, '2018-02-01', 900, 'Local', '../../assets/images/instruments/25.jpg', 'BOI-1'),
-(26, 6, 13, 130002, '2019-03-02', 940, 'Prêt', '../../assets/images/instruments/26.jpg', 'BOI-2'),
-(27, 7, 14, 140001, '2020-04-03', 1000, 'Local', '../../assets/images/instruments/27.jpg', 'PED-1'),
-(28, 8, 14, 140002, '2021-05-04', 1050, 'Prêt', '../../assets/images/instruments/28.jpg', 'PED-2'),
-(29, 9, 15, 150001, '2017-09-15', 1200, 'Local', '../../assets/images/instruments/29.jpg', 'UKU-1'),
-(30, 10, 15, 150002, '2018-10-16', 1250, 'Prêt', '../../assets/images/instruments/30.jpg', 'UKU-2'),
-(31, 1, 16, 160001, '2019-11-17', 1300, 'Local', '../../assets/images/instruments/31.jpg', 'HAR-1'),
-(32, 2, 16, 160002, '2020-12-18', 1350, 'Prêt', '../../assets/images/instruments/32.jpg', 'HAR-2'),
-(33, 3, 17, 170001, '2021-01-19', 1400, 'Local', '../../assets/images/instruments/33.jpg', 'VIO-1'),
-(34, 4, 17, 170002, '2022-02-20', 1450, 'Prêt', '../../assets/images/instruments/34.jpg', 'VIO-2'),
-(35, 5, 18, 180001, '2018-03-21', 1500, 'Local', '../../assets/images/instruments/35.jpg', 'ALT-1'),
-(36, 6, 18, 180002, '2019-04-22', 1550, 'Prêt', '../../assets/images/instruments/36.jpg', 'ALT-2'),
-(37, 7, 19, 190001, '2020-05-23', 1600, 'Local', '../../assets/images/instruments/37.jpg', 'BAT-1'),
-(38, 8, 19, 190002, '2021-06-24', 1650, 'Prêt', '../../assets/images/instruments/38.jpg', 'BAT-2'),
-(39, 9, 20, 200001, '2017-07-25', 1700, 'Local', '../../assets/images/instruments/39.jpg', 'CON-1'),
-(40, 10, 20, 200002, '2018-08-26', 1750, 'Prêt', '../../assets/images/instruments/40.jpg', 'CON-2');
-=======
 INSERT INTO `instrument` (`id`, `marque_id`, `type_instrument_id`, `num_serie`, `date_achat`, `prix_achat`, `utilisation`, `chemin_image`, `code`) VALUES
 (1, 1, 1, 10001, '2016-01-10', 1500, 'Local', '../../assets/images/instrument/1.jpg', 'ORG1'),
 (2, 2, 1, 10002, '2017-03-11', 1600, 'Prêt', '../../assets/images/instrument/2.jpg', 'ORG2'),
@@ -585,7 +491,6 @@ INSERT INTO `instrument` (`id`, `marque_id`, `type_instrument_id`, `num_serie`, 
 (73, 2, 15, 150003, '2018-04-04', 640, 'Local', '../../assets/images/instrument/73.jpg', 'BAT3'),
 (74, 1, 15, 150004, '2019-05-05', 660, 'Prêt', '../../assets/images/instrument/74.jpg', 'BAT4'),
 (75, 4, 15, 150005, '2020-06-06', 680, 'Local', '../../assets/images/instrument/75.jpg', 'BAT5');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -608,232 +513,6 @@ CREATE TABLE IF NOT EXISTS `instrument_couleur` (
 
 INSERT INTO `instrument_couleur` (`instrument_id`, `couleur_id`) VALUES
 (1, 1),
-<<<<<<< HEAD
-(1, 5),
-(1, 7),
-(1, 9),
-(1, 11),
-(1, 13),
-(1, 14),
-(1, 15),
-(2, 3),
-(2, 4),
-(2, 9),
-(2, 10),
-(2, 12),
-(2, 15),
-(3, 1),
-(3, 3),
-(3, 5),
-(3, 6),
-(3, 8),
-(4, 1),
-(4, 5),
-(4, 6),
-(4, 7),
-(4, 8),
-(4, 9),
-(4, 10),
-(4, 12),
-(4, 13),
-(5, 5),
-(5, 7),
-(5, 8),
-(5, 9),
-(5, 11),
-(5, 12),
-(5, 13),
-(5, 14),
-(5, 15),
-(6, 10),
-(6, 11),
-(6, 12),
-(6, 13),
-(7, 2),
-(7, 15),
-(8, 1),
-(8, 3),
-(8, 4),
-(8, 5),
-(8, 6),
-(8, 12),
-(8, 13),
-(8, 15),
-(9, 1),
-(9, 3),
-(9, 5),
-(9, 12),
-(9, 14),
-(10, 3),
-(10, 8),
-(10, 9),
-(10, 12),
-(10, 13),
-(11, 1),
-(11, 2),
-(11, 3),
-(11, 7),
-(11, 12),
-(11, 13),
-(11, 15),
-(12, 4),
-(12, 5),
-(12, 10),
-(12, 14),
-(13, 1),
-(13, 2),
-(13, 3),
-(13, 8),
-(13, 9),
-(13, 11),
-(14, 7),
-(14, 11),
-(14, 15),
-(15, 2),
-(15, 5),
-(15, 6),
-(15, 7),
-(15, 9),
-(15, 13),
-(15, 15),
-(16, 3),
-(16, 5),
-(16, 8),
-(16, 12),
-(16, 15),
-(17, 1),
-(17, 6),
-(17, 9),
-(17, 11),
-(17, 15),
-(18, 4),
-(18, 5),
-(18, 11),
-(18, 13),
-(18, 14),
-(19, 4),
-(19, 5),
-(19, 6),
-(19, 11),
-(19, 15),
-(20, 5),
-(20, 6),
-(20, 8),
-(20, 12),
-(20, 13),
-(20, 14),
-(21, 4),
-(21, 5),
-(21, 7),
-(21, 8),
-(21, 9),
-(21, 11),
-(21, 13),
-(21, 15),
-(22, 1),
-(22, 8),
-(22, 10),
-(23, 3),
-(23, 4),
-(23, 10),
-(23, 13),
-(23, 15),
-(24, 2),
-(24, 4),
-(24, 5),
-(24, 7),
-(24, 10),
-(24, 11),
-(25, 3),
-(25, 5),
-(25, 8),
-(25, 9),
-(25, 10),
-(25, 11),
-(25, 13),
-(25, 15),
-(26, 3),
-(26, 5),
-(26, 9),
-(26, 10),
-(26, 13),
-(26, 14),
-(27, 4),
-(27, 6),
-(27, 11),
-(27, 12),
-(27, 15),
-(28, 7),
-(28, 11),
-(28, 13),
-(28, 15),
-(29, 2),
-(29, 4),
-(29, 5),
-(29, 6),
-(29, 9),
-(29, 14),
-(30, 1),
-(30, 5),
-(30, 6),
-(30, 7),
-(30, 8),
-(30, 11),
-(31, 2),
-(31, 3),
-(31, 8),
-(31, 15),
-(32, 8),
-(32, 11),
-(32, 15),
-(33, 3),
-(33, 4),
-(33, 8),
-(33, 14),
-(33, 15),
-(34, 2),
-(34, 5),
-(34, 6),
-(34, 9),
-(34, 11),
-(35, 2),
-(35, 6),
-(35, 11),
-(35, 13),
-(35, 14),
-(36, 1),
-(36, 4),
-(36, 7),
-(36, 8),
-(36, 9),
-(36, 11),
-(37, 2),
-(37, 4),
-(37, 8),
-(37, 11),
-(37, 15),
-(38, 1),
-(38, 2),
-(38, 3),
-(38, 5),
-(38, 8),
-(38, 11),
-(38, 12),
-(39, 1),
-(39, 3),
-(39, 5),
-(39, 6),
-(39, 7),
-(39, 13),
-(39, 15),
-(40, 2),
-(40, 3),
-(40, 5),
-(40, 7),
-(40, 8),
-(40, 11),
-(40, 13);
-=======
 (2, 2),
 (3, 1),
 (4, 5),
@@ -908,7 +587,6 @@ INSERT INTO `instrument_couleur` (`instrument_id`, `couleur_id`) VALUES
 (73, 3),
 (74, 4),
 (75, 5);
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -1024,35 +702,18 @@ CREATE TABLE IF NOT EXISTS `marque` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-=======
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Déchargement des données de la table `marque`
 --
 
 INSERT INTO `marque` (`id`, `libelle`) VALUES
-<<<<<<< HEAD
-(1, 'Fender'),
-(2, 'Gibson'),
-(3, 'Yamaha'),
-(4, 'Roland'),
-(5, 'Korg'),
-(6, 'Marshall'),
-(7, 'Pearl'),
-(8, 'Shure'),
-(9, 'Boss'),
-(10, 'Ibanez');
-=======
 (1, 'Yamaha'),
 (2, 'Fender'),
 (3, 'Roland'),
 (4, 'Gibson'),
 (5, 'Selmer');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -1166,18 +827,6 @@ CREATE TABLE IF NOT EXISTS `professeur` (
 --
 
 INSERT INTO `professeur` (`id`, `nom`, `prenom`, `num_rue`, `rue`, `cpos`, `ville`, `tel`, `mail`) VALUES
-<<<<<<< HEAD
-(1, 'Martin', 'Sophie', 12, 'Rue des Lilas', '14000', 'Caen', '0231456789', 'sophie.martin@example.com'),
-(2, 'Dubois', 'Jean', 45, 'Avenue Victor Hugo', '14610', 'Épron', '0231454321', 'jean.dubois@example.com'),
-(3, 'Lemoine', 'Claire', 7, 'Boulevard Saint-Michel', '14123', 'Ifs', '0231467890', 'claire.lemoine@example.com'),
-(4, 'Moreau', 'Paul', 23, 'Rue de la Paix', '14200', 'Hérouville-Saint-Clair', '0231476543', 'paul.moreau@example.com'),
-(5, 'Rousseau', 'Amélie', 18, 'Place de la République', '14530', 'Bretteville-sur-Odon', '0231487654', 'amelie.rousseau@example.com'),
-(6, 'Bernard', 'Luc', 9, 'Rue Lafayette', '14460', 'Bayeux', '0231498765', 'luc.bernard@example.com'),
-(7, 'Petit', 'Élodie', 56, 'Rue du Faubourg', '14790', 'Colombelles', '0231409876', 'elodie.petit@example.com'),
-(8, 'Lefevre', 'Marc', 31, 'Rue des Fleurs', '14320', 'Cabourg', '0231412345', 'marc.lefevre@example.com'),
-(9, 'Girard', 'Isabelle', 14, 'Avenue des Champs', '14250', 'Merville-Franceville-Plage', '0231423456', 'isabelle.girard@example.com'),
-(10, 'Faure', 'Nicolas', 5, 'Rue Victor Hugo', '14130', 'Isigny-sur-Mer', '0231434567', 'nicolas.faure@example.com');
-=======
 (1, 'Martin', 'Claire', 3, 'Rue Mozart', '75009', 'Paris', '0600000001', 'claire.martin@ecole.fr'),
 (2, 'Bernard', 'Paul', 8, 'Avenue Chopin', '13001', 'Marseille', '0600000002', 'paul.bernard@ecole.fr'),
 (3, 'Lefevre', 'Julie', 1, 'Rue Adagio', '31000', 'Toulouse', '0600000003', 'julie.lefevre@ecole.fr'),
@@ -1188,7 +837,6 @@ INSERT INTO `professeur` (`id`, `nom`, `prenom`, `num_rue`, `rue`, `cpos`, `vill
 (8, 'Girard', 'Sophie', 10, 'Rue Pianissimo', '44000', 'Nantes', '0600000008', 'sophie.girard@ecole.fr'),
 (9, 'Gauthier', 'Hugo', 12, 'Rue Moderato', '34000', 'Montpellier', '0600000009', 'hugo.gauthier@ecole.fr'),
 (10, 'Bertrand', 'Laure', 14, 'Boulevard Vivace', '75009', 'Paris', '0600000010', 'laure.bertrand@ecole.fr');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -1444,41 +1092,13 @@ CREATE TABLE IF NOT EXISTS `type_instrument` (
   `classe_instrument_id` int(11) NOT NULL,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  KEY `IDX_21BCBFF8C2776E15` (`id_classe_instrument_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-=======
   KEY `IDX_21BCBFF8CE879FB1` (`classe_instrument_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Déchargement des données de la table `type_instrument`
 --
 
-<<<<<<< HEAD
-INSERT INTO `type_instrument` (`id`, `id_classe_instrument_id`, `libelle`) VALUES
-(1, 1, 'Guitare électrique'),
-(2, 1, 'Violon'),
-(3, 2, 'Flûte traversière'),
-(4, 2, 'Clarinette'),
-(5, 3, 'Caisse claire'),
-(6, 3, 'Tambourin'),
-(7, 4, 'Piano'),
-(8, 4, 'Synthétiseur'),
-(9, 5, 'Trompette'),
-(10, 5, 'Trombone'),
-(11, 6, 'Hautbois'),
-(12, 6, 'Basson'),
-(13, 7, 'Boîte à rythmes'),
-(14, 7, 'Pédale d’effets'),
-(15, 8, 'Ukulélé'),
-(16, 8, 'Harpe'),
-(17, 9, 'Violoncelle'),
-(18, 9, 'Alto'),
-(19, 10, 'Batterie acoustique'),
-(20, 10, 'Conga');
-=======
 INSERT INTO `type_instrument` (`id`, `classe_instrument_id`, `libelle`) VALUES
 (1, 1, 'Orgue'),
 (2, 1, 'Piano'),
@@ -1495,7 +1115,6 @@ INSERT INTO `type_instrument` (`id`, `classe_instrument_id`, `libelle`) VALUES
 (13, 5, 'Violoncelle'),
 (14, 5, 'Harpe celtique'),
 (15, 6, 'Batterie');
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 -- --------------------------------------------------------
 
@@ -1517,27 +1136,6 @@ CREATE TABLE IF NOT EXISTS `type_instrument_professeur` (
 --
 
 INSERT INTO `type_instrument_professeur` (`type_instrument_id`, `professeur_id`) VALUES
-<<<<<<< HEAD
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10),
-(11, 1),
-(12, 3),
-(13, 6),
-(14, 3),
-(15, 5),
-(16, 7),
-(17, 10),
-(18, 7),
-(19, 9);
-=======
 (1, 10),
 (2, 1),
 (3, 6),
@@ -1548,7 +1146,6 @@ INSERT INTO `type_instrument_professeur` (`type_instrument_id`, `professeur_id`)
 (8, 3),
 (12, 2),
 (13, 5);
->>>>>>> 901af7580991c61dc4aa32eba0c898656fc552f5
 
 --
 -- Contraintes pour les tables déchargées
