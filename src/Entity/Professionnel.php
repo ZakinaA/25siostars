@@ -43,9 +43,9 @@ class Professionnel
     private Collection $interventions;
 
     /**
-     * @var Collection<int, metier>
+     * @var Collection<int, Metier>
      */
-    #[ORM\ManyToMany(targetEntity: metier::class, inversedBy: 'professionnels')]
+    #[ORM\ManyToMany(targetEntity: Metier::class, inversedBy: 'professionnels')]
     private Collection $metier;
 
     public function __construct()
@@ -174,14 +174,14 @@ class Professionnel
     }
 
     /**
-     * @return Collection<int, metier>
+     * @return Collection<int, Metier>
      */
     public function getMetier(): Collection
     {
         return $this->metier;
     }
 
-    public function addMetier(metier $metier): static
+    public function addMetier(Metier $metier): static
     {
         if (!$this->metier->contains($metier)) {
             $this->metier->add($metier);
@@ -190,7 +190,7 @@ class Professionnel
         return $this;
     }
 
-    public function removeMetier(metier $metier): static
+    public function removeMetier(Metier $metier): static
     {
         $this->metier->removeElement($metier);
 

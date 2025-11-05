@@ -43,7 +43,7 @@ class Cours
     /**
      * @var Collection<int, inscription>
      */
-    #[ORM\OneToMany(targetEntity: inscription::class, mappedBy: 'cours')]
+    #[ORM\OneToMany(targetEntity: Inscription::class, mappedBy: 'cours')]
     private Collection $inscription;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
@@ -168,7 +168,7 @@ class Cours
         return $this->inscription;
     }
 
-    public function addInscription(inscription $inscription): static
+    public function addInscription(Inscription $inscription): static
     {
         if (!$this->inscription->contains($inscription)) {
             $this->inscription->add($inscription);
@@ -178,7 +178,7 @@ class Cours
         return $this;
     }
 
-    public function removeInscription(inscription $inscription): static
+    public function removeInscription(Inscription $inscription): static
     {
         if ($this->inscription->removeElement($inscription)) {
             // set the owning side to null (unless already changed)

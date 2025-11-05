@@ -74,7 +74,7 @@ final class InstrumentControllerTest extends WebTestCase
         $fixture->setCheminImage('My Title');
         $fixture->setIdCouleur('My Title');
         $fixture->setIdMarque('My Title');
-        $fixture->setIdTypeInstrument('My Title');
+        $fixture->setTypeInstrument('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
