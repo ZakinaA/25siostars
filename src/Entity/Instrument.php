@@ -39,7 +39,7 @@ class Instrument
 
     #[ORM\ManyToOne(inversedBy: 'instruments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Marque $idMarque = null;
+    private ?Marque $marque = null;
 
     /**
      * @var Collection<int, Accessoire>
@@ -49,7 +49,7 @@ class Instrument
 
     #[ORM\ManyToOne(inversedBy: 'instruments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?TypeInstrument $idTypeInstrument = null;
+    private ?TypeInstrument $typeInstrument = null;
 
     /**
      * @var Collection<int, Intervention>
@@ -63,7 +63,7 @@ class Instrument
     #[ORM\OneToMany(targetEntity: ContratPret::class, mappedBy: 'instrument')]
     private Collection $idContratPret;
 
-    #[ORM\Column(length: 10, nullable: true)]
+    #[ORM\Column(length: 12)]
     private ?string $code = null;
 
     public function __construct()
@@ -165,12 +165,12 @@ class Instrument
 
     public function getIdMarque(): ?Marque
     {
-        return $this->idMarque;
+        return $this->marque;
     }
 
-    public function setIdMarque(?Marque $idMarque): static
+    public function setIdMarque(?Marque $marque): static
     {
-        $this->idMarque = $idMarque;
+        $this->marque = $marque;
 
         return $this;
     }
@@ -207,12 +207,12 @@ class Instrument
 
     public function getIdTypeInstrument(): ?TypeInstrument
     {
-        return $this->idTypeInstrument;
+        return $this->typeInstrument;
     }
 
-    public function setIdTypeInstrument(?TypeInstrument $idTypeInstrument): static
+    public function setIdTypeInstrument(?TypeInstrument $typeInstrument): static
     {
-        $this->idTypeInstrument = $idTypeInstrument;
+        $this->typeInstrument = $typeInstrument;
 
         return $this;
     }
@@ -282,7 +282,7 @@ class Instrument
         return $this->code;
     }
 
-    public function setCode(?string $code): static
+    public function setCode(string $code): static
     {
         $this->code = $code;
 

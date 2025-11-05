@@ -647,3 +647,7 @@ b28b56,::1,GET,http://localhost/emusic/public/css/owl.carousel.min.css,176232742
 3716f8,::1,GET,http://localhost/emusic/public/css/slicknav.min.css,1762327424,,404,request
 c53c92,::1,GET,http://localhost/emusic/public/img/logo.png,1762327424,8af8f1,404,request
 8af8f1,::1,GET,http://localhost/emusic/public/img/logo.png,1762327424,,404,request
+681afe,::1,GET,http://localhost/emusic/public/instrument,1762336396,6b9b88,500,request
+6b9b88,::1,GET,http://localhost/emusic/public/instrument,1762336396,,500,request
+cf15ad,::1,GET,http://localhost/emusic/public/instrument,1762336533,82634a,500,request
+82634a,::1,GET,http://localhost/emusic/public/instrument,1762336533,,500,request
