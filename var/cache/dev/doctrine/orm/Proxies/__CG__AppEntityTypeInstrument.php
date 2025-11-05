@@ -22,15 +22,15 @@ class TypeInstrument extends \App\Entity\TypeInstrument implements \Doctrine\ORM
     
 
     private const LAZY_OBJECT_PROPERTY_SCOPES = [
+        "\0".parent::class."\0".'classeInstrument' => [parent::class, 'classeInstrument', null, 16],
         "\0".parent::class."\0".'cours' => [parent::class, 'cours', null, 16],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null, 16],
-        "\0".parent::class."\0".'idClasseInstrument' => [parent::class, 'idClasseInstrument', null, 16],
         "\0".parent::class."\0".'idProfesseur' => [parent::class, 'idProfesseur', null, 16],
         "\0".parent::class."\0".'instruments' => [parent::class, 'instruments', null, 16],
         "\0".parent::class."\0".'libelle' => [parent::class, 'libelle', null, 16],
+        'classeInstrument' => [parent::class, 'classeInstrument', null, 16],
         'cours' => [parent::class, 'cours', null, 16],
         'id' => [parent::class, 'id', null, 16],
-        'idClasseInstrument' => [parent::class, 'idClasseInstrument', null, 16],
         'idProfesseur' => [parent::class, 'idProfesseur', null, 16],
         'instruments' => [parent::class, 'instruments', null, 16],
         'libelle' => [parent::class, 'libelle', null, 16],

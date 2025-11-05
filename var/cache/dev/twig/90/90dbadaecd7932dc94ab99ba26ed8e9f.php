@@ -49,136 +49,136 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
         yield "
 <style>
 \t
-/*=================================
------------------------------------
+\t/*=================================
+\t-----------------------------------
   SolMusic HTML Template
   Version: 1.0
- ---------------------------------
- =================================*/
+ \t---------------------------------
+ \t=================================*/
 
 
 
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
+\t/*----------------------------------------*/
+\t/* Template default CSS
+\t/*----------------------------------------*/
 
-html,
-body {
+\thtml,
+\tbody {
 \theight: 100%;
 \tfont-family: \"Montserrat\", sans-serif;
 \t-webkit-font-smoothing: antialiased;
 \tfont-smoothing: antialiased;
-}
+\t}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+\th1,
+\th2,
+\th3,
+\th4,
+\th5,
+\th6 {
 \tmargin: 0;
 \tcolor: #0a183d;
 \tfont-weight: 600;
 \tline-height: 1;
-}
+\t}
 
-h1 {
+\th1 {
 \tfont-size: 70px;
-}
+\t}
 
-h2 {
+\th2 {
 \tfont-size: 36px;
-}
+\t}
 
-h3 {
-\tfont-size: 30px;
-}
+\th3 {
+\t font-size: 30px;
+ }
 
-h4 {
+ h4 {
 \tfont-size: 24px;
-}
+  }
 
-h5 {
+ h5 {
 \tfont-size: 18px;
-}
+ }
 
-h6 {
+ h6 {
 \tfont-size: 16px;
-}
+ }
 
-p {
+ p {
 \tfont-size: 15px;
 \tcolor: #6a7080;
 \tline-height: 1.8;
 \tfont-weight: 500;
-}
+ }
 
-img {
+ img {
 \tmax-width: 100%;
-}
+ }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+ input:focus,
+ select:focus,
+ button:focus,
+ textarea:focus {
 \toutline: none;
-}
+ }
 
-a:hover,
-a:focus {
+ a:hover,
+ a:focus {
 \ttext-decoration: none;
-\toutline: none;
+ \toutline: none;
 }
 
-ul,
-ol {
+ ul,
+ ol {
 \tpadding: 0;
 \tmargin: 0;
-}
+ }
 
-/*---------------------
-Helper CSS
+ /*---------------------
+ Helper CSS
  -----------------------*/
 
-.section-title {
+ .section-title {
 \tmargin-bottom: 60px;
-}
+ }
 
-.section-title h2 {
+ .section-title h2 {
 \tfont-size: 60px;
-}
+ }
 
-.set-bg {
+ .set-bg {
 \tbackground-repeat: no-repeat;
 \tbackground-size: cover;
 \tbackground-position: top center;
-}
+ }
 
-.spad {
+ .spad {
 \tpadding-top: 105px;
 \tpadding-bottom: 105px;
-}
+ }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
+ .text-white h1,
+ .text-white h2,
+ .text-white h3,
+ .text-white h4,
+ .text-white h5,
+ .text-white h6,
+ .text-white p,
+ .text-white span,
+ .text-white li,
+ .text-white a {
 \tcolor: #fff;
-}
+ }
 
-/*---------------------
-Commom elements
+ /*---------------------
+ Commom elements
  -----------------------*/
 
-/* buttons */
+ /* buttons */
 
-.site-btn {
+ .site-btn {
 \tdisplay: inline-block;
 \tborder: none;
 \tfont-size: 14px;
@@ -192,19 +192,19 @@ Commom elements
 \tline-height: normal;
 \tcursor: pointer;
 \ttext-align: center;
-}
+ }
 
-.site-btn:hover {
+ .site-btn:hover {
 \tcolor: #fff;
-}
+ }
 
-.site-btn.sb-c2 {
+ .site-btn.sb-c2 {
 \tbackground: #383b70;
-}
+ }
 
-/* Preloder */
+ /* Preloder */
 
-#preloder {
+ #preloder {
 \tposition: fixed;
 \twidth: 100%;
 \theight: 100%;
@@ -212,9 +212,9 @@ Commom elements
 \tleft: 0;
 \tz-index: 999999;
 \tbackground: #000;
-}
+ }
 
-.loader {
+ .loader {
 \twidth: 40px;
 \theight: 40px;
 \tposition: absolute;
@@ -225,9 +225,9 @@ Commom elements
 \tborder-radius: 60px;
 \tanimation: loader 0.8s linear infinite;
 \t-webkit-animation: loader 0.8s linear infinite;
-}
+ }
 
-@keyframes loader {
+ @keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\ttransform: rotate(0deg);
@@ -246,9 +246,9 @@ Commom elements
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
-}
+ }
 
-@-webkit-keyframes loader {
+ @-webkit-keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\tborder: 4px solid #f44336;
@@ -264,89 +264,89 @@ Commom elements
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
-}
+ }
 
-/*------------------
-Header section
+ /*------------------
+ Header section
  ---------------------*/
 
-.header-section {
+ .header-section {
 \tpadding-left: 55px;
 \tpadding-right: 72px;
 \tbackground: #08192d;
-}
+ }
 
-.site-logo {
+ .site-logo {
 \tdisplay: inline-block;
 \tpadding: 0;
 \tpadding: 44px 15px;
-}
+ }
 
-.header-right {
+ .header-right {
 \tfloat: right;
 \tpadding: 44px 0;
 \tmargin-left: 130px;
-}
+ }
 
-.header-right .hr-btn {
+ .header-right .hr-btn {
 \tdisplay: inline-block;
 \tcolor: #979aa5;
-}
+ }
 
-.header-right .user-panel {
+ .header-right .user-panel {
 \tdisplay: inline-block;
-}
+ }
 
-.header-right .user-panel a {
+ .header-right .user-panel a {
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tmargin: 0 10px;
-}
+ }
 
-.header-right .user-panel .register {
+ .header-right .user-panel .register {
 \tcolor: #fc0254;
 \tmargin-right: 0;
-}
+ }
 
-.header-right span {
+ .header-right span {
 \tcolor: #fff;
 \tdisplay: inline-block;
 \tpadding-left: 9px;
-}
+ }
 
-.main-menu {
+ .main-menu {
 \tlist-style: none;
 \tfloat: right;
-}
+ }
 
-.main-menu li {
+ .main-menu li {
 \tdisplay: inline-block;
 \tposition: relative;
-}
+ }
 
-.main-menu li a {
+ .main-menu li a {
 \tdisplay: block;
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tpadding: 44px 10px;
 \tmargin-left: 60px;
-}
+ }
 
-.main-menu li a:hover {
+ .main-menu li a:hover {
 \tcolor: #fc0254;
-}
+ }
 
-.main-menu li:first-child a {
+ .main-menu li:first-child a {
 \tmargin-left: 0;
-}
+ }
 
-.main-menu li:hover .sub-menu {
+ .main-menu li:hover .sub-menu {
 \tvisibility: visible;
 \topacity: 1;
 \tmargin-top: 0;
-}
+ }
 
-.main-menu .sub-menu {
+ .main-menu .sub-menu {
 \tposition: absolute;
 \tlist-style: none;
 \twidth: 220px;
@@ -362,36 +362,36 @@ Header section
 \ttransition: all 0.4s;
 \t-webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
 \tbox-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
-}
+ }
 
-.main-menu .sub-menu li {
+ .main-menu .sub-menu li {
 \tdisplay: block;
-}
+ }
 
-.main-menu .sub-menu li a {
+ .main-menu .sub-menu li a {
 \tdisplay: block;
 \tcolor: #000;
 \tmargin-left: 0;
 \tpadding: 5px 20px;
-}
+ }
 
-.main-menu .sub-menu li a:hover {
+ .main-menu .sub-menu li a:hover {
 \tcolor: #fc0254;
-}
+ }
 
-.slicknav_menu {
+ .slicknav_menu {
 \tdisplay: none;
-}
+ }
 
-/*------------------
-Hero section
+ /*------------------
+ Hero section
  ---------------------*/
 
-.hero-section {
+ .hero-section {
 \toverflow: hidden;
-}
+ }
 
-.hs-item {
+ .hs-item {
 \theight: 724px;
 \tpadding-bottom: 90px;
 \tdisplay: -webkit-box;
@@ -401,9 +401,9 @@ Hero section
 \t-ms-flex-align: center;
 \talign-items: center;
 \tbackground: #0a183d;
-}
+ }
 
-.hs-item h2 {
+ .hs-item h2 {
 \tcolor: #fff;
 \tfont-size: 70px;
 \tmargin-bottom: 25px;
@@ -411,38 +411,38 @@ Hero section
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
-}
+ }
 
-.hs-item h2 span {
+ .hs-item h2 span {
 \tcolor: #fc0254;
-}
+ }
 
-.hs-item p {
+ .hs-item p {
 \tcolor: #ffffff;
 \topacity: 0.6;
 \tmargin-bottom: 50px;
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
-}
+ }
 
-.hs-item .site-btn {
+ .hs-item .site-btn {
 \tposition: relative;
 \ttop: 50px;
 \tmargin-bottom: 20px;
 \topacity: 0;
-}
+ }
 
-.hs-item .sb-c2 {
+ .hs-item .sb-c2 {
 \tmargin-left: 8px;
 }
 
-.hs-item .hs-text {
+  .hs-item   .hs-text {
 \tpadding-top: 90px;
 \tmax-width: 475px;
 }
 
-.hr-img img {
+ .hr-img img {
 \tmin-width: 602px;
 \tposition: relative;
 \tleft: -34px;
@@ -450,21 +450,21 @@ Hero section
 \topacity: 0;
 }
 
-.owl-item.active .hs-item img,
-.owl-item.active .hs-item h2,
-.owl-item.active .hs-item p,
-.owl-item.active .hs-item .site-btn,
-.owl-item.active .hs-item .site-btn.sb-c2 {
+ .owl-item .active  .hs-item img,
+ .owl-item .active  .hs-item h2,
+ .owl-item .active  .hs-item p,
+ .owl-item .active  .hs-item  .site-btn,
+ .owl-item .active  .hs-item  .site-btn .sb-c2 {
 \ttop: 0;
 \topacity: 1;
 }
 
-.owl-item.active .hs-item img {
+ .owl-item .active  .hs-item img {
 \t-webkit-transition: all 0.5s ease 0.2s;
 \ttransition: all 0.5s ease 0.2s;
 }
 
-.owl-item.active .hs-item h2 {
+ .owl-item .active  .hs-item h2 {
 \t-webkit-transition: all 0.5s ease 0.4s;
 \ttransition: all 0.5s ease 0.4s;
 }
@@ -2060,136 +2060,136 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         return new Source("
 <style>
 \t
-/*=================================
------------------------------------
+\t/*=================================
+\t-----------------------------------
   SolMusic HTML Template
   Version: 1.0
- ---------------------------------
- =================================*/
+ \t---------------------------------
+ \t=================================*/
 
 
 
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
+\t/*----------------------------------------*/
+\t/* Template default CSS
+\t/*----------------------------------------*/
 
-html,
-body {
+\thtml,
+\tbody {
 \theight: 100%;
 \tfont-family: \"Montserrat\", sans-serif;
 \t-webkit-font-smoothing: antialiased;
 \tfont-smoothing: antialiased;
-}
+\t}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+\th1,
+\th2,
+\th3,
+\th4,
+\th5,
+\th6 {
 \tmargin: 0;
 \tcolor: #0a183d;
 \tfont-weight: 600;
 \tline-height: 1;
-}
+\t}
 
-h1 {
+\th1 {
 \tfont-size: 70px;
-}
+\t}
 
-h2 {
+\th2 {
 \tfont-size: 36px;
-}
+\t}
 
-h3 {
-\tfont-size: 30px;
-}
+\th3 {
+\t font-size: 30px;
+ }
 
-h4 {
+ h4 {
 \tfont-size: 24px;
-}
+  }
 
-h5 {
+ h5 {
 \tfont-size: 18px;
-}
+ }
 
-h6 {
+ h6 {
 \tfont-size: 16px;
-}
+ }
 
-p {
+ p {
 \tfont-size: 15px;
 \tcolor: #6a7080;
 \tline-height: 1.8;
 \tfont-weight: 500;
-}
+ }
 
-img {
+ img {
 \tmax-width: 100%;
-}
+ }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+ input:focus,
+ select:focus,
+ button:focus,
+ textarea:focus {
 \toutline: none;
-}
+ }
 
-a:hover,
-a:focus {
+ a:hover,
+ a:focus {
 \ttext-decoration: none;
-\toutline: none;
+ \toutline: none;
 }
 
-ul,
-ol {
+ ul,
+ ol {
 \tpadding: 0;
 \tmargin: 0;
-}
+ }
 
-/*---------------------
-Helper CSS
+ /*---------------------
+ Helper CSS
  -----------------------*/
 
-.section-title {
+ .section-title {
 \tmargin-bottom: 60px;
-}
+ }
 
-.section-title h2 {
+ .section-title h2 {
 \tfont-size: 60px;
-}
+ }
 
-.set-bg {
+ .set-bg {
 \tbackground-repeat: no-repeat;
 \tbackground-size: cover;
 \tbackground-position: top center;
-}
+ }
 
-.spad {
+ .spad {
 \tpadding-top: 105px;
 \tpadding-bottom: 105px;
-}
+ }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
+ .text-white h1,
+ .text-white h2,
+ .text-white h3,
+ .text-white h4,
+ .text-white h5,
+ .text-white h6,
+ .text-white p,
+ .text-white span,
+ .text-white li,
+ .text-white a {
 \tcolor: #fff;
-}
+ }
 
-/*---------------------
-Commom elements
+ /*---------------------
+ Commom elements
  -----------------------*/
 
-/* buttons */
+ /* buttons */
 
-.site-btn {
+ .site-btn {
 \tdisplay: inline-block;
 \tborder: none;
 \tfont-size: 14px;
@@ -2203,19 +2203,19 @@ Commom elements
 \tline-height: normal;
 \tcursor: pointer;
 \ttext-align: center;
-}
+ }
 
-.site-btn:hover {
+ .site-btn:hover {
 \tcolor: #fff;
-}
+ }
 
-.site-btn.sb-c2 {
+ .site-btn.sb-c2 {
 \tbackground: #383b70;
-}
+ }
 
-/* Preloder */
+ /* Preloder */
 
-#preloder {
+ #preloder {
 \tposition: fixed;
 \twidth: 100%;
 \theight: 100%;
@@ -2223,9 +2223,9 @@ Commom elements
 \tleft: 0;
 \tz-index: 999999;
 \tbackground: #000;
-}
+ }
 
-.loader {
+ .loader {
 \twidth: 40px;
 \theight: 40px;
 \tposition: absolute;
@@ -2236,9 +2236,9 @@ Commom elements
 \tborder-radius: 60px;
 \tanimation: loader 0.8s linear infinite;
 \t-webkit-animation: loader 0.8s linear infinite;
-}
+ }
 
-@keyframes loader {
+ @keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\ttransform: rotate(0deg);
@@ -2257,9 +2257,9 @@ Commom elements
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
-}
+ }
 
-@-webkit-keyframes loader {
+ @-webkit-keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\tborder: 4px solid #f44336;
@@ -2275,89 +2275,89 @@ Commom elements
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
-}
+ }
 
-/*------------------
-Header section
+ /*------------------
+ Header section
  ---------------------*/
 
-.header-section {
+ .header-section {
 \tpadding-left: 55px;
 \tpadding-right: 72px;
 \tbackground: #08192d;
-}
+ }
 
-.site-logo {
+ .site-logo {
 \tdisplay: inline-block;
 \tpadding: 0;
 \tpadding: 44px 15px;
-}
+ }
 
-.header-right {
+ .header-right {
 \tfloat: right;
 \tpadding: 44px 0;
 \tmargin-left: 130px;
-}
+ }
 
-.header-right .hr-btn {
+ .header-right .hr-btn {
 \tdisplay: inline-block;
 \tcolor: #979aa5;
-}
+ }
 
-.header-right .user-panel {
+ .header-right .user-panel {
 \tdisplay: inline-block;
-}
+ }
 
-.header-right .user-panel a {
+ .header-right .user-panel a {
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tmargin: 0 10px;
-}
+ }
 
-.header-right .user-panel .register {
+ .header-right .user-panel .register {
 \tcolor: #fc0254;
 \tmargin-right: 0;
-}
+ }
 
-.header-right span {
+ .header-right span {
 \tcolor: #fff;
 \tdisplay: inline-block;
 \tpadding-left: 9px;
-}
+ }
 
-.main-menu {
+ .main-menu {
 \tlist-style: none;
 \tfloat: right;
-}
+ }
 
-.main-menu li {
+ .main-menu li {
 \tdisplay: inline-block;
 \tposition: relative;
-}
+ }
 
-.main-menu li a {
+ .main-menu li a {
 \tdisplay: block;
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tpadding: 44px 10px;
 \tmargin-left: 60px;
-}
+ }
 
-.main-menu li a:hover {
+ .main-menu li a:hover {
 \tcolor: #fc0254;
-}
+ }
 
-.main-menu li:first-child a {
+ .main-menu li:first-child a {
 \tmargin-left: 0;
-}
+ }
 
-.main-menu li:hover .sub-menu {
+ .main-menu li:hover .sub-menu {
 \tvisibility: visible;
 \topacity: 1;
 \tmargin-top: 0;
-}
+ }
 
-.main-menu .sub-menu {
+ .main-menu .sub-menu {
 \tposition: absolute;
 \tlist-style: none;
 \twidth: 220px;
@@ -2373,36 +2373,36 @@ Header section
 \ttransition: all 0.4s;
 \t-webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
 \tbox-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
-}
+ }
 
-.main-menu .sub-menu li {
+ .main-menu .sub-menu li {
 \tdisplay: block;
-}
+ }
 
-.main-menu .sub-menu li a {
+ .main-menu .sub-menu li a {
 \tdisplay: block;
 \tcolor: #000;
 \tmargin-left: 0;
 \tpadding: 5px 20px;
-}
+ }
 
-.main-menu .sub-menu li a:hover {
+ .main-menu .sub-menu li a:hover {
 \tcolor: #fc0254;
-}
+ }
 
-.slicknav_menu {
+ .slicknav_menu {
 \tdisplay: none;
-}
+ }
 
-/*------------------
-Hero section
+ /*------------------
+ Hero section
  ---------------------*/
 
-.hero-section {
+ .hero-section {
 \toverflow: hidden;
-}
+ }
 
-.hs-item {
+ .hs-item {
 \theight: 724px;
 \tpadding-bottom: 90px;
 \tdisplay: -webkit-box;
@@ -2412,9 +2412,9 @@ Hero section
 \t-ms-flex-align: center;
 \talign-items: center;
 \tbackground: #0a183d;
-}
+ }
 
-.hs-item h2 {
+ .hs-item h2 {
 \tcolor: #fff;
 \tfont-size: 70px;
 \tmargin-bottom: 25px;
@@ -2422,38 +2422,38 @@ Hero section
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
-}
+ }
 
-.hs-item h2 span {
+ .hs-item h2 span {
 \tcolor: #fc0254;
-}
+ }
 
-.hs-item p {
+ .hs-item p {
 \tcolor: #ffffff;
 \topacity: 0.6;
 \tmargin-bottom: 50px;
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
-}
+ }
 
-.hs-item .site-btn {
+ .hs-item .site-btn {
 \tposition: relative;
 \ttop: 50px;
 \tmargin-bottom: 20px;
 \topacity: 0;
-}
+ }
 
-.hs-item .sb-c2 {
+ .hs-item .sb-c2 {
 \tmargin-left: 8px;
 }
 
-.hs-item .hs-text {
+  .hs-item   .hs-text {
 \tpadding-top: 90px;
 \tmax-width: 475px;
 }
 
-.hr-img img {
+ .hr-img img {
 \tmin-width: 602px;
 \tposition: relative;
 \tleft: -34px;
@@ -2461,21 +2461,21 @@ Hero section
 \topacity: 0;
 }
 
-.owl-item.active .hs-item img,
-.owl-item.active .hs-item h2,
-.owl-item.active .hs-item p,
-.owl-item.active .hs-item .site-btn,
-.owl-item.active .hs-item .site-btn.sb-c2 {
+ .owl-item .active  .hs-item img,
+ .owl-item .active  .hs-item h2,
+ .owl-item .active  .hs-item p,
+ .owl-item .active  .hs-item  .site-btn,
+ .owl-item .active  .hs-item  .site-btn .sb-c2 {
 \ttop: 0;
 \topacity: 1;
 }
 
-.owl-item.active .hs-item img {
+ .owl-item .active  .hs-item img {
 \t-webkit-transition: all 0.5s ease 0.2s;
 \ttransition: all 0.5s ease 0.2s;
 }
 
-.owl-item.active .hs-item h2 {
+ .owl-item .active  .hs-item h2 {
 \t-webkit-transition: all 0.5s ease 0.4s;
 \ttransition: all 0.5s ease 0.4s;
 }
