@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
+<<<<<<< HEAD
 -- Généré le : mer. 05 nov. 2025 à 09:01
+=======
+-- Généré le : lun. 03 nov. 2025 à 15:30
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.2.18
 
@@ -104,6 +108,7 @@ CREATE TABLE IF NOT EXISTS `classe_instrument` (
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+<<<<<<< HEAD
 
 --
 -- Déchargement des données de la table `classe_instrument`
@@ -118,11 +123,14 @@ INSERT INTO `classe_instrument` (`id`, `libelle`) VALUES
 (6, 'Percussion');
 
 -- --------------------------------------------------------
+=======
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 
 --
--- Structure de la table `compte`
+-- Déchargement des données de la table `classe_instrument`
 --
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -141,6 +149,15 @@ INSERT INTO `compte` (`id`, `identifiant`, `mdp`, `idRole`) VALUES
 (1, 'testEleve', 'MPeleve', 1),
 (2, 'testProfesseur', 'MPprofesseur', 2),
 (3, 'testGestionnaire', 'MPgestionnaire', 3);
+=======
+INSERT INTO `classe_instrument` (`id`, `libelle`) VALUES
+(1, 'Clavier'),
+(2, 'Instrument amplifiés'),
+(3, 'Bois'),
+(4, 'Cuivre'),
+(5, 'Corde'),
+(6, 'Percussion');
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 
 -- --------------------------------------------------------
 
@@ -416,6 +433,7 @@ CREATE TABLE IF NOT EXISTS `instrument` (
 --
 
 INSERT INTO `instrument` (`id`, `marque_id`, `type_instrument_id`, `num_serie`, `date_achat`, `prix_achat`, `utilisation`, `chemin_image`, `code`) VALUES
+<<<<<<< HEAD
 (1, 1, 1, 10001, '2016-01-10', 1500, 'Emprunt', '../../assets/images/instrument/1.jpg', 'ORG1'),
 (2, 2, 1, 10002, '2017-03-11', 1600, 'Emprunt', '../../assets/images/instrument/2.jpg', 'ORG2'),
 (3, 3, 1, 10003, '2018-05-21', 1700, 'Emprunt', '../../assets/images/instrument/3.jpg', 'ORG3'),
@@ -491,6 +509,83 @@ INSERT INTO `instrument` (`id`, `marque_id`, `type_instrument_id`, `num_serie`, 
 (73, 2, 15, 150003, '2018-04-04', 640, 'Emprunt', '../../assets/images/instrument/73.jpg', 'BAT3'),
 (74, 1, 15, 150004, '2019-05-05', 660, 'Emprunt', '../../assets/images/instrument/74.jpg', 'BAT4'),
 (75, 4, 15, 150005, '2020-06-06', 680, 'Emprunt', '../../assets/images/instrument/75.jpg', 'BAT5');
+=======
+(1, 1, 1, 10001, '2016-01-10', 1500, 'Emprunt', 'ORG1.png', 'ORG1'),
+(2, 2, 1, 10002, '2017-03-11', 1600, 'Emprunt', 'ORG2.png', 'ORG2'),
+(3, 3, 1, 10003, '2018-05-21', 1700, 'Emprunt', 'ORG3.png', 'ORG3'),
+(4, 4, 1, 10004, '2019-07-01', 1800, 'Emprunt', 'ORG4.png', 'ORG4'),
+(5, 5, 1, 10005, '2020-09-12', 1900, 'Emprunt', 'ORG5.png', 'ORG5'),
+(6, 1, 2, 20001, '2016-02-05', 2400, 'Emprunt', 'PIN1.png', 'PIN1'),
+(7, 2, 2, 20002, '2017-04-10', 2300, 'Emprunt', 'PIN2.png', 'PIN2'),
+(8, 3, 2, 20003, '2018-06-15', 2200, 'Emprunt', 'PIN3.png', 'PIN3'),
+(9, 4, 2, 20004, '2019-08-20', 2100, 'Emprunt', 'PIN4.png', 'PIN4'),
+(10, 5, 2, 20005, '2020-10-25', 2000, 'Emprunt', 'PIN5.png', 'PIN5'),
+(11, 3, 3, 30001, '2017-01-05', 800, 'Emprunt', 'CLA1.png', 'CLA1'),
+(12, 1, 3, 30002, '2018-02-06', 850, 'Emprunt', 'CLA2.png', 'CLA2'),
+(13, 2, 3, 30003, '2019-03-07', 870, 'Emprunt', 'CLA3.png', 'CLA3'),
+(14, 4, 3, 30004, '2020-04-08', 900, 'Emprunt', 'CLA4.png', 'CLA4'),
+(15, 5, 3, 30005, '2021-05-09', 950, 'Emprunt', 'CLA5.png', 'CLA5'),
+(16, 2, 4, 40001, '2017-11-11', 1200, 'Emprunt', 'GUI1.png', 'GUI1'),
+(17, 1, 4, 40002, '2018-12-12', 1250, 'Emprunt', 'GUI2.png', 'GUI2'),
+(18, 5, 4, 40003, '2019-01-13', 1300, 'Emprunt', 'GUI3.png', 'GUI3'),
+(19, 3, 4, 40004, '2020-02-14', 1350, 'Emprunt', 'GUI4.png', 'GUI4'),
+(20, 4, 4, 40005, '2021-03-15', 1400, 'Emprunt', 'GUI5.png', 'GUI5'),
+(21, 2, 5, 50001, '2017-07-07', 1100, 'Emprunt', 'BAS1.png', 'BAS1'),
+(22, 2, 5, 50002, '2018-08-08', 1150, 'Emprunt', 'BAS2.png', 'BAS2'),
+(23, 3, 5, 50003, '2019-09-09', 1175, 'Emprunt', 'BAS3.png', 'BAS3'),
+(24, 4, 5, 50004, '2020-10-10', 1200, 'Emprunt', 'BAS4.png', 'BAS4'),
+(25, 1, 5, 50005, '2021-11-11', 1250, 'Emprunt', 'BAS5.png', 'BAS5'),
+(26, 5, 6, 60001, '2016-05-05', 900, 'Emprunt', 'SAX1.png', 'SAX1'),
+(27, 5, 6, 60002, '2017-06-06', 920, 'Emprunt', 'SAX2.png', 'SAX2'),
+(28, 1, 6, 60003, '2018-07-07', 940, 'Emprunt', 'SAX3.png', 'SAX3'),
+(29, 2, 6, 60004, '2019-08-08', 960, 'Emprunt', 'SAX4.png', 'SAX4'),
+(30, 3, 6, 60005, '2020-09-09', 980, 'Emprunt', 'SAX5.png', 'SAX5'),
+(31, 5, 7, 70001, '2016-03-03', 350, 'Emprunt', 'CLV1.png', 'CLV1'),
+(32, 5, 7, 70002, '2017-04-04', 360, 'Emprunt', 'CLV2.png', 'CLV2'),
+(33, 1, 7, 70003, '2018-05-05', 370, 'Emprunt', 'CLV3.png', 'CLV3'),
+(34, 2, 7, 70004, '2019-06-06', 380, 'Emprunt', 'CLV4.png', 'CLV4'),
+(35, 3, 7, 70005, '2020-07-07', 390, 'Emprunt', 'CLV5.png', 'CLV5'),
+(36, 5, 8, 80001, '2016-02-02', 300, 'Emprunt', 'FLU1.png', 'FLU1'),
+(37, 1, 8, 80002, '2017-03-03', 320, 'Emprunt', 'FLU2.png', 'FLU2'),
+(38, 2, 8, 80003, '2018-04-04', 330, 'Emprunt', 'FLU3.png', 'FLU3'),
+(39, 3, 8, 80004, '2019-05-05', 340, 'Emprunt', 'FLU4.png', 'FLU4'),
+(40, 4, 8, 80005, '2020-06-06', 350, 'Emprunt', 'FLU5.png', 'FLU5'),
+(41, 5, 9, 90001, '2015-01-01', 700, 'Emprunt', 'TMB1.png', 'TMB1'),
+(42, 1, 9, 90002, '2016-02-02', 720, 'Emprunt', 'TMB2.png', 'TMB2'),
+(43, 2, 9, 90003, '2017-03-03', 740, 'Emprunt', 'TMB3.png', 'TMB3'),
+(44, 3, 9, 90004, '2018-04-04', 760, 'Emprunt', 'TMB4.png', 'TMB4'),
+(45, 4, 9, 90005, '2019-05-05', 780, 'Emprunt', 'TMB5.png', 'TMB5'),
+(46, 5, 10, 100001, '2015-06-06', 680, 'Emprunt', 'TPT1.png', 'TPT1'),
+(47, 1, 10, 100002, '2016-07-07', 700, 'Emprunt', 'TPT2.png', 'TPT2'),
+(48, 2, 10, 100003, '2017-08-08', 720, 'Emprunt', 'TPT3.png', 'TPT3'),
+(49, 3, 10, 100004, '2018-09-09', 740, 'Emprunt', 'TPT4.png', 'TPT4'),
+(50, 4, 10, 100005, '2019-10-10', 760, 'Emprunt', 'TPT5.png', 'TPT5'),
+(51, 4, 11, 110001, '2015-05-05', 1500, 'Emprunt', 'TUB1.png', 'TUB1'),
+(52, 4, 11, 110002, '2016-06-06', 1520, 'Emprunt', 'TUB2.png', 'TUB2'),
+(53, 1, 11, 110003, '2017-07-07', 1540, 'Emprunt', 'TUB3.png', 'TUB3'),
+(54, 2, 11, 110004, '2018-08-08', 1560, 'Emprunt', 'TUB4.png', 'TUB4'),
+(55, 3, 11, 110005, '2019-09-09', 1580, 'Emprunt', 'TUB5.png', 'TUB5'),
+(56, 5, 12, 120001, '2019-09-01', 400, 'Emprunt', 'VIO1.png', 'VIO1'),
+(57, 5, 12, 120002, '2020-10-02', 420, 'Emprunt', 'VIO2.png', 'VIO2'),
+(58, 1, 12, 120003, '2021-11-03', 440, 'Emprunt', 'VIO3.png', 'VIO3'),
+(59, 2, 12, 120004, '2022-12-04', 460, 'Emprunt', 'VIO4.png', 'VIO4'),
+(60, 3, 12, 120005, '2023-01-05', 480, 'Emprunt', 'VIO5.png', 'VIO5'),
+(61, 4, 13, 130001, '2018-08-08', 900, 'Emprunt', 'VLC1.png', 'VLC1'),
+(62, 4, 13, 130002, '2019-09-09', 920, 'Emprunt', 'VLC2.png', 'VLC2'),
+(63, 1, 13, 130003, '2020-10-10', 940, 'Emprunt', 'VLC3.png', 'VLC3'),
+(64, 2, 13, 130004, '2021-11-11', 960, 'Emprunt', 'VLC4.png', 'VLC4'),
+(65, 3, 13, 130005, '2022-12-12', 980, 'Emprunt', 'VLC5.png', 'VLC5'),
+(66, 4, 14, 140001, '2017-03-03', 1200, 'Emprunt', 'HRC1.png', 'HRC1'),
+(67, 4, 14, 140002, '2018-04-04', 1250, 'Emprunt', 'HRC2.png', 'HRC2'),
+(68, 1, 14, 140003, '2019-05-05', 1300, 'Emprunt', 'HRC3.png', 'HRC3'),
+(69, 2, 14, 140004, '2020-06-06', 1350, 'Emprunt', 'HRC4.png', 'HRC4'),
+(70, 3, 14, 140005, '2021-07-07', 1400, 'Emprunt', 'HRC5.png', 'HRC5'),
+(71, 3, 15, 150001, '2016-02-02', 600, 'Emprunt', 'BAT1.png', 'BAT1'),
+(72, 3, 15, 150002, '2017-03-03', 620, 'Emprunt', 'BAT2.png', 'BAT2'),
+(73, 2, 15, 150003, '2018-04-04', 640, 'Emprunt', 'BAT3.png', 'BAT3'),
+(74, 1, 15, 150004, '2019-05-05', 660, 'Emprunt', 'BAT4.png', 'BAT4'),
+(75, 4, 15, 150005, '2020-06-06', 680, 'Emprunt', 'BAT5.png', 'BAT5');
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 
 -- --------------------------------------------------------
 
@@ -946,6 +1041,7 @@ CREATE TABLE IF NOT EXISTS `responsable` (
   PRIMARY KEY (`id`),
   KEY `IDX_52520D07B76F6B31` (`tranche_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+<<<<<<< HEAD
 
 --
 -- Déchargement des données de la table `responsable`
@@ -974,11 +1070,14 @@ INSERT INTO `responsable` (`id`, `tranche_id`, `nom`, `prenom`, `num_rue`, `rue`
 (20, 4, 'Roche', 'Aline', 30, 'Rue Vival', '06000', 'Nice', '0620003020', 'aline.roche@mail.fr');
 
 -- --------------------------------------------------------
+=======
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 
 --
--- Structure de la table `role`
+-- Déchargement des données de la table `responsable`
 --
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -994,6 +1093,29 @@ INSERT INTO `role` (`id`, `libelle`) VALUES
 (1, 'Elève'),
 (2, 'Professeur'),
 (3, 'Gestionnaire');
+=======
+INSERT INTO `responsable` (`id`, `tranche_id`, `nom`, `prenom`, `num_rue`, `rue`, `cpos`, `ville`, `tel`, `mail`) VALUES
+(1, 1, 'Durand', 'Sophie', 10, 'Rue Victor Hugo', '44000', 'Nantes', '0600111222', 'sophie.durand@mail.fr'),
+(2, 2, 'Petit', 'Marc', 12, 'Rue de la Paix', '33000', 'Bordeaux', '0600222333', 'marc.petit@mail.fr'),
+(3, 1, 'Martin', 'Sophie', 13, 'Rue des Tilleuls', '75012', 'Paris', '0620003003', 'sophie.martin@mail.fr'),
+(4, 2, 'Bernard', 'Luc', 14, 'Rue des Roses', '69003', 'Lyon', '0620003004', 'luc.bernard@mail.fr'),
+(5, 3, 'Lemaire', 'Isabelle', 15, 'Rue des Lilas', '31000', 'Toulouse', '0620003005', 'isabelle.lemaire@mail.fr'),
+(6, 3, 'Rousseau', 'Philippe', 16, 'Boulevard des Arts', '33000', 'Bordeaux', '0620003006', 'philippe.rousseau@mail.fr'),
+(7, 1, 'Germain', 'Nathalie', 17, 'Place Mozart', '59000', 'Lille', '0620003007', 'nathalie.germain@mail.fr'),
+(8, 4, 'Carpentier', 'Olivier', 18, 'Avenue Debussy', '44000', 'Nantes', '0620003008', 'olivier.carpentier@mail.fr'),
+(9, 5, 'Marchal', 'Valerie', 19, 'Rue Vivaldi', '34000', 'Montpellier', '0620003009', 'valerie.marchal@mail.fr'),
+(10, 1, 'Perrot', 'Jacques', 20, 'Rue Ravel', '67000', 'Strasbourg', '0620003010', 'jacques.perrot@mail.fr'),
+(11, 2, 'Legrand', 'Cecile', 21, 'Rue Rossini', '13001', 'Marseille', '0620003011', 'cecile.legrand@mail.fr'),
+(12, 3, 'Gillet', 'Marc', 22, 'Boulevard Bizet', '21000', 'Dijon', '0620003012', 'marc.gillet@mail.fr'),
+(13, 4, 'Noiret', 'Agnès', 23, 'Rue Schubert', '75010', 'Paris', '0620003013', 'agnes.noiret@mail.fr'),
+(14, 5, 'Besson', 'Thierry', 24, 'Rue Haendel', '33000', 'Bordeaux', '0620003014', 'thierry.besson@mail.fr'),
+(15, 6, 'Meyer', 'Claire', 25, 'Rue Strauss', '59000', 'Lille', '0620003015', 'claire.meyer@mail.fr'),
+(16, 3, 'Delmas', 'Sabrina', 26, 'Rue Boccherini', '44000', 'Nantes', '0620003016', 'sabrina.delmas@mail.fr'),
+(17, 2, 'Ollivier', 'Bruno', 27, 'Rue Vivaldi', '34000', 'Montpellier', '0620003017', 'bruno.ollivier@mail.fr'),
+(18, 5, 'Chevalier', 'Muriel', 28, 'Rue Lully', '67000', 'Strasbourg', '0620003018', 'muriel.chevalier@mail.fr'),
+(19, 1, 'Pelletier', 'Hugo', 29, 'Rue Handel', '31000', 'Toulouse', '0620003019', 'hugo.pelletier@mail.fr'),
+(20, 4, 'Roche', 'Aline', 30, 'Rue Vival', '06000', 'Nice', '0620003020', 'aline.roche@mail.fr');
+>>>>>>> 7dffc9b7dc55e12060c00d434bab50c007a0484a
 
 -- --------------------------------------------------------
 
@@ -1156,12 +1278,6 @@ INSERT INTO `type_instrument_professeur` (`type_instrument_id`, `professeur_id`)
 --
 ALTER TABLE `accessoire`
   ADD CONSTRAINT `FK_8FD026ACF11D9C` FOREIGN KEY (`instrument_id`) REFERENCES `instrument` (`id`);
-
---
--- Contraintes pour la table `compte`
---
-ALTER TABLE `compte`
-  ADD CONSTRAINT `compte_ibfk_1` FOREIGN KEY (`idRole`) REFERENCES `role` (`id`);
 
 --
 -- Contraintes pour la table `contrat_pret`

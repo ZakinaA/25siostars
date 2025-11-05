@@ -26,7 +26,7 @@ class TypeInstrument
 
     #[ORM\ManyToOne(inversedBy: 'typeInstruments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?ClasseInstrument $idClasseInstrument = null;
+    private ?ClasseInstrument $classeInstrument = null;
 
     /**
      * @var Collection<int, Professeur>
@@ -42,8 +42,8 @@ class TypeInstrument
 
     public function __construct()
     {
-        $this->instruments = new ArrayCollection();
-        $this->idProfesseur = new ArrayCollection();
+        $this->Instruments = new ArrayCollection();
+        $this->Professeur = new ArrayCollection();
         $this->cours = new ArrayCollection();
     }
 
@@ -96,12 +96,12 @@ class TypeInstrument
 
     public function getIdClasseInstrument(): ?ClasseInstrument
     {
-        return $this->idClasseInstrument;
+        return $this->classeInstrument;
     }
 
-    public function setIdClasseInstrument(?ClasseInstrument $idClasseInstrument): static
+    public function setIdClasseInstrument(?ClasseInstrument $classeInstrument): static
     {
-        $this->idClasseInstrument = $idClasseInstrument;
+        $this->classeInstrument = $classeInstrument;
 
         return $this;
     }
