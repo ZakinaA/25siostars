@@ -43,7 +43,7 @@ class Professionnel
     private Collection $interventions;
 
     /**
-     * @var Collection<int, metier>
+     * @var Collection<int, Metier>
      */
     #[ORM\ManyToMany(targetEntity: Metier::class, inversedBy: 'professionnels')]
     private Collection $metier;
@@ -174,7 +174,7 @@ class Professionnel
     }
 
     /**
-     * @return Collection<int, metier>
+     * @return Collection<int, Metier>
      */
     public function getMetier(): Collection
     {
