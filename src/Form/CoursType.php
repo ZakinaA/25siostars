@@ -31,11 +31,11 @@ class CoursType extends AbstractType
                 'class' => Jour::class,
                 'choice_label' => 'id',
             ])
-            ->add('idProfesseur', EntityType::class, [
+            ->add('professeur', EntityType::class, [
                 'class' => Professeur::class,
                 'choice_label' => 'id',
             ])
-            ->add('idTypeInstrument', EntityType::class, [
+            ->add('typeInstrument', EntityType::class, [
                 'class' => TypeInstrument::class,
                 'choice_label' => 'id',
             ])
