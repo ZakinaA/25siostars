@@ -56,6 +56,7 @@ final class InstrumentControllerTest extends WebTestCase
             'instrument[idCouleur]' => 'Testing',
             'instrument[idMarque]' => 'Testing',
             'instrument[idTypeInstrument]' => 'Testing',
+            'instrument[code]' => 'Testing',
         ]);
 
         self::assertResponseRedirects($this->path);
@@ -75,6 +76,7 @@ final class InstrumentControllerTest extends WebTestCase
         $fixture->setIdCouleur('My Title');
         $fixture->setIdMarque('My Title');
         $fixture->setTypeInstrument('My Title');
+        $fixture->setCode('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -99,6 +101,7 @@ final class InstrumentControllerTest extends WebTestCase
         $fixture->setIdCouleur('Value');
         $fixture->setIdMarque('Value');
         $fixture->setIdTypeInstrument('Value');
+        $fixture->setCode('Value');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -114,6 +117,7 @@ final class InstrumentControllerTest extends WebTestCase
             'instrument[idCouleur]' => 'Something New',
             'instrument[idMarque]' => 'Something New',
             'instrument[idTypeInstrument]' => 'Something New',
+            'instrument[code]' => 'Something New',
         ]);
 
         self::assertResponseRedirects('/instrument/');
@@ -128,6 +132,7 @@ final class InstrumentControllerTest extends WebTestCase
         self::assertSame('Something New', $fixture[0]->getIdCouleur());
         self::assertSame('Something New', $fixture[0]->getIdMarque());
         self::assertSame('Something New', $fixture[0]->getIdTypeInstrument());
+        self::assertSame('Something New', $fixture[0]->getCode());
     }
 
     public function testRemove(): void
@@ -142,6 +147,7 @@ final class InstrumentControllerTest extends WebTestCase
         $fixture->setIdCouleur('Value');
         $fixture->setIdMarque('Value');
         $fixture->setIdTypeInstrument('Value');
+        $fixture->setCode('Value');
 
         $this->manager->persist($fixture);
         $this->manager->flush();

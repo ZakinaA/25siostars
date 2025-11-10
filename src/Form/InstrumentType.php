@@ -16,24 +16,28 @@ class InstrumentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('numSerie')
-            ->add('dateAchat')
-            ->add('prixAchat')
-            ->add('utilisation')
-            ->add('cheminImage')
+            ->add('numSerie', null, ['label' => 'Numéro de série '])
+            ->add('dateAchat', null, ['label' => 'Date d\'achat '])
+            ->add('prixAchat', null, ['label' => 'Prix d\'achat '])
+            ->add('utilisation', null, ['label' => 'Utilisation (Local/Prêt) '])
+            ->add('cheminImage', null, ['label' => 'Chemin de l\'image (à partir de "assets/images") '])
             ->add('idCouleur', EntityType::class, [
                 'class' => Couleur::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
                 'multiple' => true,
+                'label' => 'Couleur(s) ',
             ])
             ->add('idMarque', EntityType::class, [
                 'class' => Marque::class,
-                'choice_label' => 'id',
+                'choice_label' => 'libelle',
+                'label' => 'Marque ',
             ])
             ->add('idTypeInstrument', EntityType::class, [
                 'class' => TypeInstrument::class,
-                'choice_label' => 'id',
+                'choice_label' => 'libelle',
+                'label' => 'Type d\'instrument ',
             ])
+            ->add('code', null, ['label' => 'Code '])
         ;
     }
 
