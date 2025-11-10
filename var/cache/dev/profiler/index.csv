@@ -2840,3 +2840,13 @@ caa6c6,::1,GET,http://localhost/emusic/public/img/logo.png,1762772575,,404,reque
 request
 85dd17,::1,GET,http://localhost/emusic/public/bootstrap.min.css.map,1762772575,a0aa61,404,request
 a0aa61,::1,GET,http://localhost/emusic/public/bootstrap.min.css.map,1762772575,,404,request
+0d9a42,::1,GET,http://localhost/emusic/public/css/slicknav.min.css,1762784055,7d05de,404,request
+a721da,::1,GET,http://localhost/emusic/public/css/bootstrap.min.css,1762784055,ccebee,404,request
+8dddaa,::1,GET,http://localhost/emusic/public/css/owl.carousel.min.css,1762784055,2bc7ca,404,request
+b31257,::1,GET,http://localhost/emusic/public/css/font-awesome.min.css,1762784055,7bda0d,404,request
+7d05de,::1,GET,http://localhost/emusic/public/css/slicknav.min.css,1762784055,,404,request
+ccebee,::1,GET,http://localhost/emusic/public/css/bootstrap.min.css,1762784055,,404,request
+2bc7ca,::1,GET,http://localhost/emusic/public/css/owl.carousel.min.css,1762784055,,404,request
+7bda0d,::1,GET,http://localhost/emusic/public/css/font-awesome.min.css,1762784055,,404,request
+9b14e4,::1,GET,http://localhost/emusic/public/bootstrap.min.css.map,1762784055,31a9ee,404,request
+31a9ee,::1,GET,http://localhost/emusic/public/bootstrap.min.css.map,1762784055,,404,request
