@@ -1,1 +1,0 @@
-{"resources":[{"@type":"Symfony\\Component\\Config\\Resource\\FileResource","resource":"D:\\wamp2024\\www\\emusic\\assets\\controllers\\hello_controller.js"},{"@type":"Symfony\\Component\\Config\\Resource\\FileExistenceResource","exists":true,"resource":"D:\\wamp2024\\www\\emusic\\assets\\vendor\\@hotwired\\stimulus\\stimulus.index.js"}]}
