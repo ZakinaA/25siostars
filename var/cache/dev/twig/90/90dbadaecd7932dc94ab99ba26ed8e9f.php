@@ -1889,7 +1889,7 @@ Responsive
 
 <html>
     <head>
-\t<title>Emusic SIOStars</title>
+\t<title>EMusic SIOStars</title>
 \t<meta charset=\"UTF-8\">
 \t<meta name=\"description\" content=\"SolMusic HTML Template\">
 \t<meta name=\"keywords\" content=\"music, html\">
@@ -1918,7 +1918,7 @@ Responsive
 
     <header class=\"header-section clearfix\">
 \t\t<a href=\"accueil\" class=\"site-logo\">
-\t\t\t<img src=\"../assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
+\t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
 \t\t</a>
 \t\t<div class=\"header-right\">
 \t\t\t<a href=\"#\" class=\"hr-btn\">Help</a>
@@ -3900,7 +3900,7 @@ Responsive
 
 <html>
     <head>
-\t<title>Emusic SIOStars</title>
+\t<title>EMusic SIOStars</title>
 \t<meta charset=\"UTF-8\">
 \t<meta name=\"description\" content=\"SolMusic HTML Template\">
 \t<meta name=\"keywords\" content=\"music, html\">
@@ -3929,7 +3929,7 @@ Responsive
 
     <header class=\"header-section clearfix\">
 \t\t<a href=\"accueil\" class=\"site-logo\">
-\t\t\t<img src=\"../assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
+\t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
 \t\t</a>
 \t\t<div class=\"header-right\">
 \t\t\t<a href=\"#\" class=\"hr-btn\">Help</a>

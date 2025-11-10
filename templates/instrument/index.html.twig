@@ -31,8 +31,9 @@
                 <td>{{ instrument.prixAchat }}€</td>
                 <td>{{ instrument.utilisation }}</td>
                 <td>
-                    <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">show</a>
-                    <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}">edit</a>
+                    <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">Afficher</a>
+                     | 
+                    <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +44,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_instrument_new') }}">Create new</a>
+    <a href="{{ path('app_instrument_new') }}">Ajouter un instrument</a>
 {% endblock %}

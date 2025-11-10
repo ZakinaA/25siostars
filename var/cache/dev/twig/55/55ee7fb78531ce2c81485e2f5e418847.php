@@ -97,7 +97,9 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Instrument</h1>
+        yield "    <h1>Instrument n°";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6), "html", null, true);
+        yield "</h1>
 
     <table class=\"table\">
         <tbody>
@@ -189,7 +191,7 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
             </tr>
         </tbody>
     </table>
-    <img src=\"";
+    <img src=\"../../assets/images/";
         // line 56
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 56, $this->source); })()), "cheminImage", [], "any", false, false, false, 56), "html", null, true);
         yield "\" /></br>
@@ -197,12 +199,12 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
     <a href=\"";
         // line 58
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_index");
-        yield "\">back to list</a>
-
+        yield "\">Retour à la liste</a>
+     | 
     <a href=\"";
         // line 60
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 60, $this->source); })()), "id", [], "any", false, false, false, 60)]), "html", null, true);
-        yield "\">edit</a>
+        yield "\">Modifier</a>
 
     ";
         // line 62
@@ -239,7 +241,7 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  209 => 62,  204 => 60,  199 => 58,  194 => 56,  188 => 52,  179 => 48,  177 => 47,  170 => 46,  165 => 45,  157 => 40,  150 => 36,  143 => 32,  136 => 28,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  211 => 62,  206 => 60,  201 => 58,  196 => 56,  190 => 52,  181 => 48,  179 => 47,  172 => 46,  167 => 45,  159 => 40,  152 => 36,  145 => 32,  138 => 28,  131 => 24,  124 => 20,  117 => 16,  110 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -249,7 +251,7 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
 {% block title %}Instrument{% endblock %}
 
 {% block body %}
-    <h1>Instrument</h1>
+    <h1>Instrument n°{{ instrument.id }}</h1>
 
     <table class=\"table\">
         <tbody>
@@ -299,11 +301,11 @@ class __TwigTemplate_d43cee056d8e8c78a323716d950ac482 extends Template
             </tr>
         </tbody>
     </table>
-    <img src=\"{{ instrument.cheminImage }}\" /></br>
+    <img src=\"../../assets/images/{{ instrument.cheminImage }}\" /></br>
 
-    <a href=\"{{ path('app_instrument_index') }}\">back to list</a>
-
-    <a href=\"{{ path('app_instrument_edit', {'id': instrument.id}) }}\">edit</a>
+    <a href=\"{{ path('app_instrument_index') }}\">Retour à la liste</a>
+     | 
+    <a href=\"{{ path('app_instrument_edit', {'id': instrument.id}) }}\">Modifier</a>
 
     {{ include('instrument/_delete_form.html.twig') }}
 {% endblock %}", "instrument/show.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\instrument\\show.html.twig");

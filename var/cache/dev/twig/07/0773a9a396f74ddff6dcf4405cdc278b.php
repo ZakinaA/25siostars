@@ -52,7 +52,7 @@ class __TwigTemplate_55967ed8e5a5c584dae0c44af0310291 extends Template
         // line 2
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         yield "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn\">Supprimer</button>
 </form>
 ";
         
@@ -92,7 +92,7 @@ class __TwigTemplate_55967ed8e5a5c584dae0c44af0310291 extends Template
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_instrument_delete', {'id': instrument.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ instrument.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn\">Supprimer</button>
 </form>
 ", "instrument/_delete_form.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\instrument\\_delete_form.html.twig");
     }

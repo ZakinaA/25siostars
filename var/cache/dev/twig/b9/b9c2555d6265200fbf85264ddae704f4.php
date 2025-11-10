@@ -158,19 +158,20 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
                     <a href=\"";
             // line 34
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-            yield "\">show</a>
+            yield "\">Afficher</a>
+                     | 
                     <a href=\"";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 35)]), "html", null, true);
-            yield "\">edit</a>
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+            yield "\">Modifier</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 38
+        // line 39
         if (!$context['_iterated']) {
-            // line 39
+            // line 40
             yield "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -179,14 +180,14 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['instrument'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 44
         yield "        </tbody>
     </table>
 
     <a href=\"";
-        // line 46
+        // line 47
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_new");
-        yield "\">Create new</a>
+        yield "\">Ajouter un instrument</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -218,7 +219,7 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  188 => 46,  183 => 43,  174 => 39,  172 => 38,  164 => 35,  160 => 34,  155 => 32,  151 => 31,  147 => 30,  143 => 29,  139 => 28,  135 => 27,  131 => 26,  127 => 25,  124 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  189 => 47,  184 => 44,  175 => 40,  173 => 39,  165 => 36,  160 => 34,  155 => 32,  151 => 31,  147 => 30,  143 => 29,  139 => 28,  135 => 27,  131 => 26,  127 => 25,  124 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -256,8 +257,9 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
                 <td>{{ instrument.prixAchat }}€</td>
                 <td>{{ instrument.utilisation }}</td>
                 <td>
-                    <a href=\"{{ path('app_instrument_show', {'id': instrument.id}) }}\">show</a>
-                    <a href=\"{{ path('app_instrument_edit', {'id': instrument.id}) }}\">edit</a>
+                    <a href=\"{{ path('app_instrument_show', {'id': instrument.id}) }}\">Afficher</a>
+                     | 
+                    <a href=\"{{ path('app_instrument_edit', {'id': instrument.id}) }}\">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -268,7 +270,7 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_instrument_new') }}\">Create new</a>
+    <a href=\"{{ path('app_instrument_new') }}\">Ajouter un instrument</a>
 {% endblock %}
 ", "instrument/index.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\instrument\\index.html.twig");
     }
