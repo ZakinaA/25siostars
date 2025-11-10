@@ -100,12 +100,12 @@ class Cours
         return $this;
     }
 
-    public function getnbPlaces(): ?int
+    public function getNbPlaces(): ?int
     {
         return $this->nbPlaces;
     }
 
-    public function setnbPlaces(int $nbPlaces): static
+    public function setNbPlaces(int $nbPlaces): static
     {
         $this->nbPlaces = $nbPlaces;
 
@@ -148,6 +148,11 @@ class Cours
         return $this;
     }
 
+    public function getTypeNom(): ?string
+    {
+        return $this->type?->getNom();
+    }
+
     public function getJour(): ?Jour
     {
         return $this->jour;
@@ -158,6 +163,11 @@ class Cours
         $this->jour = $jour;
 
         return $this;
+    }
+
+    public function getJourLibelle(): ?string
+    {
+        return $this->jour?->getLibelle();
     }
 
     /**
@@ -190,27 +200,37 @@ class Cours
         return $this;
     }
 
-    public function getIdProfesseur(): ?Professeur
+    public function getProfesseur(): ?Professeur
     {
         return $this->professeur;
     }
 
-    public function setIdProfesseur(?Professeur $professeur): static
+    public function setProfesseur(?Professeur $professeur): static
     {
         $this->professeur = $professeur;
 
         return $this;
     }
 
-    public function getIdTypeInstrument(): ?TypeInstrument
+    public function getProfesseurNom(): ?string
+    {
+        return $this->professeur?->getNom();
+    }
+
+    public function getTypeInstrument(): ?TypeInstrument
     {
         return $this->typeInstrument;
     }
 
-    public function setIdTypeInstrument(?TypeInstrument $typeInstrument): static
+    public function setTypeInstrument(?TypeInstrument $typeInstrument): static
     {
         $this->typeInstrument = $typeInstrument;
 
         return $this;
+    }
+
+    public function getTypeInstrumentLibelle(): ?string
+    {
+        return $this->typeInstrument?->getLibelle();
     }
 }

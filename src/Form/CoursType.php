@@ -25,19 +25,19 @@ class CoursType extends AbstractType
             ->add('heureFin')
             ->add('type', EntityType::class, [
                 'class' => Type::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
             ->add('jour', EntityType::class, [
                 'class' => Jour::class,
-                'choice_label' => 'id',
+                'choice_label' => 'libelle',
             ])
             ->add('professeur', EntityType::class, [
                 'class' => Professeur::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
             ->add('typeInstrument', EntityType::class, [
                 'class' => TypeInstrument::class,
-                'choice_label' => 'id',
+                'choice_label' => 'libelle',
             ])
         ;
     }

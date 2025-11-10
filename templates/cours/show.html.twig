@@ -35,6 +35,22 @@
                 <th>HeureFin</th>
                 <td>{{ cour.heureFin ? cour.heureFin|date('H:i:s') : '' }}</td>
             </tr>
+            <tr>
+                <th>Enseignant</th>
+                <td>{{ cour.professeurNom }}</td>
+            </tr>
+            <tr>
+                <th>Jour</th>
+                <td>{{ cour.jourLibelle }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ cour.typeNom }}</td>
+            </tr>
+            <tr>
+                <th>Instrument</th>
+                <td>{{ cour.typeInstrumentLibelle }}</td>
+            </tr>
         </tbody>
     </table>
 
