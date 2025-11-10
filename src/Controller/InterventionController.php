@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Intervention;
-use App\Form\Intervention2Type;
+use App\Form\InterventionType;
 use App\Repository\InterventionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +26,7 @@ final class InterventionController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $intervention = new Intervention();
-        $form = $this->createForm(Intervention2Type::class, $intervention);
+        $form = $this->createForm(InterventionType::class, $intervention);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
