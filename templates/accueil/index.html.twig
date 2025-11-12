@@ -3,41 +3,114 @@
 {% block title %}Cours index{% endblock %}
 
 {% block body %}
-    <h1>Bienvenue voici les cours disponibles</h1>
+<style>
+/* --- ton CSS existant, inchangé --- */
+.tables-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.table-box {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.table-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.table-box h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.2em;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  background-color: #007BFF;
+  color: white;
+  padding: 8px;
+  text-align: left;
+  font-weight: normal;
+}
+.table td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table a {
+  color: #007BFF;
+  text-decoration: none;
+  margin-right: 5px;
+}
+.table a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .table-box {
+    flex: 1 1 100%;
+  }
+}
+</style>
 
-    <table class="table">
+<h1>Bienvenue sur EMusic — Cours disponibles</h1>
+<h3>Voici les différents types de cours proposés :</h3>
+
+<div class="tables-container">
+  {% for instrument, cours in coursParInstrument %}
+    <div class="table-box">
+      <h4>{{ instrument }}</h4>
+      <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Libelle</th>
-                <th>AgeMini</th>
-                <th>AgeMaxi</th>
-                <th>NbPlaces</th>
-                <th>HeureDebut</th>
-                <th>HeureFin</th>
-                <th>actions</th>
-            </tr>
+          <tr>
+            <th>Id</th>
+            <th>Libelle</th>
+            <th>AgeMini</th>
+            <th>AgeMaxi</th>
+            <th>NbPlaces</th>
+            <th>HeureDebut</th>
+            <th>HeureFin</th>
+            <th>actions</th>
+          </tr>
         </thead>
         <tbody>
-        {% for cour in cours %}
-            <tr>
+          {% if cours is not empty %}
+            {% for cour in cours %}
+              <tr>
                 <td>{{ cour.id }}</td>
                 <td>{{ cour.libelle }}</td>
                 <td>{{ cour.ageMini }}</td>
                 <td>{{ cour.ageMaxi }}</td>
                 <td>{{ cour.nbPlaces }}</td>
-                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i:s') : '' }}</td>
-                <td>{{ cour.heureFin ? cour.heureFin|date('H:i:s') : '' }}</td>
+                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
+                <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">show</a>
-                    <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">edit</a>
+                  <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">show</a>
+                  <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">edit</a>
                 </td>
-            </tr>
-        {% else %}
+              </tr>
+            {% endfor %}
+          {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+              <td colspan="8">Aucun cours pour cet instrument</td>
             </tr>
-        {% endfor %}
+          {% endif %}
         </tbody>
-    </table>
+      </table>
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}
