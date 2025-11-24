@@ -1917,14 +1917,8 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-<<<<<<< HEAD
-\t\t<a href=\"index.html\" class=\"site-logo\">
-\t\t\t<img src=\"img/logo.png\" alt=\"\">
-=======
-\t
 \t\t<a href=\"accueil\" class=\"site-logo\">
 \t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t</a>
 \t\t<div class=\"header-right\">
 \t\t\t<a href=\"#\" class=\"hr-btn\">Aide</a>
@@ -1935,11 +1929,7 @@ Responsive
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-<<<<<<< HEAD
 \t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
-=======
-\t\t\t<li><a href=\"http://localhost/emusic/public/accueil\">Accueil</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
@@ -1948,11 +1938,7 @@ Responsive
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
-<<<<<<< HEAD
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionaire\">Gestionnaire</a></li>
-=======
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionnaire\">Gestionnaire</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>
@@ -1960,15 +1946,9 @@ Responsive
 \t\t</ul>
 \t</header>
         ";
-<<<<<<< HEAD
         // line 1900
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 1901
-=======
-        // line 1901
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 1902
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
         yield "    </body>
 \t
 \t<!-- Footer section -->
@@ -1983,10 +1963,6 @@ Responsive
 \t\t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
-<<<<<<< HEAD
-=======
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -2029,11 +2005,7 @@ Responsive
         yield from [];
     }
 
-<<<<<<< HEAD
     // line 1900
-=======
-    // line 1901
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -2068,11 +2040,7 @@ Responsive
      */
     public function getDebugInfo(): array
     {
-<<<<<<< HEAD
         return array (  2009 => 1900,  1952 => 1901,  1950 => 1900,  49 => 1,);
-=======
-        return array (  2023 => 1901,  1953 => 1902,  1951 => 1901,  49 => 1,);
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
     }
 
     public function getSourceContext(): Source
@@ -3948,14 +3916,8 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-<<<<<<< HEAD
-\t\t<a href=\"index.html\" class=\"site-logo\">
-\t\t\t<img src=\"img/logo.png\" alt=\"\">
-=======
-\t
 \t\t<a href=\"accueil\" class=\"site-logo\">
 \t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t</a>
 \t\t<div class=\"header-right\">
 \t\t\t<a href=\"#\" class=\"hr-btn\">Aide</a>
@@ -3966,11 +3928,7 @@ Responsive
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-<<<<<<< HEAD
 \t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
-=======
-\t\t\t<li><a href=\"http://localhost/emusic/public/accueil\">Accueil</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
@@ -3979,11 +3937,7 @@ Responsive
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
-<<<<<<< HEAD
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionaire\">Gestionnaire</a></li>
-=======
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionnaire\">Gestionnaire</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>
@@ -4005,10 +3959,6 @@ Responsive
 \t\t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
-<<<<<<< HEAD
-=======
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
