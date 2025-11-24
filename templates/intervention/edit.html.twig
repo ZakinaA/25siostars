@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Intervention</h1>
 
-    {{ include('intervention/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    {{ include('intervention/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_intervention_index') }}">Retour à la liste</a>
+    <a href="{{ path('app_intervention_index') }}">back to list</a>
 
     {{ include('intervention/_delete_form.html.twig') }}
 {% endblock %}

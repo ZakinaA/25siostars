@@ -16,7 +16,12 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \Container4te5cRo\App_KernelDevDebugContainer([
     'container.build_hash' => '4te5cRo',
+<<<<<<< HEAD
     'container.build_id' => 'fad6b13c',
     'container.build_time' => 1762942656,
+=======
+    'container.build_id' => '367ca51d',
+    'container.build_time' => 1762940404,
+>>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container4te5cRo');

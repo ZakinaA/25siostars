@@ -17,10 +17,28 @@ final class AccueilController extends AbstractController
     #[Route(name: 'app_accueil_index', methods: ['GET'])]
     public function index(CoursRepository $coursRepository): Response
     {
-        return $this->render('accueil/index.html.twig', [
-            'cours' => $coursRepository->findAll(),
-        ]);
+    // Liste des instruments à afficher
+    $instruments = [
+        'Orgue', 'Piano', 'Clavier amplifié', 'Guitare électrique', 'Saxophone',
+        'Clarinette', 'Flûte', 'Trombone', 'Trompette', 'Tuba',
+        'Violon', 'Violoncelle', 'Harpe', 'Batterie'
+    ];
+
+    // Tableau associatif instrument => liste des cours
+    $coursParInstrument = [];
+
+    foreach ($instruments as $instrument) {
+        $coursParInstrument[$instrument] = $coursRepository->findBy(
+            ['libelle' => $instrument],
+            ['id' => 'ASC'] // tri optionnel par id ou autre
+        );
     }
+
+    return $this->render('accueil/index.html.twig', [
+        'coursParInstrument' => $coursParInstrument,
+    ]);
+    }
+
 
     #[Route('/new', name: 'app_accueil_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
