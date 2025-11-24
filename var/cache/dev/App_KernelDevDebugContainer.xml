@@ -374,6 +374,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CoursController"/>
       </call>
     </service>
+    <service id="App\Controller\EleveController" class="App\Controller\EleveController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\EleveController"/>
+      </call>
+    </service>
     <service id="App\Controller\InstrumentController" class="App\Controller\InstrumentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -386,6 +393,20 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\InterventionController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProfesseurController" class="App\Controller\ProfesseurController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ProfesseurController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProfessionnelController" class="App\Controller\ProfessionnelController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ProfessionnelController"/>
       </call>
     </service>
     <service id="App\Entity\Accessoire" class="App\Entity\Accessoire" autowire="true" autoconfigure="true">
@@ -471,10 +492,19 @@
     <service id="App\Form\CoursType" class="App\Form\CoursType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Form\EleveType" class="App\Form\EleveType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\InstrumentType" class="App\Form\InstrumentType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Form\InterventionType" class="App\Form\InterventionType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Form\ProfesseurType" class="App\Form\ProfesseurType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Form\ProfessionnelType" class="App\Form\ProfessionnelType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Repository\AccessoireRepository" class="App\Repository\AccessoireRepository" autowire="true" autoconfigure="true">
@@ -585,7 +615,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.SCwRz3H"/>
+      <argument type="service" id=".service_locator.YFC55BA"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1542,8 +1572,11 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CoursType</argument>
+        <argument>App\Form\EleveType</argument>
         <argument>App\Form\InstrumentType</argument>
         <argument>App\Form\InterventionType</argument>
+        <argument>App\Form\ProfesseurType</argument>
+        <argument>App\Form\ProfessionnelType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3610,7 +3643,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.SCwRz3H"/>
+      <argument type="service" id=".service_locator.YFC55BA"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4202,7 +4235,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.2U_V5Cj"/>
+      <argument type="service" id=".service_locator.AzFMcjx"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4301,8 +4334,11 @@
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
         <argument key="App\Form\CoursType">submit</argument>
+        <argument key="App\Form\EleveType">submit</argument>
         <argument key="App\Form\InstrumentType">submit</argument>
         <argument key="App\Form\InterventionType">submit</argument>
+        <argument key="App\Form\ProfesseurType">submit</argument>
+        <argument key="App\Form\ProfessionnelType">submit</argument>
       </argument>
     </service>
     <service id="validator.builder" class="Symfony\Component\Validator\ValidatorBuilder">
@@ -7637,6 +7673,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\CoursController.0.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EleveController" class="App\Controller\EleveController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EleveController" class="App\Controller\EleveController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\EleveController.0.App\Controller\EleveController" class="App\Controller\EleveController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EleveController" class="App\Controller\EleveController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\InstrumentController.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
@@ -7645,6 +7685,14 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InterventionController" class="App\Controller\InterventionController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\InterventionController.0.App\Controller\InterventionController" class="App\Controller\InterventionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\InterventionController" class="App\Controller\InterventionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProfesseurController" class="App\Controller\ProfesseurController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProfesseurController" class="App\Controller\ProfesseurController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\ProfesseurController.0.App\Controller\ProfesseurController" class="App\Controller\ProfesseurController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProfesseurController" class="App\Controller\ProfesseurController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProfessionnelController" class="App\Controller\ProfessionnelController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProfessionnelController" class="App\Controller\ProfessionnelController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\ProfessionnelController.0.App\Controller\ProfessionnelController" class="App\Controller\ProfessionnelController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProfessionnelController" class="App\Controller\ProfessionnelController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Accessoire.0.App\Entity\Accessoire" class="App\Entity\Accessoire" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Accessoire" class="App\Entity\Accessoire" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\ClasseInstrument.0.App\Entity\ClasseInstrument" class="App\Entity\ClasseInstrument" autowire="true" abstract="true"/>
@@ -7687,10 +7735,16 @@
     <service id=".abstract.instanceof.App\Entity\TypeInstrument" class="App\Entity\TypeInstrument" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CoursType" class="App\Form\CoursType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CoursType" class="App\Form\CoursType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EleveType" class="App\Form\EleveType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EleveType" class="App\Form\EleveType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InstrumentType" class="App\Form\InstrumentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\InstrumentType" class="App\Form\InstrumentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InterventionType" class="App\Form\InterventionType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\InterventionType" class="App\Form\InterventionType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfesseurType" class="App\Form\ProfesseurType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProfesseurType" class="App\Form\ProfesseurType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfessionnelType" class="App\Form\ProfessionnelType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProfessionnelType" class="App\Form\ProfessionnelType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AccessoireRepository" class="App\Repository\AccessoireRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AccessoireRepository" class="App\Repository\AccessoireRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClasseInstrumentRepository" class="App\Repository\ClasseInstrumentRepository" autowire="true" abstract="true"/>
@@ -8334,6 +8388,55 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mGUuBR5" method="withContext"/>
     </service>
+    <service id=".service_locator.VkZ4W1y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="eleveRepository" type="service_closure" id="App\Repository\EleveRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.VkZ4W1y.App\Controller\EleveController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController::index()"/>
+      <argument>App\Controller\EleveController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.VkZ4W1y" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\EleveController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController::new()"/>
+      <argument>App\Controller\EleveController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.61eAldK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="eleve" type="service_closure" id=".errored..service_locator.61eAldK.App\Entity\Eleve"/>
+      </argument>
+    </service>
+    <service id=".service_locator.61eAldK.App\Controller\EleveController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController::show()"/>
+      <argument>App\Controller\EleveController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.61eAldK" method="withContext"/>
+    </service>
+    <service id=".service_locator..6gP3vv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="eleve" type="service_closure" id=".errored..service_locator..6gP3vv.App\Entity\Eleve"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator..6gP3vv.App\Controller\EleveController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController::edit()"/>
+      <argument>App\Controller\EleveController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator..6gP3vv" method="withContext"/>
+    </service>
+    <service id=".service_locator..6gP3vv.App\Controller\EleveController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController::delete()"/>
+      <argument>App\Controller\EleveController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator..6gP3vv" method="withContext"/>
+    </service>
     <service id=".service_locator.9sOGoae" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8432,7 +8535,105 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.gVB_8IW" method="withContext"/>
     </service>
-    <service id=".service_locator.SCwRz3H" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.lJRtONh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professeurRepository" type="service_closure" id="App\Repository\ProfesseurRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.lJRtONh.App\Controller\ProfesseurController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController::index()"/>
+      <argument>App\Controller\ProfesseurController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.lJRtONh" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\ProfesseurController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController::new()"/>
+      <argument>App\Controller\ProfesseurController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.m7qyalN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professeur" type="service_closure" id=".errored..service_locator.m7qyalN.App\Entity\Professeur"/>
+      </argument>
+    </service>
+    <service id=".service_locator.m7qyalN.App\Controller\ProfesseurController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController::show()"/>
+      <argument>App\Controller\ProfesseurController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.m7qyalN" method="withContext"/>
+    </service>
+    <service id=".service_locator.jd0PfRn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professeur" type="service_closure" id=".errored..service_locator.jd0PfRn.App\Entity\Professeur"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController::edit()"/>
+      <argument>App\Controller\ProfesseurController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jd0PfRn" method="withContext"/>
+    </service>
+    <service id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController::delete()"/>
+      <argument>App\Controller\ProfesseurController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jd0PfRn" method="withContext"/>
+    </service>
+    <service id=".service_locator.oqwsgu5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professionnelRepository" type="service_closure" id="App\Repository\ProfessionnelRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oqwsgu5.App\Controller\ProfessionnelController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController::index()"/>
+      <argument>App\Controller\ProfessionnelController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.oqwsgu5" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\ProfessionnelController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController::new()"/>
+      <argument>App\Controller\ProfessionnelController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.Lud1mKX" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professionnel" type="service_closure" id=".errored..service_locator.Lud1mKX.App\Entity\Professionnel"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Lud1mKX.App\Controller\ProfessionnelController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController::show()"/>
+      <argument>App\Controller\ProfessionnelController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Lud1mKX" method="withContext"/>
+    </service>
+    <service id=".service_locator.XbNuJxo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="professionnel" type="service_closure" id=".errored..service_locator.XbNuJxo.App\Entity\Professionnel"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController::edit()"/>
+      <argument>App\Controller\ProfessionnelController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.XbNuJxo" method="withContext"/>
+    </service>
+    <service id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController::delete()"/>
+      <argument>App\Controller\ProfessionnelController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.XbNuJxo" method="withContext"/>
+    </service>
+    <service id=".service_locator.YFC55BA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8449,6 +8650,11 @@
         <argument key="App\Controller\CoursController::show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\CoursController::show()"/>
         <argument key="App\Controller\CoursController::edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::edit()"/>
         <argument key="App\Controller\CoursController::delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::delete()"/>
+        <argument key="App\Controller\EleveController::index" type="service_closure" id=".service_locator.VkZ4W1y.App\Controller\EleveController::index()"/>
+        <argument key="App\Controller\EleveController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\EleveController::new()"/>
+        <argument key="App\Controller\EleveController::show" type="service_closure" id=".service_locator.61eAldK.App\Controller\EleveController::show()"/>
+        <argument key="App\Controller\EleveController::edit" type="service_closure" id=".service_locator..6gP3vv.App\Controller\EleveController::edit()"/>
+        <argument key="App\Controller\EleveController::delete" type="service_closure" id=".service_locator..6gP3vv.App\Controller\EleveController::delete()"/>
         <argument key="App\Controller\InstrumentController::index" type="service_closure" id=".service_locator.9sOGoae.App\Controller\InstrumentController::index()"/>
         <argument key="App\Controller\InstrumentController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\InstrumentController::new()"/>
         <argument key="App\Controller\InstrumentController::show" type="service_closure" id=".service_locator.19UqbJR.App\Controller\InstrumentController::show()"/>
@@ -8459,6 +8665,16 @@
         <argument key="App\Controller\InterventionController::show" type="service_closure" id=".service_locator.WhoyZJQ.App\Controller\InterventionController::show()"/>
         <argument key="App\Controller\InterventionController::edit" type="service_closure" id=".service_locator.gVB_8IW.App\Controller\InterventionController::edit()"/>
         <argument key="App\Controller\InterventionController::delete" type="service_closure" id=".service_locator.gVB_8IW.App\Controller\InterventionController::delete()"/>
+        <argument key="App\Controller\ProfesseurController::index" type="service_closure" id=".service_locator.lJRtONh.App\Controller\ProfesseurController::index()"/>
+        <argument key="App\Controller\ProfesseurController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\ProfesseurController::new()"/>
+        <argument key="App\Controller\ProfesseurController::show" type="service_closure" id=".service_locator.m7qyalN.App\Controller\ProfesseurController::show()"/>
+        <argument key="App\Controller\ProfesseurController::edit" type="service_closure" id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::edit()"/>
+        <argument key="App\Controller\ProfesseurController::delete" type="service_closure" id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::delete()"/>
+        <argument key="App\Controller\ProfessionnelController::index" type="service_closure" id=".service_locator.oqwsgu5.App\Controller\ProfessionnelController::index()"/>
+        <argument key="App\Controller\ProfessionnelController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\ProfessionnelController::new()"/>
+        <argument key="App\Controller\ProfessionnelController::show" type="service_closure" id=".service_locator.Lud1mKX.App\Controller\ProfessionnelController::show()"/>
+        <argument key="App\Controller\ProfessionnelController::edit" type="service_closure" id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::edit()"/>
+        <argument key="App\Controller\ProfessionnelController::delete" type="service_closure" id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::delete()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\AccueilController:index" type="service_closure" id=".service_locator.EdELPbA.App\Controller\AccueilController::index()"/>
@@ -8471,6 +8687,11 @@
         <argument key="App\Controller\CoursController:show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\CoursController::show()"/>
         <argument key="App\Controller\CoursController:edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::edit()"/>
         <argument key="App\Controller\CoursController:delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::delete()"/>
+        <argument key="App\Controller\EleveController:index" type="service_closure" id=".service_locator.VkZ4W1y.App\Controller\EleveController::index()"/>
+        <argument key="App\Controller\EleveController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\EleveController::new()"/>
+        <argument key="App\Controller\EleveController:show" type="service_closure" id=".service_locator.61eAldK.App\Controller\EleveController::show()"/>
+        <argument key="App\Controller\EleveController:edit" type="service_closure" id=".service_locator..6gP3vv.App\Controller\EleveController::edit()"/>
+        <argument key="App\Controller\EleveController:delete" type="service_closure" id=".service_locator..6gP3vv.App\Controller\EleveController::delete()"/>
         <argument key="App\Controller\InstrumentController:index" type="service_closure" id=".service_locator.9sOGoae.App\Controller\InstrumentController::index()"/>
         <argument key="App\Controller\InstrumentController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\InstrumentController::new()"/>
         <argument key="App\Controller\InstrumentController:show" type="service_closure" id=".service_locator.19UqbJR.App\Controller\InstrumentController::show()"/>
@@ -8481,6 +8702,16 @@
         <argument key="App\Controller\InterventionController:show" type="service_closure" id=".service_locator.WhoyZJQ.App\Controller\InterventionController::show()"/>
         <argument key="App\Controller\InterventionController:edit" type="service_closure" id=".service_locator.gVB_8IW.App\Controller\InterventionController::edit()"/>
         <argument key="App\Controller\InterventionController:delete" type="service_closure" id=".service_locator.gVB_8IW.App\Controller\InterventionController::delete()"/>
+        <argument key="App\Controller\ProfesseurController:index" type="service_closure" id=".service_locator.lJRtONh.App\Controller\ProfesseurController::index()"/>
+        <argument key="App\Controller\ProfesseurController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\ProfesseurController::new()"/>
+        <argument key="App\Controller\ProfesseurController:show" type="service_closure" id=".service_locator.m7qyalN.App\Controller\ProfesseurController::show()"/>
+        <argument key="App\Controller\ProfesseurController:edit" type="service_closure" id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::edit()"/>
+        <argument key="App\Controller\ProfesseurController:delete" type="service_closure" id=".service_locator.jd0PfRn.App\Controller\ProfesseurController::delete()"/>
+        <argument key="App\Controller\ProfessionnelController:index" type="service_closure" id=".service_locator.oqwsgu5.App\Controller\ProfessionnelController::index()"/>
+        <argument key="App\Controller\ProfessionnelController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\ProfessionnelController::new()"/>
+        <argument key="App\Controller\ProfessionnelController:show" type="service_closure" id=".service_locator.Lud1mKX.App\Controller\ProfessionnelController::show()"/>
+        <argument key="App\Controller\ProfessionnelController:edit" type="service_closure" id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::edit()"/>
+        <argument key="App\Controller\ProfessionnelController:delete" type="service_closure" id=".service_locator.XbNuJxo.App\Controller\ProfessionnelController::delete()"/>
       </argument>
     </service>
     <service id=".service_locator.HxALDTI" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8666,12 +8897,15 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.2U_V5Cj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.AzFMcjx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CoursType" type="service_closure" id="App\Form\CoursType"/>
+        <argument key="App\Form\EleveType" type="service_closure" id="App\Form\EleveType"/>
         <argument key="App\Form\InstrumentType" type="service_closure" id="App\Form\InstrumentType"/>
         <argument key="App\Form\InterventionType" type="service_closure" id="App\Form\InterventionType"/>
+        <argument key="App\Form\ProfesseurType" type="service_closure" id="App\Form\ProfesseurType"/>
+        <argument key="App\Form\ProfessionnelType" type="service_closure" id="App\Form\ProfessionnelType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
@@ -9097,6 +9331,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\EleveController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EleveController"/>
+      <argument>App\Controller\EleveController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\InstrumentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\InstrumentController"/>
       <argument>App\Controller\InstrumentController</argument>
@@ -9106,6 +9346,18 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\InterventionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\InterventionController"/>
       <argument>App\Controller\InterventionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\ProfesseurController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfesseurController"/>
+      <argument>App\Controller\ProfesseurController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\ProfessionnelController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProfessionnelController"/>
+      <argument>App\Controller\ProfessionnelController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -9303,8 +9555,11 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\AccueilController</argument>
           <argument>App\Controller\CoursController</argument>
+          <argument>App\Controller\EleveController</argument>
           <argument>App\Controller\InstrumentController</argument>
           <argument>App\Controller\InterventionController</argument>
+          <argument>App\Controller\ProfesseurController</argument>
+          <argument>App\Controller\ProfessionnelController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -9542,6 +9797,12 @@
     <service id=".errored..service_locator.mGUuBR5.App\Entity\Cours" class="App\Entity\Cours">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.mGUuBR5&quot;: it needs an instance of &quot;App\Entity\Cours&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
+    <service id=".errored..service_locator.61eAldK.App\Entity\Eleve" class="App\Entity\Eleve">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.61eAldK&quot;: it needs an instance of &quot;App\Entity\Eleve&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator..6gP3vv.App\Entity\Eleve" class="App\Entity\Eleve">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator..6gP3vv&quot;: it needs an instance of &quot;App\Entity\Eleve&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
     <service id=".errored..service_locator.19UqbJR.App\Entity\Instrument" class="App\Entity\Instrument">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.19UqbJR&quot;: it needs an instance of &quot;App\Entity\Instrument&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
@@ -9553,6 +9814,18 @@
     </service>
     <service id=".errored..service_locator.gVB_8IW.App\Entity\Intervention" class="App\Entity\Intervention">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.gVB_8IW&quot;: it needs an instance of &quot;App\Entity\Intervention&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.m7qyalN.App\Entity\Professeur" class="App\Entity\Professeur">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.m7qyalN&quot;: it needs an instance of &quot;App\Entity\Professeur&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.jd0PfRn.App\Entity\Professeur" class="App\Entity\Professeur">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.jd0PfRn&quot;: it needs an instance of &quot;App\Entity\Professeur&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.Lud1mKX.App\Entity\Professionnel" class="App\Entity\Professionnel">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Lud1mKX&quot;: it needs an instance of &quot;App\Entity\Professionnel&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.XbNuJxo.App\Entity\Professionnel" class="App\Entity\Professionnel">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.XbNuJxo&quot;: it needs an instance of &quot;App\Entity\Professionnel&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -10758,7 +11031,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.SCwRz3H"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YFC55BA"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10806,12 +11079,21 @@
     <service id=".service_locator.5Vd5JYV" alias=".service_locator.egipcEH"/>
     <service id=".service_locator.udC1j5H" alias=".service_locator.REroOrJ"/>
     <service id=".service_locator.nnwL469" alias=".service_locator.mGUuBR5"/>
+    <service id=".service_locator.eMS2qc_" alias=".service_locator.VkZ4W1y"/>
+    <service id=".service_locator.8iBBP8J" alias=".service_locator.61eAldK"/>
+    <service id=".service_locator.3_S9P4f" alias=".service_locator..6gP3vv"/>
     <service id=".service_locator.k59P8SH" alias=".service_locator.9sOGoae"/>
     <service id=".service_locator.Voo2Ga4" alias=".service_locator.19UqbJR"/>
     <service id=".service_locator.FGB7SKX" alias=".service_locator.AYsh93h"/>
     <service id=".service_locator.DFzEIBD" alias=".service_locator.MVxzEdn"/>
     <service id=".service_locator.RUO3J5H" alias=".service_locator.WhoyZJQ"/>
     <service id=".service_locator.JeVguTD" alias=".service_locator.gVB_8IW"/>
+    <service id=".service_locator.Y4XXKeU" alias=".service_locator.lJRtONh"/>
+    <service id=".service_locator.88qoK9D" alias=".service_locator.m7qyalN"/>
+    <service id=".service_locator.1wb5GF7" alias=".service_locator.jd0PfRn"/>
+    <service id=".service_locator.x9v0L4M" alias=".service_locator.oqwsgu5"/>
+    <service id=".service_locator.fcSceZR" alias=".service_locator.Lud1mKX"/>
+    <service id=".service_locator.4ftEQxh" alias=".service_locator.XbNuJxo"/>
     <service id=".service_locator.9nvaCmp" alias=".service_locator.ZyP9f7K"/>
   </services>
 </container>

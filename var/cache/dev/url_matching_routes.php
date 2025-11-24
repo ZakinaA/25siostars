@@ -19,10 +19,16 @@ return [
         '/accueil/new' => [[['_route' => 'app_accueil_new', '_controller' => 'App\\Controller\\AccueilController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/cours' => [[['_route' => 'app_cours_index', '_controller' => 'App\\Controller\\CoursController::index'], null, ['GET' => 0], null, false, false, null]],
         '/cours/new' => [[['_route' => 'app_cours_new', '_controller' => 'App\\Controller\\CoursController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/eleve' => [[['_route' => 'app_eleve_index', '_controller' => 'App\\Controller\\EleveController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/eleve/new' => [[['_route' => 'app_eleve_new', '_controller' => 'App\\Controller\\EleveController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/instrument' => [[['_route' => 'app_instrument_index', '_controller' => 'App\\Controller\\InstrumentController::index'], null, ['GET' => 0], null, false, false, null]],
         '/instrument/new' => [[['_route' => 'app_instrument_new', '_controller' => 'App\\Controller\\InstrumentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/intervention' => [[['_route' => 'app_intervention_index', '_controller' => 'App\\Controller\\InterventionController::index'], null, ['GET' => 0], null, false, false, null]],
         '/intervention/new' => [[['_route' => 'app_intervention_new', '_controller' => 'App\\Controller\\InterventionController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/professeur' => [[['_route' => 'app_professeur_index', '_controller' => 'App\\Controller\\ProfesseurController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/professeur/new' => [[['_route' => 'app_professeur_new', '_controller' => 'App\\Controller\\ProfesseurController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/professionnel' => [[['_route' => 'app_professionnel_index', '_controller' => 'App\\Controller\\ProfessionnelController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/professionnel/new' => [[['_route' => 'app_professionnel_new', '_controller' => 'App\\Controller\\ProfessionnelController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -54,16 +60,33 @@ return [
                     .'|/edit(*:283)'
                     .'|(*:291)'
                 .')'
+                .'|/eleve/([^/]++)(?'
+                    .'|(*:318)'
+                    .'|/edit(*:331)'
+                    .'|(*:339)'
+                .')'
                 .'|/in(?'
                     .'|strument/([^/]++)(?'
-                        .'|(*:326)'
-                        .'|/edit(*:339)'
-                        .'|(*:347)'
+                        .'|(*:374)'
+                        .'|/edit(*:387)'
+                        .'|(*:395)'
                     .')'
                     .'|tervention/([^/]++)(?'
-                        .'|(*:378)'
-                        .'|/edit(*:391)'
-                        .'|(*:399)'
+                        .'|(*:426)'
+                        .'|/edit(*:439)'
+                        .'|(*:447)'
+                    .')'
+                .')'
+                .'|/profess(?'
+                    .'|eur/([^/]++)(?'
+                        .'|(*:483)'
+                        .'|/edit(*:496)'
+                        .'|(*:504)'
+                    .')'
+                    .'|ionnel/([^/]++)(?'
+                        .'|(*:531)'
+                        .'|/edit(*:544)'
+                        .'|(*:552)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -83,13 +106,22 @@ return [
         270 => [[['_route' => 'app_cours_show', '_controller' => 'App\\Controller\\CoursController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         283 => [[['_route' => 'app_cours_edit', '_controller' => 'App\\Controller\\CoursController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         291 => [[['_route' => 'app_cours_delete', '_controller' => 'App\\Controller\\CoursController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        326 => [[['_route' => 'app_instrument_show', '_controller' => 'App\\Controller\\InstrumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        339 => [[['_route' => 'app_instrument_edit', '_controller' => 'App\\Controller\\InstrumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        347 => [[['_route' => 'app_instrument_delete', '_controller' => 'App\\Controller\\InstrumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        378 => [[['_route' => 'app_intervention_show', '_controller' => 'App\\Controller\\InterventionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        391 => [[['_route' => 'app_intervention_edit', '_controller' => 'App\\Controller\\InterventionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        399 => [
-            [['_route' => 'app_intervention_delete', '_controller' => 'App\\Controller\\InterventionController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        318 => [[['_route' => 'app_eleve_show', '_controller' => 'App\\Controller\\EleveController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        331 => [[['_route' => 'app_eleve_edit', '_controller' => 'App\\Controller\\EleveController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        339 => [[['_route' => 'app_eleve_delete', '_controller' => 'App\\Controller\\EleveController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        374 => [[['_route' => 'app_instrument_show', '_controller' => 'App\\Controller\\InstrumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        387 => [[['_route' => 'app_instrument_edit', '_controller' => 'App\\Controller\\InstrumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        395 => [[['_route' => 'app_instrument_delete', '_controller' => 'App\\Controller\\InstrumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        426 => [[['_route' => 'app_intervention_show', '_controller' => 'App\\Controller\\InterventionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        439 => [[['_route' => 'app_intervention_edit', '_controller' => 'App\\Controller\\InterventionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        447 => [[['_route' => 'app_intervention_delete', '_controller' => 'App\\Controller\\InterventionController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        483 => [[['_route' => 'app_professeur_show', '_controller' => 'App\\Controller\\ProfesseurController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        496 => [[['_route' => 'app_professeur_edit', '_controller' => 'App\\Controller\\ProfesseurController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        504 => [[['_route' => 'app_professeur_delete', '_controller' => 'App\\Controller\\ProfesseurController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        531 => [[['_route' => 'app_professionnel_show', '_controller' => 'App\\Controller\\ProfessionnelController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        544 => [[['_route' => 'app_professionnel_edit', '_controller' => 'App\\Controller\\ProfessionnelController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        552 => [
+            [['_route' => 'app_professionnel_delete', '_controller' => 'App\\Controller\\ProfessionnelController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
