@@ -87,9 +87,9 @@
           </tr>
         </thead>
         <tbody>
-          {% if cours is not empty %}
-            {% for cour in cours %}
-              <tr>
+        {% set filtered = cours|filter(cour => cour.type.id == 2) %}
+        {% for cour in filtered %}
+            <tr>
                 <td>{{ cour.id }}</td>
                 <td>{{ cour.libelle }}</td>
                 <td>{{ cour.ageMini }}</td>
@@ -98,8 +98,8 @@
                 <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
                 <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
                 <td>
-                  <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">show</a>
-                  <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">edit</a>
+                    <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">Afficher</a>
+                    <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">Modifier</a>
                 </td>
               </tr>
             {% endfor %}

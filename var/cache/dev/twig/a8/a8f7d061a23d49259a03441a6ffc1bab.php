@@ -183,7 +183,14 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
         yield "        </tbody>
     </table>
 
+<<<<<<< HEAD
+    <a href=\"";
+        // line 46
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_intervention_new");
+        yield "\">Crée une nouvelle intervention</a>
+=======
     
+>>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -265,7 +272,11 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
         </tbody>
     </table>
 
+<<<<<<< HEAD
+    <a href=\"{{ path('app_intervention_new') }}\">Crée une nouvelle intervention</a>
+=======
     
+>>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 {% endblock %}
 ", "intervention/index.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\intervention\\index.html.twig");
     }

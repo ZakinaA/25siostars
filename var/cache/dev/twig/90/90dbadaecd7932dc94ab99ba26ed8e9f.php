@@ -1917,7 +1917,6 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-\t
 \t\t<a href=\"accueil\" class=\"site-logo\">
 \t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
 \t\t</a>
@@ -1930,7 +1929,7 @@ Responsive
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-\t\t\t<li><a href=\"http://localhost/emusic/public/accueil\">Accueil</a></li>
+\t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
@@ -1947,9 +1946,9 @@ Responsive
 \t\t</ul>
 \t</header>
         ";
-        // line 1901
+        // line 1900
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 1902
+        // line 1901
         yield "    </body>
 \t
 \t<!-- Footer section -->
@@ -1964,29 +1963,16 @@ Responsive
 \t\t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Products</h2>
+\t\t\t\t\t\t\t\t<h2>Mention légale</h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Subscription</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Custom Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Footage</a></li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Playlists</h2>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Newsletter</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Careers</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Press</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Cookies</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Contact</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Aide</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -1995,8 +1981,8 @@ Responsive
 \t\t\t\t<div class=\"col-xl-6 col-lg-5 order-lg-1\">
 \t\t\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t\t\t\t<div class=\"copyright\"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+\t\t\t\t\tCopyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
+\t\t\t\t\t<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 \t\t\t\t\t<div class=\"social-links\">
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-instagram\"></i></a>
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-pinterest\"></i></a>
@@ -2019,7 +2005,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         yield from [];
     }
 
-    // line 1901
+    // line 1900
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -2054,7 +2040,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      */
     public function getDebugInfo(): array
     {
-        return array (  2023 => 1901,  1953 => 1902,  1951 => 1901,  49 => 1,);
+        return array (  2009 => 1900,  1952 => 1901,  1950 => 1900,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -3930,7 +3916,6 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-\t
 \t\t<a href=\"accueil\" class=\"site-logo\">
 \t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
 \t\t</a>
@@ -3943,7 +3928,7 @@ Responsive
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-\t\t\t<li><a href=\"http://localhost/emusic/public/accueil\">Accueil</a></li>
+\t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
@@ -3974,29 +3959,16 @@ Responsive
 \t\t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Products</h2>
+\t\t\t\t\t\t\t\t<h2>Mention légale</h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Subscription</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Custom Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Footage</a></li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Playlists</h2>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Newsletter</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Careers</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Press</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Cookies</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Contact</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Aide</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -4005,8 +3977,8 @@ Responsive
 \t\t\t\t<div class=\"col-xl-6 col-lg-5 order-lg-1\">
 \t\t\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t\t\t\t<div class=\"copyright\"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+\t\t\t\t\tCopyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
+\t\t\t\t\t<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 \t\t\t\t\t<div class=\"social-links\">
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-instagram\"></i></a>
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-pinterest\"></i></a>

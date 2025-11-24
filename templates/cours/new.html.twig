@@ -3,9 +3,9 @@
 {% block title %}New Cours{% endblock %}
 
 {% block body %}
-    <h1>Create new Cours</h1>
+    <h1>Crée nouveau Cours</h1>
 
-    {{ include('cours/_form.html.twig') }}
+    {{ include('cours/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <a href="{{ path('app_cours_index') }}">back to list</a>
+    <a href="{{ path('app_cours_index') }}">Retour à la liste</a>
 {% endblock %}
