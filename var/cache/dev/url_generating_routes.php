@@ -33,6 +33,9 @@ return [
     'app_intervention_show' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
     'app_intervention_edit' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
     'app_intervention_delete' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/inscription']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/connexion']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\AccueilController::index' => [[], ['_controller' => 'App\\Controller\\AccueilController::index'], [], [['text', '/accueil']], [], [], []],
     'App\Controller\AccueilController::new' => [[], ['_controller' => 'App\\Controller\\AccueilController::new'], [], [['text', '/accueil/new']], [], [], []],
     'App\Controller\AccueilController::show' => [['id'], ['_controller' => 'App\\Controller\\AccueilController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/accueil']], [], [], []],
@@ -48,4 +51,7 @@ return [
     'App\Controller\InterventionController::show' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
     'App\Controller\InterventionController::edit' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
     'App\Controller\InterventionController::delete' => [['id'], ['_controller' => 'App\\Controller\\InterventionController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/intervention']], [], [], []],
+    'App\Controller\RegistrationController::register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/inscription']], [], [], []],
+    'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/connexion']], [], [], []],
+    'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];

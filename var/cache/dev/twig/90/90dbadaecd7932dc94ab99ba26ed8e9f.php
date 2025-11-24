@@ -1896,7 +1896,7 @@ Responsive
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t
 \t<!-- Favicon -->
-\t<link href=\"https://static.vecteezy.com/system/resources/thumbnails/056/250/105/small/gold-music-note-icon-png.png\" rel=\"shortcut icon\"/>
+\t<link href=\"/emusic/assets/images/favicon.png\" rel=\"shortcut icon\"/>
 
 \t<!-- Google font -->
 \t<link href=\"https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap\" rel=\"stylesheet\">
@@ -3907,7 +3907,7 @@ Responsive
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t
 \t<!-- Favicon -->
-\t<link href=\"https://static.vecteezy.com/system/resources/thumbnails/056/250/105/small/gold-music-note-icon-png.png\" rel=\"shortcut icon\"/>
+\t<link href=\"/emusic/assets/images/favicon.png\" rel=\"shortcut icon\"/>
 
 \t<!-- Google font -->
 \t<link href=\"https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap\" rel=\"stylesheet\">
