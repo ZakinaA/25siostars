@@ -3,8 +3,8 @@
 {% block title %}Intervention index{% endblock %}
 
 {% block body %}
-    <h1>Lister les interventions</h1>
-
+    <center><h1>Lister les interventions</h1></center>
+    <button class="btn btn-secondary btn-lg active" role="button" ><a href="{{ path('app_intervention_new') }}">crée une nouvelle intervention </a></button>
     <table class="table">
         <thead>
             <tr>
@@ -31,8 +31,8 @@
 
 
                 <td>
-                    <a href="{{ path('app_intervention_show', {'id': intervention.id}) }}">show</a>
-                    <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">edit</a>
+                    <a href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Afficher</a>
+                    <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_intervention_new') }}">Create new</a>
+    <a href="{{ path('app_intervention_new') }}">Crée une nouvelle intervention</a>
 {% endblock %}

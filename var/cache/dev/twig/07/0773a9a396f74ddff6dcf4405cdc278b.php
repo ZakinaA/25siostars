@@ -47,7 +47,7 @@ class __TwigTemplate_55967ed8e5a5c584dae0c44af0310291 extends Template
         // line 1
         yield "<form method=\"post\" action=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        yield "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        yield "\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["instrument"]) || array_key_exists("instrument", $context) ? $context["instrument"] : (function () { throw new RuntimeError('Variable "instrument" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
@@ -90,7 +90,7 @@ class __TwigTemplate_55967ed8e5a5c584dae0c44af0310291 extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("<form method=\"post\" action=\"{{ path('app_instrument_delete', {'id': instrument.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form method=\"post\" action=\"{{ path('app_instrument_delete', {'id': instrument.id}) }}\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ instrument.id) }}\">
     <button class=\"btn\">Supprimer</button>
 </form>

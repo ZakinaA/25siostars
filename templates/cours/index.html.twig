@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+    <h1>Liste des cours</h1>
+<h5>Aucun cour ne vous convient prenez un cour particulier.</h5>
+    <a href="http://localhost/emusic/public/rerserverCour">Reserver</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>AgeMini</th>
+                <th>AgeMaxi</th>
+                <th>NbPlaces</th>
+                <th>HeureDebut</th>
+                <th>HeureFin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set filtered = cours|filter(cour => cour.type.id == 2) %}
+        {% for cour in filtered %}
+            <tr>
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.libelle }}</td>
+                <td>{{ cour.ageMini }}</td>
+                <td>{{ cour.ageMaxi }}</td>
+                <td>{{ cour.nbPlaces }}</td>
+                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i:s') : '' }}</td>
+                <td>{{ cour.heureFin ? cour.heureFin|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_cours_show', {'id': cour.id}) }}">Afficher</a>
+                    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('app_cours_new') }}">Crée nouveaux cours</a>
+{% endblock %}

@@ -97,7 +97,8 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Liste des instruments</h1>
+        yield "  
+    <center><h1>Liste des instruments</h1></center>
 
     <table class=\"table\">
         <thead>
@@ -115,63 +116,63 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
         </thead>
         <tbody>
         ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["instruments"]) || array_key_exists("instruments", $context) ? $context["instruments"] : (function () { throw new RuntimeError('Variable "instruments" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["instruments"]) || array_key_exists("instruments", $context) ? $context["instruments"] : (function () { throw new RuntimeError('Variable "instruments" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["instrument"]) {
-            // line 24
+            // line 25
             yield "            <tr>
                 <td>";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 25), "html", null, true);
-            yield "</td>
-                <td>";
             // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "code", [], "any", false, false, false, 26), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 26), "html", null, true);
             yield "</td>
                 <td>";
             // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "idTypeInstrument", [], "any", false, false, false, 27), "libelle", [], "any", false, false, false, 27), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "code", [], "any", false, false, false, 27), "html", null, true);
             yield "</td>
                 <td>";
             // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "idMarque", [], "any", false, false, false, 28), "libelle", [], "any", false, false, false, 28), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "idTypeInstrument", [], "any", false, false, false, 28), "libelle", [], "any", false, false, false, 28), "html", null, true);
             yield "</td>
                 <td>";
             // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "numSerie", [], "any", false, false, false, 29), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "idMarque", [], "any", false, false, false, 29), "libelle", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
                 <td>";
             // line 30
-            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "dateAchat", [], "any", false, false, false, 30)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "dateAchat", [], "any", false, false, false, 30), "Y-m-d"), "html", null, true)) : (""));
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "numSerie", [], "any", false, false, false, 30), "html", null, true);
             yield "</td>
                 <td>";
             // line 31
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "prixAchat", [], "any", false, false, false, 31), "html", null, true);
-            yield "€</td>
+            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "dateAchat", [], "any", false, false, false, 31)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "dateAchat", [], "any", false, false, false, 31), "Y-m-d"), "html", null, true)) : (""));
+            yield "</td>
                 <td>";
             // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "utilisation", [], "any", false, false, false, 32), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "prixAchat", [], "any", false, false, false, 32), "html", null, true);
+            yield "€</td>
+                <td>";
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "utilisation", [], "any", false, false, false, 33), "html", null, true);
             yield "</td>
                 <td>
                     <a href=\"";
-            // line 34
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 34)]), "html", null, true);
+            // line 35
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             yield "\">Afficher</a>
                      | 
                     <a href=\"";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+            // line 37
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["instrument"], "id", [], "any", false, false, false, 37)]), "html", null, true);
             yield "\">Modifier</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 39
+        // line 40
         if (!$context['_iterated']) {
-            // line 40
+            // line 41
             yield "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -180,14 +181,15 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['instrument'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 45
         yield "        </tbody>
     </table>
 
     <a href=\"";
-        // line 47
+        // line 48
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_instrument_new");
         yield "\">Ajouter un instrument</a>
+ 
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -219,7 +221,7 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  189 => 47,  184 => 44,  175 => 40,  173 => 39,  165 => 36,  160 => 34,  155 => 32,  151 => 31,  147 => 30,  143 => 29,  139 => 28,  135 => 27,  131 => 26,  127 => 25,  124 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  190 => 48,  185 => 45,  176 => 41,  174 => 40,  166 => 37,  161 => 35,  156 => 33,  152 => 32,  148 => 31,  144 => 30,  140 => 29,  136 => 28,  132 => 27,  128 => 26,  125 => 25,  120 => 24,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -229,7 +231,8 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
 {% block title %}Instrument index{% endblock %}
 
 {% block body %}
-    <h1>Liste des instruments</h1>
+  
+    <center><h1>Liste des instruments</h1></center>
 
     <table class=\"table\">
         <thead>
@@ -271,6 +274,7 @@ class __TwigTemplate_6f2b68b2f62effa7980e3b9d0431e36c extends Template
     </table>
 
     <a href=\"{{ path('app_instrument_new') }}\">Ajouter un instrument</a>
+ 
 {% endblock %}
 ", "instrument/index.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\instrument\\index.html.twig");
     }
