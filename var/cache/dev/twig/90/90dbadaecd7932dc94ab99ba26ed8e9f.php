@@ -49,136 +49,136 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
         yield "
 <style>
 \t
-\t/*=================================
-\t-----------------------------------
+/*=================================
+-----------------------------------
   SolMusic HTML Template
   Version: 1.0
- \t---------------------------------
- \t=================================*/
+ ---------------------------------
+ =================================*/
 
 
 
-\t/*----------------------------------------*/
-\t/* Template default CSS
-\t/*----------------------------------------*/
+/*----------------------------------------*/
+/* Template default CSS
+/*----------------------------------------*/
 
-\thtml,
-\tbody {
+html,
+body {
 \theight: 100%;
 \tfont-family: \"Montserrat\", sans-serif;
 \t-webkit-font-smoothing: antialiased;
 \tfont-smoothing: antialiased;
-\t}
+}
 
-\th1,
-\th2,
-\th3,
-\th4,
-\th5,
-\th6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 \tmargin: 0;
 \tcolor: #0a183d;
 \tfont-weight: 600;
 \tline-height: 1;
-\t}
+}
 
-\th1 {
+h1 {
 \tfont-size: 70px;
-\t}
+}
 
-\th2 {
+h2 {
 \tfont-size: 36px;
-\t}
+}
 
-\th3 {
-\t font-size: 30px;
- }
+h3 {
+\tfont-size: 30px;
+}
 
- h4 {
+h4 {
 \tfont-size: 24px;
-  }
+}
 
- h5 {
+h5 {
 \tfont-size: 18px;
- }
+}
 
- h6 {
+h6 {
 \tfont-size: 16px;
- }
+}
 
- p {
+p {
 \tfont-size: 15px;
 \tcolor: #6a7080;
 \tline-height: 1.8;
 \tfont-weight: 500;
- }
-
- img {
-\tmax-width: 100%;
- }
-
- input:focus,
- select:focus,
- button:focus,
- textarea:focus {
-\toutline: none;
- }
-
- a:hover,
- a:focus {
-\ttext-decoration: none;
- \toutline: none;
 }
 
- ul,
- ol {
+img {
+\tmax-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+\toutline: none;
+}
+
+a:hover,
+a:focus {
+\ttext-decoration: none;
+\toutline: none;
+}
+
+ul,
+ol {
 \tpadding: 0;
 \tmargin: 0;
- }
+}
 
- /*---------------------
- Helper CSS
+/*---------------------
+Helper CSS
  -----------------------*/
 
- .section-title {
+.section-title {
 \tmargin-bottom: 60px;
- }
+}
 
- .section-title h2 {
+.section-title h2 {
 \tfont-size: 60px;
- }
+}
 
- .set-bg {
+.set-bg {
 \tbackground-repeat: no-repeat;
 \tbackground-size: cover;
 \tbackground-position: top center;
- }
+}
 
- .spad {
+.spad {
 \tpadding-top: 105px;
 \tpadding-bottom: 105px;
- }
+}
 
- .text-white h1,
- .text-white h2,
- .text-white h3,
- .text-white h4,
- .text-white h5,
- .text-white h6,
- .text-white p,
- .text-white span,
- .text-white li,
- .text-white a {
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
 \tcolor: #fff;
- }
+}
 
- /*---------------------
- Commom elements
+/*---------------------
+Commom elements
  -----------------------*/
 
- /* buttons */
+/* buttons */
 
- .site-btn {
+.site-btn {
 \tdisplay: inline-block;
 \tborder: none;
 \tfont-size: 14px;
@@ -192,19 +192,19 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \tline-height: normal;
 \tcursor: pointer;
 \ttext-align: center;
- }
+}
 
- .site-btn:hover {
+.site-btn:hover {
 \tcolor: #fff;
- }
+}
 
- .site-btn.sb-c2 {
+.site-btn.sb-c2 {
 \tbackground: #383b70;
- }
+}
 
- /* Preloder */
+/* Preloder */
 
- #preloder {
+#preloder {
 \tposition: fixed;
 \twidth: 100%;
 \theight: 100%;
@@ -212,9 +212,9 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \tleft: 0;
 \tz-index: 999999;
 \tbackground: #000;
- }
+}
 
- .loader {
+.loader {
 \twidth: 40px;
 \theight: 40px;
 \tposition: absolute;
@@ -225,9 +225,9 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \tborder-radius: 60px;
 \tanimation: loader 0.8s linear infinite;
 \t-webkit-animation: loader 0.8s linear infinite;
- }
+}
 
- @keyframes loader {
+@keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\ttransform: rotate(0deg);
@@ -246,9 +246,9 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
- }
+}
 
- @-webkit-keyframes loader {
+@-webkit-keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\tborder: 4px solid #f44336;
@@ -264,89 +264,89 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
- }
+}
 
- /*------------------
- Header section
+/*------------------
+Header section
  ---------------------*/
 
- .header-section {
+.header-section {
 \tpadding-left: 55px;
 \tpadding-right: 72px;
 \tbackground: #08192d;
- }
+}
 
- .site-logo {
+.site-logo {
 \tdisplay: inline-block;
 \tpadding: 0;
 \tpadding: 44px 15px;
- }
+}
 
- .header-right {
+.header-right {
 \tfloat: right;
 \tpadding: 44px 0;
 \tmargin-left: 130px;
- }
+}
 
- .header-right .hr-btn {
+.header-right .hr-btn {
 \tdisplay: inline-block;
 \tcolor: #979aa5;
- }
+}
 
- .header-right .user-panel {
+.header-right .user-panel {
 \tdisplay: inline-block;
- }
+}
 
- .header-right .user-panel a {
+.header-right .user-panel a {
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tmargin: 0 10px;
- }
+}
 
- .header-right .user-panel .register {
+.header-right .user-panel .register {
 \tcolor: #fc0254;
 \tmargin-right: 0;
- }
+}
 
- .header-right span {
+.header-right span {
 \tcolor: #fff;
 \tdisplay: inline-block;
 \tpadding-left: 9px;
- }
+}
 
- .main-menu {
+.main-menu {
 \tlist-style: none;
 \tfloat: right;
- }
+}
 
- .main-menu li {
+.main-menu li {
 \tdisplay: inline-block;
 \tposition: relative;
- }
+}
 
- .main-menu li a {
+.main-menu li a {
 \tdisplay: block;
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tpadding: 44px 10px;
 \tmargin-left: 60px;
- }
+}
 
- .main-menu li a:hover {
+.main-menu li a:hover {
 \tcolor: #fc0254;
- }
+}
 
- .main-menu li:first-child a {
+.main-menu li:first-child a {
 \tmargin-left: 0;
- }
+}
 
- .main-menu li:hover .sub-menu {
+.main-menu li:hover .sub-menu {
 \tvisibility: visible;
 \topacity: 1;
 \tmargin-top: 0;
- }
+}
 
- .main-menu .sub-menu {
+.main-menu .sub-menu {
 \tposition: absolute;
 \tlist-style: none;
 \twidth: 220px;
@@ -362,36 +362,36 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \ttransition: all 0.4s;
 \t-webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
 \tbox-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
- }
+}
 
- .main-menu .sub-menu li {
+.main-menu .sub-menu li {
 \tdisplay: block;
- }
+}
 
- .main-menu .sub-menu li a {
+.main-menu .sub-menu li a {
 \tdisplay: block;
 \tcolor: #000;
 \tmargin-left: 0;
 \tpadding: 5px 20px;
- }
+}
 
- .main-menu .sub-menu li a:hover {
+.main-menu .sub-menu li a:hover {
 \tcolor: #fc0254;
- }
+}
 
- .slicknav_menu {
+.slicknav_menu {
 \tdisplay: none;
- }
+}
 
- /*------------------
- Hero section
+/*------------------
+Hero section
  ---------------------*/
 
- .hero-section {
+.hero-section {
 \toverflow: hidden;
- }
+}
 
- .hs-item {
+.hs-item {
 \theight: 724px;
 \tpadding-bottom: 90px;
 \tdisplay: -webkit-box;
@@ -401,9 +401,9 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \t-ms-flex-align: center;
 \talign-items: center;
 \tbackground: #0a183d;
- }
+}
 
- .hs-item h2 {
+.hs-item h2 {
 \tcolor: #fff;
 \tfont-size: 70px;
 \tmargin-bottom: 25px;
@@ -411,38 +411,38 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
- }
+}
 
- .hs-item h2 span {
+.hs-item h2 span {
 \tcolor: #fc0254;
- }
+}
 
- .hs-item p {
+.hs-item p {
 \tcolor: #ffffff;
 \topacity: 0.6;
 \tmargin-bottom: 50px;
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
- }
+}
 
- .hs-item .site-btn {
+.hs-item .site-btn {
 \tposition: relative;
 \ttop: 50px;
 \tmargin-bottom: 20px;
 \topacity: 0;
- }
+}
 
- .hs-item .sb-c2 {
+.hs-item .sb-c2 {
 \tmargin-left: 8px;
 }
 
-  .hs-item   .hs-text {
+.hs-item .hs-text {
 \tpadding-top: 90px;
 \tmax-width: 475px;
 }
 
- .hr-img img {
+.hr-img img {
 \tmin-width: 602px;
 \tposition: relative;
 \tleft: -34px;
@@ -450,21 +450,21 @@ class __TwigTemplate_47e97a1b8104a6e006f6327d59541078 extends Template
 \topacity: 0;
 }
 
- .owl-item .active  .hs-item img,
- .owl-item .active  .hs-item h2,
- .owl-item .active  .hs-item p,
- .owl-item .active  .hs-item  .site-btn,
- .owl-item .active  .hs-item  .site-btn .sb-c2 {
+.owl-item.active .hs-item img,
+.owl-item.active .hs-item h2,
+.owl-item.active .hs-item p,
+.owl-item.active .hs-item .site-btn,
+.owl-item.active .hs-item .site-btn.sb-c2 {
 \ttop: 0;
 \topacity: 1;
 }
 
- .owl-item .active  .hs-item img {
+.owl-item.active .hs-item img {
 \t-webkit-transition: all 0.5s ease 0.2s;
 \ttransition: all 0.5s ease 0.2s;
 }
 
- .owl-item .active  .hs-item h2 {
+.owl-item.active .hs-item h2 {
 \t-webkit-transition: all 0.5s ease 0.4s;
 \ttransition: all 0.5s ease 0.4s;
 }
@@ -1917,27 +1917,28 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-\t\t<a href=\"accueil\" class=\"site-logo\">
-\t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
+\t\t<a href=\"index.html\" class=\"site-logo\">
+\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t</a>
 \t\t<div class=\"header-right\">
-\t\t\t<a href=\"#\" class=\"hr-btn\">Help</a>
+\t\t\t<a href=\"#\" class=\"hr-btn\">Aide</a>
 \t\t\t<span>|</span>
 \t\t\t<div class=\"user-panel\">
-\t\t\t\t<a href=\"\" class=\"login\">Login</a>
-\t\t\t\t<a href=\"\" class=\"register\">Create an account</a>
+\t\t\t\t<a href=\"http://localhost/emusic/public/connexion\" class=\"login\">Connexion</a>
+\t\t\t\t<a href=\"http://localhost/emusic/public/inscription\" class=\"register\">Cree un compte</a>
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-\t\t\t<li><a href=\"index.html\">Home</a></li>
-\t\t\t<li><a href=\"#\">About</a></li>
+\t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t<li><a href=\"category.html\">Category</a></li>
-\t\t\t\t\t<li><a href=\"playlist.html\">Playlist</a></li>
-\t\t\t\t\t<li><a href=\"artist.html\">Artist</a></li>
-\t\t\t\t\t<li><a href=\"blog.html\">Blog</a></li>
-\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/instrument\">Instrument</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/intervention\">Intervention</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionaire\">Gestionnaire</a></li>
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>
@@ -1945,9 +1946,9 @@ Responsive
 \t\t</ul>
 \t</header>
         ";
-        // line 1899
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 1900
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 1901
         yield "    </body>
 \t
 \t<!-- Footer section -->
@@ -1958,33 +1959,20 @@ Responsive
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>About us</h2>
+\t\t\t\t\t\t\t\t<h2>A propos de </h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Our Story</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Sol Music Blog</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Products</h2>
+\t\t\t\t\t\t\t\t<h2>Mention légale</h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Subscription</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Custom Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Footage</a></li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Playlists</h2>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Newsletter</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Careers</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Press</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Cookies</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Contact</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Aide</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -1993,8 +1981,8 @@ Responsive
 \t\t\t\t<div class=\"col-xl-6 col-lg-5 order-lg-1\">
 \t\t\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t\t\t\t<div class=\"copyright\"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+\t\t\t\t\tCopyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
+\t\t\t\t\t<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 \t\t\t\t\t<div class=\"social-links\">
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-instagram\"></i></a>
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-pinterest\"></i></a>
@@ -2017,7 +2005,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         yield from [];
     }
 
-    // line 1899
+    // line 1900
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -2052,7 +2040,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      */
     public function getDebugInfo(): array
     {
-        return array (  2021 => 1899,  1951 => 1900,  1949 => 1899,  49 => 1,);
+        return array (  2009 => 1900,  1952 => 1901,  1950 => 1900,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -2060,136 +2048,136 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         return new Source("
 <style>
 \t
-\t/*=================================
-\t-----------------------------------
+/*=================================
+-----------------------------------
   SolMusic HTML Template
   Version: 1.0
- \t---------------------------------
- \t=================================*/
+ ---------------------------------
+ =================================*/
 
 
 
-\t/*----------------------------------------*/
-\t/* Template default CSS
-\t/*----------------------------------------*/
+/*----------------------------------------*/
+/* Template default CSS
+/*----------------------------------------*/
 
-\thtml,
-\tbody {
+html,
+body {
 \theight: 100%;
 \tfont-family: \"Montserrat\", sans-serif;
 \t-webkit-font-smoothing: antialiased;
 \tfont-smoothing: antialiased;
-\t}
+}
 
-\th1,
-\th2,
-\th3,
-\th4,
-\th5,
-\th6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 \tmargin: 0;
 \tcolor: #0a183d;
 \tfont-weight: 600;
 \tline-height: 1;
-\t}
+}
 
-\th1 {
+h1 {
 \tfont-size: 70px;
-\t}
+}
 
-\th2 {
+h2 {
 \tfont-size: 36px;
-\t}
+}
 
-\th3 {
-\t font-size: 30px;
- }
+h3 {
+\tfont-size: 30px;
+}
 
- h4 {
+h4 {
 \tfont-size: 24px;
-  }
+}
 
- h5 {
+h5 {
 \tfont-size: 18px;
- }
+}
 
- h6 {
+h6 {
 \tfont-size: 16px;
- }
+}
 
- p {
+p {
 \tfont-size: 15px;
 \tcolor: #6a7080;
 \tline-height: 1.8;
 \tfont-weight: 500;
- }
-
- img {
-\tmax-width: 100%;
- }
-
- input:focus,
- select:focus,
- button:focus,
- textarea:focus {
-\toutline: none;
- }
-
- a:hover,
- a:focus {
-\ttext-decoration: none;
- \toutline: none;
 }
 
- ul,
- ol {
+img {
+\tmax-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+\toutline: none;
+}
+
+a:hover,
+a:focus {
+\ttext-decoration: none;
+\toutline: none;
+}
+
+ul,
+ol {
 \tpadding: 0;
 \tmargin: 0;
- }
+}
 
- /*---------------------
- Helper CSS
+/*---------------------
+Helper CSS
  -----------------------*/
 
- .section-title {
+.section-title {
 \tmargin-bottom: 60px;
- }
+}
 
- .section-title h2 {
+.section-title h2 {
 \tfont-size: 60px;
- }
+}
 
- .set-bg {
+.set-bg {
 \tbackground-repeat: no-repeat;
 \tbackground-size: cover;
 \tbackground-position: top center;
- }
+}
 
- .spad {
+.spad {
 \tpadding-top: 105px;
 \tpadding-bottom: 105px;
- }
+}
 
- .text-white h1,
- .text-white h2,
- .text-white h3,
- .text-white h4,
- .text-white h5,
- .text-white h6,
- .text-white p,
- .text-white span,
- .text-white li,
- .text-white a {
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
 \tcolor: #fff;
- }
+}
 
- /*---------------------
- Commom elements
+/*---------------------
+Commom elements
  -----------------------*/
 
- /* buttons */
+/* buttons */
 
- .site-btn {
+.site-btn {
 \tdisplay: inline-block;
 \tborder: none;
 \tfont-size: 14px;
@@ -2203,19 +2191,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \tline-height: normal;
 \tcursor: pointer;
 \ttext-align: center;
- }
+}
 
- .site-btn:hover {
+.site-btn:hover {
 \tcolor: #fff;
- }
+}
 
- .site-btn.sb-c2 {
+.site-btn.sb-c2 {
 \tbackground: #383b70;
- }
+}
 
- /* Preloder */
+/* Preloder */
 
- #preloder {
+#preloder {
 \tposition: fixed;
 \twidth: 100%;
 \theight: 100%;
@@ -2223,9 +2211,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \tleft: 0;
 \tz-index: 999999;
 \tbackground: #000;
- }
+}
 
- .loader {
+.loader {
 \twidth: 40px;
 \theight: 40px;
 \tposition: absolute;
@@ -2236,9 +2224,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \tborder-radius: 60px;
 \tanimation: loader 0.8s linear infinite;
 \t-webkit-animation: loader 0.8s linear infinite;
- }
+}
 
- @keyframes loader {
+@keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\ttransform: rotate(0deg);
@@ -2257,9 +2245,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
- }
+}
 
- @-webkit-keyframes loader {
+@-webkit-keyframes loader {
 \t0% {
 \t\t-webkit-transform: rotate(0deg);
 \t\tborder: 4px solid #f44336;
@@ -2275,89 +2263,89 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t\tborder: 4px solid #f44336;
 \t\tborder-left-color: transparent;
 \t}
- }
+}
 
- /*------------------
- Header section
+/*------------------
+Header section
  ---------------------*/
 
- .header-section {
+.header-section {
 \tpadding-left: 55px;
 \tpadding-right: 72px;
 \tbackground: #08192d;
- }
+}
 
- .site-logo {
+.site-logo {
 \tdisplay: inline-block;
 \tpadding: 0;
 \tpadding: 44px 15px;
- }
+}
 
- .header-right {
+.header-right {
 \tfloat: right;
 \tpadding: 44px 0;
 \tmargin-left: 130px;
- }
+}
 
- .header-right .hr-btn {
+.header-right .hr-btn {
 \tdisplay: inline-block;
 \tcolor: #979aa5;
- }
+}
 
- .header-right .user-panel {
+.header-right .user-panel {
 \tdisplay: inline-block;
- }
+}
 
- .header-right .user-panel a {
+.header-right .user-panel a {
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tmargin: 0 10px;
- }
+}
 
- .header-right .user-panel .register {
+.header-right .user-panel .register {
 \tcolor: #fc0254;
 \tmargin-right: 0;
- }
+}
 
- .header-right span {
+.header-right span {
 \tcolor: #fff;
 \tdisplay: inline-block;
 \tpadding-left: 9px;
- }
+}
 
- .main-menu {
+.main-menu {
 \tlist-style: none;
 \tfloat: right;
- }
+}
 
- .main-menu li {
+.main-menu li {
 \tdisplay: inline-block;
 \tposition: relative;
- }
+}
 
- .main-menu li a {
+.main-menu li a {
 \tdisplay: block;
 \tfont-size: 16px;
 \tcolor: #ffffff;
 \tpadding: 44px 10px;
 \tmargin-left: 60px;
- }
+}
 
- .main-menu li a:hover {
+.main-menu li a:hover {
 \tcolor: #fc0254;
- }
+}
 
- .main-menu li:first-child a {
+.main-menu li:first-child a {
 \tmargin-left: 0;
- }
+}
 
- .main-menu li:hover .sub-menu {
+.main-menu li:hover .sub-menu {
 \tvisibility: visible;
 \topacity: 1;
 \tmargin-top: 0;
- }
+}
 
- .main-menu .sub-menu {
+.main-menu .sub-menu {
 \tposition: absolute;
 \tlist-style: none;
 \twidth: 220px;
@@ -2373,36 +2361,36 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \ttransition: all 0.4s;
 \t-webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
 \tbox-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
- }
+}
 
- .main-menu .sub-menu li {
+.main-menu .sub-menu li {
 \tdisplay: block;
- }
+}
 
- .main-menu .sub-menu li a {
+.main-menu .sub-menu li a {
 \tdisplay: block;
 \tcolor: #000;
 \tmargin-left: 0;
 \tpadding: 5px 20px;
- }
+}
 
- .main-menu .sub-menu li a:hover {
+.main-menu .sub-menu li a:hover {
 \tcolor: #fc0254;
- }
+}
 
- .slicknav_menu {
+.slicknav_menu {
 \tdisplay: none;
- }
+}
 
- /*------------------
- Hero section
+/*------------------
+Hero section
  ---------------------*/
 
- .hero-section {
+.hero-section {
 \toverflow: hidden;
- }
+}
 
- .hs-item {
+.hs-item {
 \theight: 724px;
 \tpadding-bottom: 90px;
 \tdisplay: -webkit-box;
@@ -2412,9 +2400,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t-ms-flex-align: center;
 \talign-items: center;
 \tbackground: #0a183d;
- }
+}
 
- .hs-item h2 {
+.hs-item h2 {
 \tcolor: #fff;
 \tfont-size: 70px;
 \tmargin-bottom: 25px;
@@ -2422,38 +2410,38 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
- }
+}
 
- .hs-item h2 span {
+.hs-item h2 span {
 \tcolor: #fc0254;
- }
+}
 
- .hs-item p {
+.hs-item p {
 \tcolor: #ffffff;
 \topacity: 0.6;
 \tmargin-bottom: 50px;
 \tposition: relative;
 \ttop: 50px;
 \topacity: 0;
- }
+}
 
- .hs-item .site-btn {
+.hs-item .site-btn {
 \tposition: relative;
 \ttop: 50px;
 \tmargin-bottom: 20px;
 \topacity: 0;
- }
+}
 
- .hs-item .sb-c2 {
+.hs-item .sb-c2 {
 \tmargin-left: 8px;
 }
 
-  .hs-item   .hs-text {
+.hs-item .hs-text {
 \tpadding-top: 90px;
 \tmax-width: 475px;
 }
 
- .hr-img img {
+.hr-img img {
 \tmin-width: 602px;
 \tposition: relative;
 \tleft: -34px;
@@ -2461,21 +2449,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \topacity: 0;
 }
 
- .owl-item .active  .hs-item img,
- .owl-item .active  .hs-item h2,
- .owl-item .active  .hs-item p,
- .owl-item .active  .hs-item  .site-btn,
- .owl-item .active  .hs-item  .site-btn .sb-c2 {
+.owl-item.active .hs-item img,
+.owl-item.active .hs-item h2,
+.owl-item.active .hs-item p,
+.owl-item.active .hs-item .site-btn,
+.owl-item.active .hs-item .site-btn.sb-c2 {
 \ttop: 0;
 \topacity: 1;
 }
 
- .owl-item .active  .hs-item img {
+.owl-item.active .hs-item img {
 \t-webkit-transition: all 0.5s ease 0.2s;
 \ttransition: all 0.5s ease 0.2s;
 }
 
- .owl-item .active  .hs-item h2 {
+.owl-item.active .hs-item h2 {
 \t-webkit-transition: all 0.5s ease 0.4s;
 \ttransition: all 0.5s ease 0.4s;
 }
@@ -3928,27 +3916,28 @@ Responsive
     <body>
 
     <header class=\"header-section clearfix\">
-\t\t<a href=\"accueil\" class=\"site-logo\">
-\t\t\t<img src=\"/emusic/assets/images/logo.png\" alt=\"Logo emusic SIOStars\">
+\t\t<a href=\"index.html\" class=\"site-logo\">
+\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t</a>
 \t\t<div class=\"header-right\">
-\t\t\t<a href=\"#\" class=\"hr-btn\">Help</a>
+\t\t\t<a href=\"#\" class=\"hr-btn\">Aide</a>
 \t\t\t<span>|</span>
 \t\t\t<div class=\"user-panel\">
-\t\t\t\t<a href=\"\" class=\"login\">Login</a>
-\t\t\t\t<a href=\"\" class=\"register\">Create an account</a>
+\t\t\t\t<a href=\"http://localhost/emusic/public/connexion\" class=\"login\">Connexion</a>
+\t\t\t\t<a href=\"http://localhost/emusic/public/inscription\" class=\"register\">Cree un compte</a>
 \t\t\t</div> 
 \t\t</div>
 \t\t<ul class=\"main-menu\">
-\t\t\t<li><a href=\"index.html\">Home</a></li>
-\t\t\t<li><a href=\"#\">About</a></li>
+\t\t\t<li><a href=\"http://localhost/emusic/public/acceuil\">Acceuil</a></li>
 \t\t\t<li><a href=\"#\">Pages</a>
 \t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t<li><a href=\"category.html\">Category</a></li>
-\t\t\t\t\t<li><a href=\"playlist.html\">Playlist</a></li>
-\t\t\t\t\t<li><a href=\"artist.html\">Artist</a></li>
-\t\t\t\t\t<li><a href=\"blog.html\">Blog</a></li>
-\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/cours\">Cours</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/instrument\">Instrument</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/intervention\">Intervention</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionaire\">Gestionnaire</a></li>
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>
@@ -3966,33 +3955,20 @@ Responsive
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>About us</h2>
+\t\t\t\t\t\t\t\t<h2>A propos de </h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Our Story</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Sol Music Blog</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">History</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos cours</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Vos instruments</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Products</h2>
+\t\t\t\t\t\t\t\t<h2>Mention légale</h2>
 \t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Subscription</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Custom Music</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Footage</a></li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t<div class=\"footer-widget\">
-\t\t\t\t\t\t\t\t<h2>Playlists</h2>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Newsletter</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Careers</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"\">Press</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Cookies</a></li>
 \t\t\t\t\t\t\t\t\t<li><a href=\"\">Contact</a></li>
+\t\t\t\t\t\t\t\t\t<li><a href=\"\">Aide</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -4001,8 +3977,8 @@ Responsive
 \t\t\t\t<div class=\"col-xl-6 col-lg-5 order-lg-1\">
 \t\t\t\t\t<img src=\"img/logo.png\" alt=\"\">
 \t\t\t\t\t<div class=\"copyright\"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+\t\t\t\t\tCopyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>
+\t\t\t\t\t<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 \t\t\t\t\t<div class=\"social-links\">
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-instagram\"></i></a>
 \t\t\t\t\t\t<a href=\"\"><i class=\"fa fa-pinterest\"></i></a>

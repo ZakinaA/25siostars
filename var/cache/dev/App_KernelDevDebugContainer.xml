@@ -367,6 +367,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\AccueilController"/>
       </call>
     </service>
+    <service id="App\Controller\CoursController" class="App\Controller\CoursController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CoursController"/>
+      </call>
+    </service>
     <service id="App\Controller\InstrumentController" class="App\Controller\InstrumentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -578,7 +585,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.6eEOMH_"/>
+      <argument type="service" id=".service_locator.SCwRz3H"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3603,7 +3610,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.6eEOMH_"/>
+      <argument type="service" id=".service_locator.SCwRz3H"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7626,6 +7633,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\AccueilController.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\CoursController.0.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CoursController" class="App\Controller\CoursController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\InstrumentController.0.App\Controller\InstrumentController" class="App\Controller\InstrumentController" autowire="true" abstract="true"/>
@@ -8293,6 +8304,36 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mGUuBR5" method="withContext"/>
     </service>
+    <service id=".service_locator.EdELPbA.App\Controller\CoursController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController::index()"/>
+      <argument>App\Controller\CoursController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.EdELPbA" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\CoursController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController::new()"/>
+      <argument>App\Controller\CoursController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.REroOrJ.App\Controller\CoursController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController::show()"/>
+      <argument>App\Controller\CoursController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.REroOrJ" method="withContext"/>
+    </service>
+    <service id=".service_locator.mGUuBR5.App\Controller\CoursController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController::edit()"/>
+      <argument>App\Controller\CoursController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mGUuBR5" method="withContext"/>
+    </service>
+    <service id=".service_locator.mGUuBR5.App\Controller\CoursController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController::delete()"/>
+      <argument>App\Controller\CoursController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mGUuBR5" method="withContext"/>
+    </service>
     <service id=".service_locator.9sOGoae" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8391,7 +8432,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.gVB_8IW" method="withContext"/>
     </service>
-    <service id=".service_locator.6eEOMH_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.SCwRz3H" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8403,6 +8444,11 @@
         <argument key="App\Controller\AccueilController::show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\AccueilController::show()"/>
         <argument key="App\Controller\AccueilController::edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\AccueilController::edit()"/>
         <argument key="App\Controller\AccueilController::delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\AccueilController::delete()"/>
+        <argument key="App\Controller\CoursController::index" type="service_closure" id=".service_locator.EdELPbA.App\Controller\CoursController::index()"/>
+        <argument key="App\Controller\CoursController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\CoursController::new()"/>
+        <argument key="App\Controller\CoursController::show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\CoursController::show()"/>
+        <argument key="App\Controller\CoursController::edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::edit()"/>
+        <argument key="App\Controller\CoursController::delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::delete()"/>
         <argument key="App\Controller\InstrumentController::index" type="service_closure" id=".service_locator.9sOGoae.App\Controller\InstrumentController::index()"/>
         <argument key="App\Controller\InstrumentController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\InstrumentController::new()"/>
         <argument key="App\Controller\InstrumentController::show" type="service_closure" id=".service_locator.19UqbJR.App\Controller\InstrumentController::show()"/>
@@ -8420,6 +8466,11 @@
         <argument key="App\Controller\AccueilController:show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\AccueilController::show()"/>
         <argument key="App\Controller\AccueilController:edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\AccueilController::edit()"/>
         <argument key="App\Controller\AccueilController:delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\AccueilController::delete()"/>
+        <argument key="App\Controller\CoursController:index" type="service_closure" id=".service_locator.EdELPbA.App\Controller\CoursController::index()"/>
+        <argument key="App\Controller\CoursController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\CoursController::new()"/>
+        <argument key="App\Controller\CoursController:show" type="service_closure" id=".service_locator.REroOrJ.App\Controller\CoursController::show()"/>
+        <argument key="App\Controller\CoursController:edit" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::edit()"/>
+        <argument key="App\Controller\CoursController:delete" type="service_closure" id=".service_locator.mGUuBR5.App\Controller\CoursController::delete()"/>
         <argument key="App\Controller\InstrumentController:index" type="service_closure" id=".service_locator.9sOGoae.App\Controller\InstrumentController::index()"/>
         <argument key="App\Controller\InstrumentController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\InstrumentController::new()"/>
         <argument key="App\Controller\InstrumentController:show" type="service_closure" id=".service_locator.19UqbJR.App\Controller\InstrumentController::show()"/>
@@ -9040,6 +9091,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\CoursController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoursController"/>
+      <argument>App\Controller\CoursController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\InstrumentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\InstrumentController"/>
       <argument>App\Controller\InstrumentController</argument>
@@ -9245,6 +9302,7 @@
         <argument type="collection">
           <argument>App\Kernel</argument>
           <argument>App\Controller\AccueilController</argument>
+          <argument>App\Controller\CoursController</argument>
           <argument>App\Controller\InstrumentController</argument>
           <argument>App\Controller\InterventionController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
@@ -10700,7 +10758,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.6eEOMH_"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.SCwRz3H"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

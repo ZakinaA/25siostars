@@ -3,9 +3,9 @@
 {% block title %}New Intervention{% endblock %}
 
 {% block body %}
-    <h1>Create new Intervention</h1>
+    <h1>Crée nouvelle intervention</h1>
 
-    {{ include('intervention/_form.html.twig') }}
+    {{ include('intervention/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <a href="{{ path('app_intervention_index') }}">back to list</a>
+    <a href="{{ path('app_intervention_index') }}">Retour à la liste</a>
 {% endblock %}
