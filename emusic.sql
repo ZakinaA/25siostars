@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 10 nov. 2025 à 11:06
+-- Généré le : lun. 24 nov. 2025 à 13:55
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.2.18
 
@@ -126,21 +126,21 @@ INSERT INTO `classe_instrument` (`id`, `libelle`) VALUES
 DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `identifiant` varchar(50) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
-  `idRole` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `identifiant` varchar(180) NOT NULL,
+  `roles` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '(DC2Type:json)' CHECK (json_valid(`roles`)),
+  `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_role` (`idRole`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  UNIQUE KEY `UNIQ_IDENTIFIER_IDENTIFIANT` (`identifiant`),
+  KEY `IDX_CFF65260D60322AC` (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
-INSERT INTO `compte` (`id`, `identifiant`, `mdp`, `idRole`) VALUES
-(1, 'testEleve', 'MPeleve', 1),
-(2, 'testProfesseur', 'MPprofesseur', 2),
-(3, 'testGestionnaire', 'MPgestionnaire', 3);
+INSERT INTO `compte` (`id`, `role_id`, `identifiant`, `roles`, `password`) VALUES
+(1, 1, 'Maxence', '[]', '$2y$13$SsyFbpAf.mLRNXo.Mg3cYuCCA1nTnSJHApwC0wA2qENaRvFvAPJ.u');
 
 -- --------------------------------------------------------
 
@@ -604,7 +604,6 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `descriptif` varchar(255) NOT NULL,
   `prix` double NOT NULL,
   `quotite` double NOT NULL,
-  `profressionnel` double NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_D11814AB8A49CC82` (`professionnel_id`),
   KEY `IDX_D11814ABCF11D9C` (`instrument_id`)
@@ -614,57 +613,57 @@ CREATE TABLE IF NOT EXISTS `intervention` (
 -- Déchargement des données de la table `intervention`
 --
 
-INSERT INTO `intervention` (`id`, `professionnel_id`, `instrument_id`, `date_debut`, `date_fin`, `descriptif`, `prix`, `quotite`, `profressionnel`) VALUES
-(1, 1, 1, '2025-09-02', '2025-09-03', 'Réglage clavier', 50, 100, 1),
-(2, 2, 2, '2025-09-03', '2025-09-04', 'Accord piano', 60, 100, 2),
-(3, 3, 3, '2025-09-04', '2025-09-05', 'Réglage guitare', 40, 100, 3),
-(4, 4, 4, '2025-09-05', '2025-09-06', 'Changement peaux batterie', 70, 100, 4),
-(5, 5, 5, '2025-09-06', '2025-09-07', 'Réglage saxophone', 45, 100, 5),
-(6, 6, 6, '2025-09-07', '2025-09-08', 'Nettoyage', 30, 100, 6),
-(7, 7, 7, '2025-09-08', '2025-09-09', 'Lubrification', 35, 100, 7),
-(8, 8, 8, '2025-09-09', '2025-09-10', 'Vérification cordes', 40, 100, 8),
-(9, 9, 9, '2025-09-10', '2025-09-11', 'Remplacement cymbales', 50, 100, 9),
-(10, 10, 10, '2025-09-11', '2025-09-12', 'Accordage final', 55, 100, 10),
-(11, 11, 11, '2025-09-12', '2025-09-13', 'Régler mécanique', 48, 100, 11),
-(12, 12, 12, '2025-09-13', '2025-09-14', 'Remplac. cordes', 42, 100, 12),
-(13, 13, 13, '2025-09-14', '2025-09-15', 'Contrôle frettes', 38, 100, 13),
-(14, 14, 14, '2025-09-15', '2025-09-16', 'Soudure électronique', 90, 100, 14),
-(15, 15, 15, '2025-09-16', '2025-09-17', 'Réglage archet', 66, 100, 15),
-(16, 16, 16, '2025-09-17', '2025-09-18', 'Test micro', 55, 100, 16),
-(17, 17, 17, '2025-09-18', '2025-09-19', 'Accord manuel', 60, 100, 17),
-(18, 18, 18, '2025-09-19', '2025-09-20', 'Réglage peaux', 70, 100, 18),
-(19, 19, 19, '2025-09-20', '2025-09-21', 'Remplacement pièces', 85, 100, 19),
-(20, 20, 20, '2025-09-21', '2025-09-22', 'Nettoyage complet', 45, 100, 20),
-(21, 1, 21, '2025-09-22', '2025-09-23', 'Réglage basse', 52, 100, 1),
-(22, 2, 22, '2025-09-23', '2025-09-24', 'Accordage', 60, 100, 2),
-(23, 3, 23, '2025-09-24', '2025-09-25', 'Contrôle électronique', 48, 100, 3),
-(24, 4, 24, '2025-09-25', '2025-09-26', 'Remplac. cordes', 40, 100, 4),
-(25, 5, 25, '2025-09-26', '2025-09-27', 'Nettoyage', 35, 100, 5),
-(26, 6, 26, '2025-09-27', '2025-09-28', 'Bec réglé', 30, 100, 6),
-(27, 7, 27, '2025-09-28', '2025-09-29', 'Ligature réglée', 28, 100, 7),
-(28, 8, 28, '2025-09-29', '2025-09-30', 'Test souffle', 33, 100, 8),
-(29, 9, 29, '2025-09-30', '2025-10-01', 'Rempla. valve', 48, 100, 9),
-(30, 10, 30, '2025-10-01', '2025-10-02', 'Test acoustique', 44, 100, 10),
-(31, 11, 31, '2025-10-02', '2025-10-03', 'Réglage', 39, 100, 11),
-(32, 12, 32, '2025-10-03', '2025-10-04', 'Entretien', 41, 100, 12),
-(33, 13, 33, '2025-10-04', '2025-10-05', 'Contrôle', 37, 100, 13),
-(34, 14, 34, '2025-10-05', '2025-10-06', 'Vérif électronique', 72, 100, 14),
-(35, 15, 35, '2025-10-06', '2025-10-07', 'Réglage', 58, 100, 15),
-(36, 16, 36, '2025-10-07', '2025-10-08', 'Étui vérif', 25, 100, 16),
-(37, 17, 37, '2025-10-08', '2025-10-09', 'Remplissage', 29, 100, 17),
-(38, 18, 38, '2025-10-09', '2025-10-10', 'Nettoyage', 31, 100, 18),
-(39, 19, 39, '2025-10-10', '2025-10-11', 'Révision', 35, 100, 19),
-(40, 20, 40, '2025-10-11', '2025-10-12', 'Ajustement', 45, 100, 20),
-(41, 1, 41, '2025-10-12', '2025-10-13', 'Test slide', 52, 100, 1),
-(42, 2, 42, '2025-10-13', '2025-10-14', 'Valve check', 60, 100, 2),
-(43, 3, 43, '2025-10-14', '2025-10-15', 'Grosse révision', 98, 100, 3),
-(44, 4, 44, '2025-10-15', '2025-10-16', 'Mécanique', 66, 100, 4),
-(45, 5, 45, '2025-10-16', '2025-10-17', 'Nettoyage', 36, 100, 5),
-(46, 6, 46, '2025-10-17', '2025-10-18', 'Cordes', 49, 100, 6),
-(47, 7, 47, '2025-10-18', '2025-10-19', 'Archet', 55, 100, 7),
-(48, 8, 48, '2025-10-19', '2025-10-20', 'Réglage fin', 44, 100, 8),
-(49, 9, 49, '2025-10-20', '2025-10-21', 'Remplacement', 60, 100, 9),
-(50, 10, 50, '2025-10-21', '2025-10-22', 'Contrôle final', 50, 100, 10);
+INSERT INTO `intervention` (`id`, `professionnel_id`, `instrument_id`, `date_debut`, `date_fin`, `descriptif`, `prix`, `quotite`) VALUES
+(1, 1, 1, '2025-09-02', '2025-09-03', 'Réglage clavier', 50, 100),
+(2, 2, 2, '2025-09-03', '2025-09-04', 'Accord piano', 60, 100),
+(3, 3, 3, '2025-09-04', '2025-09-05', 'Réglage guitare', 40, 100),
+(4, 4, 4, '2025-09-05', '2025-09-06', 'Changement peaux batterie', 70, 100),
+(5, 5, 5, '2025-09-06', '2025-09-07', 'Réglage saxophone', 45, 100),
+(6, 6, 6, '2025-09-07', '2025-09-08', 'Nettoyage', 30, 100),
+(7, 7, 7, '2025-09-08', '2025-09-09', 'Lubrification', 35, 100),
+(8, 8, 8, '2025-09-09', '2025-09-10', 'Vérification cordes', 40, 100),
+(9, 9, 9, '2025-09-10', '2025-09-11', 'Remplacement cymbales', 50, 100),
+(10, 10, 10, '2025-09-11', '2025-09-12', 'Accordage final', 55, 100),
+(11, 11, 11, '2025-09-12', '2025-09-13', 'Régler mécanique', 48, 100),
+(12, 12, 12, '2025-09-13', '2025-09-14', 'Remplac. cordes', 42, 100),
+(13, 13, 13, '2025-09-14', '2025-09-15', 'Contrôle frettes', 38, 100),
+(14, 14, 14, '2025-09-15', '2025-09-16', 'Soudure électronique', 90, 100),
+(15, 15, 15, '2025-09-16', '2025-09-17', 'Réglage archet', 66, 100),
+(16, 16, 16, '2025-09-17', '2025-09-18', 'Test micro', 55, 100),
+(17, 17, 17, '2025-09-18', '2025-09-19', 'Accord manuel', 60, 100),
+(18, 18, 18, '2025-09-19', '2025-09-20', 'Réglage peaux', 70, 100),
+(19, 19, 19, '2025-09-20', '2025-09-21', 'Remplacement pièces', 85, 100),
+(20, 20, 20, '2025-09-21', '2025-09-22', 'Nettoyage complet', 45, 100),
+(21, 1, 21, '2025-09-22', '2025-09-23', 'Réglage basse', 52, 100),
+(22, 2, 22, '2025-09-23', '2025-09-24', 'Accordage', 60, 100),
+(23, 3, 23, '2025-09-24', '2025-09-25', 'Contrôle électronique', 48, 100),
+(24, 4, 24, '2025-09-25', '2025-09-26', 'Remplac. cordes', 40, 100),
+(25, 5, 25, '2025-09-26', '2025-09-27', 'Nettoyage', 35, 100),
+(26, 6, 26, '2025-09-27', '2025-09-28', 'Bec réglé', 30, 100),
+(27, 7, 27, '2025-09-28', '2025-09-29', 'Ligature réglée', 28, 100),
+(28, 8, 28, '2025-09-29', '2025-09-30', 'Test souffle', 33, 100),
+(29, 9, 29, '2025-09-30', '2025-10-01', 'Rempla. valve', 48, 100),
+(30, 10, 30, '2025-10-01', '2025-10-02', 'Test acoustique', 44, 100),
+(31, 11, 31, '2025-10-02', '2025-10-03', 'Réglage', 39, 100),
+(32, 12, 32, '2025-10-03', '2025-10-04', 'Entretien', 41, 100),
+(33, 13, 33, '2025-10-04', '2025-10-05', 'Contrôle', 37, 100),
+(34, 14, 34, '2025-10-05', '2025-10-06', 'Vérif électronique', 72, 100),
+(35, 15, 35, '2025-10-06', '2025-10-07', 'Réglage', 58, 100),
+(36, 16, 36, '2025-10-07', '2025-10-08', 'Étui vérif', 25, 100),
+(37, 17, 37, '2025-10-08', '2025-10-09', 'Remplissage', 29, 100),
+(38, 18, 38, '2025-10-09', '2025-10-10', 'Nettoyage', 31, 100),
+(39, 19, 39, '2025-10-10', '2025-10-11', 'Révision', 35, 100),
+(40, 20, 40, '2025-10-11', '2025-10-12', 'Ajustement', 45, 100),
+(41, 1, 41, '2025-10-12', '2025-10-13', 'Test slide', 52, 100),
+(42, 2, 42, '2025-10-13', '2025-10-14', 'Valve check', 60, 100),
+(43, 3, 43, '2025-10-14', '2025-10-15', 'Grosse révision', 98, 100),
+(44, 4, 44, '2025-10-15', '2025-10-16', 'Mécanique', 66, 100),
+(45, 5, 45, '2025-10-16', '2025-10-17', 'Nettoyage', 36, 100),
+(46, 6, 46, '2025-10-17', '2025-10-18', 'Cordes', 49, 100),
+(47, 7, 47, '2025-10-18', '2025-10-19', 'Archet', 55, 100),
+(48, 8, 48, '2025-10-19', '2025-10-20', 'Réglage fin', 44, 100),
+(49, 9, 49, '2025-10-20', '2025-10-21', 'Remplacement', 60, 100),
+(50, 10, 50, '2025-10-21', '2025-10-22', 'Contrôle final', 50, 100);
 
 -- --------------------------------------------------------
 
@@ -984,14 +983,14 @@ CREATE TABLE IF NOT EXISTS `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `role`
 --
 
 INSERT INTO `role` (`id`, `libelle`) VALUES
-(1, 'Elève'),
+(1, 'Eleve'),
 (2, 'Professeur'),
 (3, 'Gestionnaire');
 
@@ -1161,7 +1160,7 @@ ALTER TABLE `accessoire`
 -- Contraintes pour la table `compte`
 --
 ALTER TABLE `compte`
-  ADD CONSTRAINT `compte_ibfk_1` FOREIGN KEY (`idRole`) REFERENCES `role` (`id`);
+  ADD CONSTRAINT `FK_CFF65260D60322AC` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
 
 --
 -- Contraintes pour la table `contrat_pret`

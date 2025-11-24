@@ -19,7 +19,7 @@ class InstrumentType extends AbstractType
             ->add('numSerie', null, ['label' => 'Numéro de série '])
             ->add('dateAchat', null, ['label' => 'Date d\'achat '])
             ->add('prixAchat', null, ['label' => 'Prix d\'achat '])
-            ->add('utilisation', null, ['label' => 'Utilisation (Local/Prêt) '])
+            ->add('utilisation', null, ['label' => 'Utilisation (Local/Prêt/Emprunté) '])
             ->add('cheminImage', null, ['label' => 'Chemin de l\'image (à partir de "assets/images") '])
             ->add('idCouleur', EntityType::class, [
                 'class' => Couleur::class,

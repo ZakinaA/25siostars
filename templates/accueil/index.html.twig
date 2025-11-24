@@ -87,9 +87,10 @@
           </tr>
         </thead>
         <tbody>
-        {% set filtered = cours|filter(cour => cour.type.id == 2) %}
-        {% for cour in filtered %}
-            <tr>
+{#        {% set filtered = cours|filter(cour => cour.type.id == 2) %} #}
+          {% if cours is not empty %}
+            {% for cour in filtered %}
+              <tr>
                 <td>{{ cour.id }}</td>
                 <td>{{ cour.libelle }}</td>
                 <td>{{ cour.ageMini }}</td>
