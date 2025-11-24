@@ -158,11 +158,11 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
                     <a href=\"";
             // line 34
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_intervention_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["intervention"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-            yield "\">show</a>
+            yield "\">Afficher</a>
                     <a href=\"";
             // line 35
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_intervention_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["intervention"], "id", [], "any", false, false, false, 35)]), "html", null, true);
-            yield "\">edit</a>
+            yield "\">Modifier</a>
                 </td>
             </tr>
         ";
@@ -183,14 +183,10 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
         yield "        </tbody>
     </table>
 
-<<<<<<< HEAD
     <a href=\"";
         // line 46
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_intervention_new");
         yield "\">Crée une nouvelle intervention</a>
-=======
-    
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -222,7 +218,7 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  183 => 43,  174 => 39,  172 => 38,  164 => 35,  160 => 34,  153 => 30,  149 => 29,  145 => 28,  141 => 27,  137 => 26,  133 => 25,  129 => 24,  126 => 23,  121 => 22,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  188 => 46,  183 => 43,  174 => 39,  172 => 38,  164 => 35,  160 => 34,  153 => 30,  149 => 29,  145 => 28,  141 => 27,  137 => 26,  133 => 25,  129 => 24,  126 => 23,  121 => 22,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -260,8 +256,8 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
 
 
                 <td>
-                    <a href=\"{{ path('app_intervention_show', {'id': intervention.id}) }}\">show</a>
-                    <a href=\"{{ path('app_intervention_edit', {'id': intervention.id}) }}\">edit</a>
+                    <a href=\"{{ path('app_intervention_show', {'id': intervention.id}) }}\">Afficher</a>
+                    <a href=\"{{ path('app_intervention_edit', {'id': intervention.id}) }}\">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -272,11 +268,7 @@ class __TwigTemplate_cf9748c4bda39415096f7fb1fd360717 extends Template
         </tbody>
     </table>
 
-<<<<<<< HEAD
     <a href=\"{{ path('app_intervention_new') }}\">Crée une nouvelle intervention</a>
-=======
-    
->>>>>>> b594383ed106055c74af22be7214c2e3fcf427ea
 {% endblock %}
 ", "intervention/index.html.twig", "D:\\wamp2024\\www\\emusic\\templates\\intervention\\index.html.twig");
     }

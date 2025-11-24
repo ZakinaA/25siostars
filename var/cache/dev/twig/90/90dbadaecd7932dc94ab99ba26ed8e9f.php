@@ -1936,9 +1936,8 @@ Responsive
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/instrument\">Instrument</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/intervention\">Intervention</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionnel\">Professionel</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionnaire\">Gestionnaire</a></li>
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>
@@ -1946,9 +1945,9 @@ Responsive
 \t\t</ul>
 \t</header>
         ";
-        // line 1900
+        // line 1899
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 1901
+        // line 1900
         yield "    </body>
 \t
 \t<!-- Footer section -->
@@ -2005,7 +2004,7 @@ Responsive
         yield from [];
     }
 
-    // line 1900
+    // line 1899
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -2040,7 +2039,7 @@ Responsive
      */
     public function getDebugInfo(): array
     {
-        return array (  2009 => 1900,  1952 => 1901,  1950 => 1900,  49 => 1,);
+        return array (  2008 => 1899,  1951 => 1900,  1949 => 1899,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -3935,9 +3934,8 @@ Responsive
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/instrument\">Instrument</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/intervention\">Intervention</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/eleve\">Eleve</a></li>
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionel\">Professionel</a></li>
+\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professionnel\">Professionel</a></li>
 \t\t\t\t\t<li><a href=\"http://localhost/emusic/public/professeur\">Professeur</a></li>
-\t\t\t\t\t<li><a href=\"http://localhost/emusic/public/gestionnaire\">Gestionnaire</a></li>
 \t\t\t\t</ul>
 \t\t\t</li>
 \t\t\t<li><a href=\"blog.html\">News</a></li>

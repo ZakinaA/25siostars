@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Professionnel{% endblock %}
+
+{% block body %}
+    <h1>Crée un nouveau professionnel</h1>
+
+    {{ include('professionnel/_form.html.twig') }}
+
+    <a href="{{ path('app_professionnel_index') }}">Retourner à la liste</a>
+{% endblock %}
