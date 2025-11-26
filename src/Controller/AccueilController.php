@@ -10,34 +10,48 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\TypeInstrumentRepository;
 
 #[Route('/accueil')]
 final class AccueilController extends AbstractController
 {
     #[Route(name: 'app_accueil_index', methods: ['GET'])]
-    public function index(CoursRepository $coursRepository): Response
+    public function index(
+    CoursRepository $coursRepository,
+    TypeInstrumentRepository $typeInstrumentRepo
+    ): Response
     {
-    // Liste des instruments à afficher
-    $instruments = [
-        'Orgue', 'Piano', 'Clavier amplifié', 'Guitare électrique', 'Saxophone',
-        'Clarinette', 'Flûte', 'Trombone', 'Trompette', 'Tuba',
-        'Violon', 'Violoncelle', 'Harpe', 'Batterie'
-    ];
+    // On récupère tous les types d'instrument existants en base
+    $types = $typeInstrumentRepo->findAll();
 
-    // Tableau associatif instrument => liste des cours
     $coursParInstrument = [];
 
-    foreach ($instruments as $instrument) {
-        $coursParInstrument[$instrument] = $coursRepository->findBy(
-            ['libelle' => $instrument],
-            ['id' => 'ASC'] // tri optionnel par id ou autre
+    foreach ($types as $type) {
+        $cours = $coursRepository->findBy(
+            ['typeInstrument' => $type],
+            ['id' => 'ASC']
         );
+
+        // clé = nom du type d’instrument
+        $coursParInstrument[$type->getLibelle()] = $cours;
     }
+
+    foreach ($types as $typeInstrument) {
+    $cours = $coursRepository->findBy(
+        [
+            'typeInstrument' => $typeInstrument,
+            'type' => 2   // ID du type Collectif
+        ],
+        ['id' => 'ASC']
+    );
+
+    $coursParInstrument[$typeInstrument->getLibelle()] = $cours;
+}
 
     return $this->render('accueil/index.html.twig', [
         'coursParInstrument' => $coursParInstrument,
     ]);
-    }
+}
 
 
     #[Route('/new', name: 'app_accueil_new', methods: ['GET', 'POST'])]

@@ -66,8 +66,8 @@
 }
 </style>
 
-<h1>Bienvenue sur EMusic — Cours disponibles</h1>
-<h3>Voici les différents types de cours proposés :</h3>
+<center><h1>Bienvenue sur EMusic — Cours disponibles</h1>
+<h3>Voici les différents types de cours proposés :</h3></center>
 
 <div class="tables-container">
   {% for instrument, cours in coursParInstrument %}
@@ -100,7 +100,7 @@
                 <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
                 <td>
                     <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">Afficher</a>
-                    <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">Modifier</a>
+                    
                 </td>
               </tr>
             {% endfor %}
