@@ -48,7 +48,7 @@ class Eleve
     /**
      * @var Collection<int, inscription>
      */
-    #[ORM\OneToMany(targetEntity: inscription::class, mappedBy: 'eleve')]
+    #[ORM\OneToMany(targetEntity: Inscription::class, mappedBy: 'eleve')]
     private Collection $inscription;
 
     /**
@@ -196,7 +196,7 @@ class Eleve
         return $this->inscription;
     }
 
-    public function addInscription(inscription $inscription): static
+    public function addInscription(Inscription $inscription): static
     {
         if (!$this->inscription->contains($inscription)) {
             $this->inscription->add($inscription);
@@ -206,7 +206,7 @@ class Eleve
         return $this;
     }
 
-    public function removeInscription(inscription $inscription): static
+    public function removeInscription(Inscription $inscription): static
     {
         if ($this->inscription->removeElement($inscription)) {
             // set the owning side to null (unless already changed)
