@@ -57,6 +57,9 @@ class Eleve
     #[ORM\OneToMany(targetEntity: ContratPret::class, mappedBy: 'idEleve')]
     private Collection $contratPrets;
 
+    #[ORM\OneToOne(mappedBy: 'eleve', cascade: ['persist', 'remove'])]
+    private ?Compte $compte = null;
+
     public function __construct()
     {
         $this->inscription = new ArrayCollection();
@@ -244,6 +247,28 @@ class Eleve
                 $contratPret->setIdEleve(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCompte(): ?Compte
+    {
+        return $this->compte;
+    }
+
+    public function setCompte(?Compte $compte): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($compte === null && $this->compte !== null) {
+            $this->compte->setEleve(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($compte !== null && $compte->getEleve() !== $this) {
+            $compte->setEleve($this);
+        }
+
+        $this->compte = $compte;
 
         return $this;
     }
