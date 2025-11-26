@@ -89,7 +89,7 @@
         <tbody>
 {#        {% set filtered = cours|filter(cour => cour.type.id == 2) %} #}
           {% if cours is not empty %}
-            {% for cour in filtered %}
+            {% for cour in cours %}
               <tr>
                 <td>{{ cour.id }}</td>
                 <td>{{ cour.libelle }}</td>
