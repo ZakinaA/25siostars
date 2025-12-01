@@ -111,5 +111,48 @@
             </table>
         </div>
     {% endfor %}
+<div class="tables-container">
+  {% for instrument, cours in coursParInstrument %}
+    <div class="table-box">
+      <h4>{{ instrument }}</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Libelle</th>
+            <th>AgeMini</th>
+            <th>AgeMaxi</th>
+            <th>NbPlaces</th>
+            <th>HeureDebut</th>
+            <th>HeureFin</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if cours is not empty %}
+            {% for cour in cours %}
+              <tr>
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.libelle }}</td>
+                <td>{{ cour.ageMini }}</td>
+                <td>{{ cour.ageMaxi }}</td>
+                <td>{{ cour.nbPlaces }}</td>
+                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
+                <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">Afficher</a>
+                    
+                </td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="8">Aucun cours pour cet instrument</td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
 </div>
 {% endblock %}
