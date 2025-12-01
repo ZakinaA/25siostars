@@ -34,14 +34,6 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\ManyToOne(inversedBy: 'comptes')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Role $role = null;
-
-    #[ORM\OneToOne(inversedBy: 'compte', cascade: ['persist', 'remove'])]
-    private ?Eleve $eleve = null;
-
-    #[ORM\OneToOne(inversedBy: 'compte', cascade: ['persist', 'remove'])]
-    private ?Professeur $professeur = null;
 
     public function getId(): ?int
     {
@@ -76,8 +68,8 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // guarantee every user at least has role_eleve
+        $roles[] = "role_eleve";
 
         return array_unique($roles);
     }
@@ -122,41 +114,5 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     public function eraseCredentials(): void
     {
         // @deprecated, to be removed when upgrading to Symfony 8
-    }
-
-    public function getRole(): ?Role
-    {
-        return $this->role;
-    }
-
-    public function setRole(?Role $role): static
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    public function getEleve(): ?Eleve
-    {
-        return $this->eleve;
-    }
-
-    public function setEleve(?Eleve $eleve): static
-    {
-        $this->eleve = $eleve;
-
-        return $this;
-    }
-
-    public function getProfesseur(): ?Professeur
-    {
-        return $this->professeur;
-    }
-
-    public function setProfesseur(?Professeur $professeur): static
-    {
-        $this->professeur = $professeur;
-
-        return $this;
     }
 }

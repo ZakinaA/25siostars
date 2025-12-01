@@ -17,13 +17,13 @@ class RegistrationController extends AbstractController
     #[Route('/inscription', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-        $role = $entityManager->getRepository(Role::class)->find(1);
+        /* $role = $entityManager->getRepository(Role::class)->find(1);
 
         if (!$role) {
             throw $this->createNotFoundException(
                 'Le rôle Elève n\'a pas été trouvé'
             );
-        }
+        } */
 
         $user = new Compte();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -37,19 +37,18 @@ class RegistrationController extends AbstractController
             // encode the plain password
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
-            $user->setRole($role);
+            $user->setRoles(["role_eleve"]);
 
             $entityManager->persist($user);
             $entityManager->flush();
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_accueil_index');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,
-            'role' => $role,
         ]);
     }
 }

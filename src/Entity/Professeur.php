@@ -51,9 +51,6 @@ class Professeur
     #[ORM\OneToMany(targetEntity: Cours::class, mappedBy: 'idProfesseur')]
     private Collection $cours;
 
-    #[ORM\OneToOne(mappedBy: 'professeur', cascade: ['persist', 'remove'])]
-    private ?Compte $compte = null;
-
     public function __construct()
     {
         $this->typeInstruments = new ArrayCollection();
@@ -214,28 +211,6 @@ class Professeur
                 $cour->setIdProfesseur(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getCompte(): ?Compte
-    {
-        return $this->compte;
-    }
-
-    public function setCompte(?Compte $compte): static
-    {
-        // unset the owning side of the relation if necessary
-        if ($compte === null && $this->compte !== null) {
-            $this->compte->setProfesseur(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($compte !== null && $compte->getProfesseur() !== $this) {
-            $compte->setProfesseur($this);
-        }
-
-        $this->compte = $compte;
 
         return $this;
     }

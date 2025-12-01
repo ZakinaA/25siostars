@@ -255,7 +255,8 @@ Header section
 	margin: 0 10px;
 }
 
-.header-right .user-panel .register {
+.header-right .user-panel .register, 
+.header-right .user-panel .disconnect {
 	color: #fc0254;
 	margin-right: 0;
 }
@@ -1510,7 +1511,8 @@ Responsive
 	.header-right-warp .header-right .user-panel a:hover {
 		background: transparent;
 	}
-	.header-right-warp .header-right .user-panel .login {
+	.header-right-warp .header-right .user-panel .login, 
+	.header-right-warp .header-right .user-panel .profil {
 		padding-right: 10px;
 	}
 	.sub-text {
@@ -1646,7 +1648,8 @@ Responsive
 	.header-right-warp .header-right .user-panel a:hover {
 		background: transparent;
 	}
-	.header-right-warp .header-right .user-panel .login {
+	.header-right-warp .header-right .user-panel .login, 
+	.header-right-warp .header-right .user-panel .profil {
 		padding-right: 10px;
 	}
 	.sub-list {
@@ -1815,6 +1818,12 @@ Responsive
 		margin-top: 20px;
 	}
 }
+
+/* Extra SIOStars */
+.force-white {
+	color: white;
+}
+
 /*!
  * SlickNav Responsive Mobile Menu v1.0.10
  * (c) 2016 Josh Cope
@@ -1873,31 +1882,43 @@ Responsive
 			<img src="/emusic/assets/images/logo.png" alt="Logo emusic SIOStars">
 		</a>
 		<div class="header-right">
-			<a href="http://localhost/emusic/public/connexion" class="login">Connexion</a>
-			<span>|</span>
-			<div class="user-panel">
+			{% if (app.user) %}
+				<a href="#" class="profil">Mon profil ({{ app.user.identifiant }})</a>
+			{% else %}
 				<a href="http://localhost/emusic/public/connexion" class="login">Connexion</a>
-				<a href="http://localhost/emusic/public/inscription" class="register">Créer un compte</a>
-			</div> 
+			{% endif %}
+			<div class="user-panel">
+				<span>|</span>
+				{% if (app.user) %}
+					<a href="http://localhost/emusic/public/logout" class="disconnect">Se déconnecter</a>
+				{% else %}
+					<a href="http://localhost/emusic/public/inscription" class="register">Créer un compte</a>
+				{% endif %}
+			</div>
+			{% if (app.user) %}
+				</br><p class="force-white">Rôle: {{ app.user.roles[0]}}</p>
+			{% endif %}
 		</div>
 		<ul class="main-menu">
 			<li><a href="http://localhost/emusic/public/accueil">Accueil</a></li>
-            <li><a href="http://localhost/emusic/public/cours">Cours</a></li>
-            <li><a href="http://localhost/emusic/public/instrument">Instruments</a></li>
-			<li><a href="#">Administration</a>
-				<ul class="sub-menu">
-					<li><a href="http://localhost/emusic/public/intervention">Intervention</a></li>
-					<li><a href="http://localhost/emusic/public/eleve">Eleve</a></li>
-					<li><a href="http://localhost/emusic/public/professionnel">Professionel</a></li>
-					<li><a href="http://localhost/emusic/public/professeur">Professeur</a></li>
-				</ul>
-			</li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li><a href="http://localhost/emusic/public/cours">Cours</a></li>
+			<li><a href="http://localhost/emusic/public/instrument">Instruments</a></li>
+			{% if (app.user and app.user.roles[0] == "role_gestionnaire") %}
+				<li><a href="#">Administration</a>
+					<ul class="sub-menu">
+						<li><a href="http://localhost/emusic/public/intervention">Intervention</a></li>
+						<li><a href="http://localhost/emusic/public/eleve">Eleve</a></li>
+						<li><a href="http://localhost/emusic/public/professionnel">Professionel</a></li>
+						<li><a href="http://localhost/emusic/public/professeur">Professeur</a></li>
+					</ul>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			{% endif %}
 		</ul>
 	</header>
         {% block body %}{% endblock %}

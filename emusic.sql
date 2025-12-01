@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 24 nov. 2025 à 13:55
+-- Généré le : lun. 01 déc. 2025 à 13:51
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.2.18
 
@@ -126,21 +126,21 @@ INSERT INTO `classe_instrument` (`id`, `libelle`) VALUES
 DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) NOT NULL,
   `identifiant` varchar(180) NOT NULL,
   `roles` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '(DC2Type:json)' CHECK (json_valid(`roles`)),
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_IDENTIFIER_IDENTIFIANT` (`identifiant`),
-  KEY `IDX_CFF65260D60322AC` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  UNIQUE KEY `UNIQ_IDENTIFIER_IDENTIFIANT` (`identifiant`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
-INSERT INTO `compte` (`id`, `role_id`, `identifiant`, `roles`, `password`) VALUES
-(1, 1, 'Maxence', '[]', '$2y$13$SsyFbpAf.mLRNXo.Mg3cYuCCA1nTnSJHApwC0wA2qENaRvFvAPJ.u');
+INSERT INTO `compte` (`id`, `identifiant`, `roles`, `password`) VALUES
+(11, 'testEleve', '[\"role_eleve\"]', '$2y$13$iO7WUaxyxqucrN4ysUghduZHO3BuXeI3IjkBzlic5pmfmRisTEHHK'),
+(12, 'testProfesseur', '[\"role_professeur\"]', '$2y$13$364d4YO/fcR84ESXg1ha7Oi5k1XuA/O3Q333wSJSg/HlannCkZGpC'),
+(13, 'testGestionnaire', '[\"role_gestionnaire\"]', '$2y$13$pZzj49m4f7Nwjss25wzQqOpd.L05cbcSkzUc9z5ir6zjuOcuUJRTm');
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `cours` (
   KEY `IDX_FDCA8C9C220C6AD0` (`jour_id`),
   KEY `IDX_FDCA8C9CBAB22EE9` (`professeur_id`),
   KEY `IDX_FDCA8C9C7C1CAAA9` (`type_instrument_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `cours`
@@ -273,7 +273,157 @@ INSERT INTO `cours` (`id`, `type_id`, `jour_id`, `professeur_id`, `type_instrume
 (27, 2, 3, 6, 14, 'Harpe - Groupe', 8, 14, 5, '12:00:00', '13:00:00'),
 (28, 1, 4, 7, 14, 'Harpe - Individuel', 15, NULL, 0, '09:00:00', '09:45:00'),
 (29, 2, 5, 8, 15, 'Batterie - Groupe', 8, 14, 6, '18:00:00', '19:00:00'),
-(30, 1, 6, 9, 15, 'Batterie - Individuel', 15, NULL, 0, '16:00:00', '16:45:00');
+(30, 1, 6, 9, 15, 'Batterie - Individuel', 15, NULL, 0, '16:00:00', '16:45:00'),
+(31, 2, 1, 1, 1, 'Orgue - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(32, 2, 1, 1, 1, 'Orgue - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(33, 2, 1, 1, 1, 'Orgue - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(34, 2, 1, 1, 1, 'Orgue - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(35, 2, 1, 1, 1, 'Orgue - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(36, 1, 1, 1, 1, 'Orgue - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(37, 1, 1, 1, 1, 'Orgue - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(38, 1, 1, 1, 1, 'Orgue - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(39, 1, 1, 1, 1, 'Orgue - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(40, 1, 1, 1, 1, 'Orgue - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(41, 2, 1, 1, 2, 'Piano - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(42, 2, 1, 1, 2, 'Piano - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(43, 2, 1, 1, 2, 'Piano - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(44, 2, 1, 1, 2, 'Piano - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(45, 2, 1, 1, 2, 'Piano - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(46, 1, 1, 1, 2, 'Piano - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(47, 1, 1, 1, 2, 'Piano - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(48, 1, 1, 1, 2, 'Piano - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(49, 1, 1, 1, 2, 'Piano - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(50, 1, 1, 1, 2, 'Piano - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(51, 2, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(52, 2, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(53, 2, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(54, 2, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(55, 2, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(56, 1, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(57, 1, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(58, 1, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(59, 1, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(60, 1, 1, 1, 3, 'Clavier amplifié - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(61, 2, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(62, 2, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(63, 2, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(64, 2, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(65, 2, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(66, 1, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(67, 1, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(68, 1, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(69, 1, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(70, 1, 1, 1, 4, 'Guitare électrique - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(71, 2, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(72, 2, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(73, 2, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(74, 2, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(75, 2, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(76, 1, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(77, 1, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(78, 1, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(79, 1, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(80, 1, 1, 1, 5, 'Basse électrique - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(81, 2, 1, 1, 6, 'Saxophone - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(82, 2, 1, 1, 6, 'Saxophone - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(83, 2, 1, 1, 6, 'Saxophone - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(84, 2, 1, 1, 6, 'Saxophone - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(85, 2, 1, 1, 6, 'Saxophone - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(86, 1, 1, 1, 6, 'Saxophone - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(87, 1, 1, 1, 6, 'Saxophone - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(88, 1, 1, 1, 6, 'Saxophone - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(89, 1, 1, 1, 6, 'Saxophone - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(90, 1, 1, 1, 6, 'Saxophone - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(91, 2, 1, 1, 7, 'Clarinette - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(92, 2, 1, 1, 7, 'Clarinette - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(93, 2, 1, 1, 7, 'Clarinette - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(94, 2, 1, 1, 7, 'Clarinette - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(95, 2, 1, 1, 7, 'Clarinette - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(96, 1, 1, 1, 7, 'Clarinette - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(97, 1, 1, 1, 7, 'Clarinette - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(98, 1, 1, 1, 7, 'Clarinette - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(99, 1, 1, 1, 7, 'Clarinette - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(100, 1, 1, 1, 7, 'Clarinette - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(101, 2, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(102, 2, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(103, 2, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(104, 2, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(105, 2, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(106, 1, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(107, 1, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(108, 1, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(109, 1, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(110, 1, 1, 1, 8, 'Flûte traversière - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(111, 2, 1, 1, 9, 'Trombone - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(112, 2, 1, 1, 9, 'Trombone - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(113, 2, 1, 1, 9, 'Trombone - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(114, 2, 1, 1, 9, 'Trombone - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(115, 2, 1, 1, 9, 'Trombone - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(116, 1, 1, 1, 9, 'Trombone - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(117, 1, 1, 1, 9, 'Trombone - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(118, 1, 1, 1, 9, 'Trombone - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(119, 1, 1, 1, 9, 'Trombone - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(120, 1, 1, 1, 9, 'Trombone - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(121, 2, 1, 1, 10, 'Trompette - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(122, 2, 1, 1, 10, 'Trompette - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(123, 2, 1, 1, 10, 'Trompette - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(124, 2, 1, 1, 10, 'Trompette - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(125, 2, 1, 1, 10, 'Trompette - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(126, 1, 1, 1, 10, 'Trompette - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(127, 1, 1, 1, 10, 'Trompette - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(128, 1, 1, 1, 10, 'Trompette - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(129, 1, 1, 1, 10, 'Trompette - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(130, 1, 1, 1, 10, 'Trompette - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(131, 2, 1, 1, 11, 'Tuba - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(132, 2, 1, 1, 11, 'Tuba - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(133, 2, 1, 1, 11, 'Tuba - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(134, 2, 1, 1, 11, 'Tuba - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(135, 2, 1, 1, 11, 'Tuba - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(136, 1, 1, 1, 11, 'Tuba - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(137, 1, 1, 1, 11, 'Tuba - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(138, 1, 1, 1, 11, 'Tuba - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(139, 1, 1, 1, 11, 'Tuba - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(140, 1, 1, 1, 11, 'Tuba - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(141, 2, 1, 1, 12, 'Violon - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(142, 2, 1, 1, 12, 'Violon - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(143, 2, 1, 1, 12, 'Violon - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(144, 2, 1, 1, 12, 'Violon - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(145, 2, 1, 1, 12, 'Violon - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(146, 1, 1, 1, 12, 'Violon - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(147, 1, 1, 1, 12, 'Violon - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(148, 1, 1, 1, 12, 'Violon - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(149, 1, 1, 1, 12, 'Violon - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(150, 1, 1, 1, 12, 'Violon - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(151, 2, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(152, 2, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(153, 2, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(154, 2, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(155, 2, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(156, 1, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(157, 1, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(158, 1, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(159, 1, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(160, 1, 1, 1, 13, 'Violoncelle - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(161, 2, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(162, 2, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(163, 2, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(164, 2, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(165, 2, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(166, 1, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(167, 1, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(168, 1, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(169, 1, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(170, 1, 1, 1, 14, 'Harpe celtique - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00'),
+(171, 2, 1, 1, 15, 'Batterie - Cours Supplémentaire 1', 6, 99, 12, '09:00:00', '10:00:00'),
+(172, 2, 1, 1, 15, 'Batterie - Cours Supplémentaire 2', 6, 99, 12, '10:00:00', '11:00:00'),
+(173, 2, 1, 1, 15, 'Batterie - Cours Supplémentaire 3', 6, 99, 12, '11:00:00', '12:00:00'),
+(174, 2, 1, 1, 15, 'Batterie - Cours Supplémentaire 4', 6, 99, 12, '12:00:00', '13:00:00'),
+(175, 2, 1, 1, 15, 'Batterie - Cours Supplémentaire 5', 6, 99, 12, '08:00:00', '09:00:00'),
+(176, 1, 1, 1, 15, 'Batterie - Cours Supplémentaire 6', 6, 99, 1, '09:00:00', '10:00:00'),
+(177, 1, 1, 1, 15, 'Batterie - Cours Supplémentaire 7', 6, 99, 1, '10:00:00', '11:00:00'),
+(178, 1, 1, 1, 15, 'Batterie - Cours Supplémentaire 8', 6, 99, 1, '11:00:00', '12:00:00'),
+(179, 1, 1, 1, 15, 'Batterie - Cours Supplémentaire 9', 6, 99, 1, '12:00:00', '13:00:00'),
+(180, 1, 1, 1, 15, 'Batterie - Cours Supplémentaire 10', 6, 99, 1, '08:00:00', '09:00:00');
 
 -- --------------------------------------------------------
 
@@ -975,28 +1125,6 @@ INSERT INTO `responsable` (`id`, `tranche_id`, `nom`, `prenom`, `num_rue`, `rue`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `role`
---
-
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE IF NOT EXISTS `role` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `role`
---
-
-INSERT INTO `role` (`id`, `libelle`) VALUES
-(1, 'Eleve'),
-(2, 'Professeur'),
-(3, 'Gestionnaire');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `tarif`
 --
 
@@ -1155,12 +1283,6 @@ INSERT INTO `type_instrument_professeur` (`type_instrument_id`, `professeur_id`)
 --
 ALTER TABLE `accessoire`
   ADD CONSTRAINT `FK_8FD026ACF11D9C` FOREIGN KEY (`instrument_id`) REFERENCES `instrument` (`id`);
-
---
--- Contraintes pour la table `compte`
---
-ALTER TABLE `compte`
-  ADD CONSTRAINT `FK_CFF65260D60322AC` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
 
 --
 -- Contraintes pour la table `contrat_pret`
