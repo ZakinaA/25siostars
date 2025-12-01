@@ -66,12 +66,12 @@
 }
 </style>
 
-<h1>Bienvenue sur EMusic — Cours disponibles</h1>
+<center><h1>Bienvenue sur EMusic — Cours disponibles</h1>
 
 <form method="get" action="{{ path('app_accueil_index') }}">
     <input type="text" name="instrument" placeholder="Rechercher un instrument" value="{{ searchInstrument|default('') }}">
     <button type="submit">Rechercher</button>
-</form>
+</form></center>
 
 <!-- <div class="tables-container" style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
     {% for instrument, cours in coursParInstrument %}
