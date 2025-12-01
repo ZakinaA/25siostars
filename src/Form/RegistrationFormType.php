@@ -45,7 +45,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('role', HiddenType::class)
+            //->add('role', HiddenType::class)
         ;
     }
 
