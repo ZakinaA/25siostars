@@ -18,7 +18,7 @@ final class CoursController extends AbstractController
     public function index(CoursRepository $coursRepository): Response
     {
         return $this->render('cours/index.html.twig', [
-            'cours' => $coursRepository->findAll(),
+            'cours' => $coursRepository->findBy(['type' => 2]),
         ]);
     }
 

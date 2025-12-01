@@ -37,6 +37,12 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\JoinColumn(nullable: false)]
     private ?Role $role = null;
 
+    #[ORM\OneToOne(inversedBy: 'compte', cascade: ['persist', 'remove'])]
+    private ?Eleve $eleve = null;
+
+    #[ORM\OneToOne(inversedBy: 'compte', cascade: ['persist', 'remove'])]
+    private ?Professeur $professeur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -126,6 +132,30 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRole(?Role $role): static
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getEleve(): ?Eleve
+    {
+        return $this->eleve;
+    }
+
+    public function setEleve(?Eleve $eleve): static
+    {
+        $this->eleve = $eleve;
+
+        return $this;
+    }
+
+    public function getProfesseur(): ?Professeur
+    {
+        return $this->professeur;
+    }
+
+    public function setProfesseur(?Professeur $professeur): static
+    {
+        $this->professeur = $professeur;
 
         return $this;
     }
