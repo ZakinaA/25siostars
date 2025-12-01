@@ -31,8 +31,8 @@
                 <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
                 <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">Afficher</a>
-                    <a href="{{ path('app_accueil_edit', {'id': cour.id}) }}">Modifier</a>
+                    <a href="{{ path('app_cours_show', {'id': cour.id}) }}">Afficher</a>
+                    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">Modifier</a>
                 </td>
               </tr>
             {% endfor %}
