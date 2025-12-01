@@ -66,52 +66,50 @@
 }
 </style>
 
-<center><h1>Bienvenue sur EMusic — Cours disponibles</h1>
-<h3>Voici les différents types de cours proposés :</h3></center>
+<h1>Bienvenue sur EMusic — Cours disponibles</h1>
 
-<div class="tables-container">
-  {% for instrument, cours in coursParInstrument %}
-    <div class="table-box">
-      <h4>{{ instrument }}</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Libelle</th>
-            <th>AgeMini</th>
-            <th>AgeMaxi</th>
-            <th>NbPlaces</th>
-            <th>HeureDebut</th>
-            <th>HeureFin</th>
-            <th>actions</th>
-          </tr>
-        </thead>
-        <tbody>
-{#        {% set filtered = cours|filter(cour => cour.type.id == 2) %} #}
-          {% if cours is not empty %}
-            {% for cour in cours %}
-              <tr>
-                <td>{{ cour.id }}</td>
-                <td>{{ cour.libelle }}</td>
-                <td>{{ cour.ageMini }}</td>
-                <td>{{ cour.ageMaxi }}</td>
-                <td>{{ cour.nbPlaces }}</td>
-                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
-                <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_accueil_show', {'id': cour.id}) }}">Afficher</a>
-                    
-                </td>
-              </tr>
-            {% endfor %}
-          {% else %}
-            <tr>
-              <td colspan="8">Aucun cours pour cet instrument</td>
-            </tr>
-          {% endif %}
-        </tbody>
-      </table>
-    </div>
-  {% endfor %}
+<form method="get" action="{{ path('app_accueil_index') }}">
+    <input type="text" name="instrument" placeholder="Rechercher un instrument" value="{{ searchInstrument|default('') }}">
+    <button type="submit">Rechercher</button>
+</form>
+
+<div class="tables-container" style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
+    {% for instrument, cours in coursParInstrument %}
+        <div class="table-box" style="flex:1 1 calc(50% - 20px); background:#f9f9f9; border:1px solid #ddd; border-radius:10px; padding:15px; box-sizing:border-box;">
+            <h4 style="text-align:center;">{{ instrument }}</h4>
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Libelle</th>
+                        <th>AgeMini</th>
+                        <th>AgeMaxi</th>
+                        <th>NbPlaces</th>
+                        <th>HeureDebut</th>
+                        <th>HeureFin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if cours is not empty %}
+                        {% for cour in cours %}
+                            <tr>
+                                <td>{{ cour.id }}</td>
+                                <td>{{ cour.libelle }}</td>
+                                <td>{{ cour.ageMini }}</td>
+                                <td>{{ cour.ageMaxi }}</td>
+                                <td>{{ cour.nbPlaces }}</td>
+                                <td>{{ cour.heureDebut ? cour.heureDebut|date('H:i') : '' }}</td>
+                                <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="7">Aucun cours pour cet instrument</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
