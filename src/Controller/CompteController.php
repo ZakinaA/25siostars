@@ -9,6 +9,7 @@ use App\Repository\EleveRepository;
 use App\Repository\InscriptionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -16,8 +17,16 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/compte')]
 final class CompteController extends AbstractController
 {
-    #[Route(name: 'app_compte_index', methods: ['GET'])]
-    public function index(EleveRepository $eleveRepo, InscriptionRepository $inscriptionRepo): Response
+    #[Route('/gestion', name: 'app_compte_index', methods: ['GET'])]
+    public function index(CompteRepository $compteRepository): Response
+    {
+        return $this->render('compte/index.html.twig', [
+            'comptes' => $compteRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/show', name: 'app_compte_show', methods: ['GET'])]
+    public function show(EleveRepository $eleveRepo, InscriptionRepository $inscriptionRepo): Response
     {
         // 1. Récupère le compte connecté
         $compte = $this->getUser();
@@ -27,6 +36,7 @@ final class CompteController extends AbstractController
         }
 
         // 2. Récupère l'élève lié (même ID dans ta base)
+        // Note de Maxence: ça se voit que ça a utilisé ChatGPT là
         $eleve = $eleveRepo->find($compte->getId());
 
         // 3. Récupérer les inscriptions de cet élève
@@ -44,49 +54,38 @@ final class CompteController extends AbstractController
             }
         }
 
-        return $this->render('compte/index.html.twig', [
-            'compte'      => $compte,
-            'eleve'       => $eleve,
-            'cours'       => $cours,
-            'inscriptions'=> $inscriptions,
-        ]);
-    }
-
-    #[Route('/new', name: 'app_compte_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $compte = new Compte();
-        $form = $this->createForm(CompteType::class, $compte);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($compte);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_compte_index', [], Response::HTTP_SEE_OTHER);
+        if ($compte->getRoles()[0] == "role_eleve") {
+            return $this->render('compte/show-eleve.html.twig', [
+                'compte'      => $compte,
+                'eleve'       => $eleve,
+                'cours'       => $cours,
+                'inscriptions'=> $inscriptions,
+            ]);
+        } elseif ($compte->getRoles()[0] == "role_professeur") {
+            return $this->render('compte/show-professeur.html.twig', [
+                'compte'      => $compte,
+            ]);
+        } elseif ($compte->getRoles()[0] == "role_gestionnaire") {
+            return $this->render('compte/show-gestionnaire.html.twig', [
+                'compte'      => $compte,
+            ]);
         }
-
-        return $this->render('compte/new.html.twig', [
-            'compte' => $compte,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'app_compte_show', methods: ['GET'])]
-    public function show(Compte $compte): Response
-    {
-        return $this->render('compte/show.html.twig', [
-            'compte' => $compte,
-        ]);
     }
 
     #[Route('/{id}/edit', name: 'app_compte_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Compte $compte, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Compte $compte, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $form = $this->createForm(CompteType::class, $compte);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var string $plainPassword */
+            $plainPassword = $form->get('plainPassword')->getData();
+
+            // encode the plain password
+            $compte->setPassword($userPasswordHasher->hashPassword($compte, $plainPassword));
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_compte_index', [], Response::HTTP_SEE_OTHER);

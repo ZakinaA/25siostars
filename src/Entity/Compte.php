@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: CompteRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_IDENTIFIANT', fields: ['identifiant'])]
-#[UniqueEntity(fields: ['identifiant'], message: 'There is already an account with this identifiant')]
+#[UniqueEntity(fields: ['identifiant'], message: 'Il existe déjà un compte avec cet identifiant')]
 class Compte implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -68,8 +68,6 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has role_eleve
-        $roles[] = "role_eleve";
 
         return array_unique($roles);
     }

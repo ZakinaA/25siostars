@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte index{% endblock %}
+
+{% block body %}
+
+    <h2>Votre compte</h2>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Identifiant</th>
+            <td>{{ compte.identifiant }}</td>
+        </tr>
+        <tr>
+            <th>Mot de passe</th>
+            <td>{{ compte.password }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endblock %}
+
