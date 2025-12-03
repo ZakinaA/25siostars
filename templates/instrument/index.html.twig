@@ -3,7 +3,12 @@
 {% block title %}Instrument index{% endblock %}
 
 {% block body %}
-  
+<style>
+div{
+  margin-left: 20px;
+}
+</Style>
+<div>
     <center><h1>Liste des instruments</h1></center>
     <a href="{{ path('app_instrument_new') }}" class="btn btn-primary">
         Créer un nouvel instrument
@@ -46,7 +51,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     
  
 {% endblock %}

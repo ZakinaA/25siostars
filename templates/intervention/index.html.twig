@@ -21,7 +21,13 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.20);
 }
 
+div{
+  margin-left: 20px;
+}
+
+
 </style>
+<div>
     <center><h1>Lister les interventions</h1></center>
     <a href="{{ path('app_intervention_new') }}" class="btn btn-primary custom-btn-lg">
     Créer une nouvelle intervention
@@ -64,4 +70,5 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}

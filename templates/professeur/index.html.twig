@@ -3,6 +3,12 @@
 {% block title %}Professeur index{% endblock %}
 
 {% block body %}
+<style>
+div{
+  margin-left: 20px;
+}
+</Style>
+<div>
     <h1>Liste des professeurs</h1>
 
     <table class="table">
@@ -47,4 +53,5 @@
     </table>
 
     <a href="{{ path('app_professeur_new') }}">Ajouter un nouveau professeur</a>
+</div>
 {% endblock %}
