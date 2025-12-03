@@ -3,6 +3,12 @@
 {% block title %}Professionnel index{% endblock %}
 
 {% block body %}
+<style>
+div{
+  margin-left: 20px;
+}
+</Style>
+<div>
     <h1>Liste des professionnels</h1>
 
     <table class="table">
@@ -32,16 +38,18 @@
                 <td>{{ professionnel.mail }}</td>
                 <td>
                     <a href="{{ path('app_professionnel_show', {'id': professionnel.id}) }}">Afficher</a>
+                     | 
                     <a href="{{ path('app_professionnel_edit', {'id': professionnel.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Aucun professionnel trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_professionnel_new') }}">Ajouter un nouveau professeur</a>
+    <a href="{{ path('app_professionnel_new') }}">Ajouter un nouveau professionnel</a>
+</div>
 {% endblock %}

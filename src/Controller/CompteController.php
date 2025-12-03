@@ -17,6 +17,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/compte')]
 final class CompteController extends AbstractController
 {
+
     #[Route('/gestion', name: 'app_compte_index', methods: ['GET'])]
     public function index(CompteRepository $compteRepository): Response
     {

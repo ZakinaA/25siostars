@@ -21,7 +21,13 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.20);
 }
 
+div{
+  margin-left: 20px;
+}
+
+
 </style>
+<div>
     <center><h1>Lister les interventions</h1></center>
     <a href="{{ path('app_intervention_new') }}" class="btn btn-primary custom-btn-lg">
     Créer une nouvelle intervention
@@ -53,14 +59,16 @@
 
                 <td>
                     <a href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Afficher</a>
+                     | 
                     <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucune intervention trouvée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}
