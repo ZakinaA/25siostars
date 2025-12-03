@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Identifiant</th>
                 <th>Role</th>
-                <th>Mot de passe</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,8 +19,13 @@
             <tr>
                 <td>{{ compte.id }}</td>
                 <td>{{ compte.identifiant }}</td>
-                <td>{{ compte.roles ? compte.roles|json_encode : '' }}</td>
-                <td>{{ compte.password }}</td>
+                {% if ((compte.roles ? compte.roles|json_encode : '') == '["role_eleve"]') %}
+                    <td>Elève</td>
+                {% elseif ((compte.roles ? compte.roles|json_encode : '') == '["role_professeur"]') %}
+                    <td>Professeur</td>
+                {% elseif ((compte.roles ? compte.roles|json_encode : '') == '["role_gestionnaire"]') %}
+                    <td>Gestionnaire</td>
+                {% endif %}
                 <td>
                     <a href="{{ path('app_compte_edit', {'id': compte.id}) }}">Modifier</a>
                 </td>

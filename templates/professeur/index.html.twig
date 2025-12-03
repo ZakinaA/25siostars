@@ -34,16 +34,17 @@
                 <td>{{ professeur.mail }}</td>
                 <td>
                     <a href="{{ path('app_professeur_show', {'id': professeur.id}) }}">Afficher</a>
+                     | 
                     <a href="{{ path('app_professeur_edit', {'id': professeur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun professeur trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_professeur_new') }}">Ajouter nouveau professeurs</a>
+    <a href="{{ path('app_professeur_new') }}">Ajouter un nouveau professeur</a>
 {% endblock %}
