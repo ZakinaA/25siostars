@@ -7,5 +7,7 @@
 
     {{ include('cours/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <a href="{{ path('app_cours_index') }}">Retour à la liste</a>
+    <a href="{{ path('app_cours_index') }}" class="btn btn-secondary">
+        Retour à la liste
+    </a>
 {% endblock %}

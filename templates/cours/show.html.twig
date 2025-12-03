@@ -55,9 +55,8 @@
     </table>
     <a href="http://localhost/emusic/public/rerserverCour">Reserver</a>
 
-    <a href="{{ path('app_cours_index') }}">Retour à la liste</a>
-
-    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">Modifier</a>
+    <a href="{{ path('app_cours_index') }}" class="btn btn-secondary">Retour à la liste</a>
+    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}" class="btn btn-primary">Modifier</a>
 
     {{ include('cours/_delete_form.html.twig') }}
 {% endblock %}

@@ -5,7 +5,9 @@
 {% block body %}
   
     <center><h1>Liste des instruments</h1></center>
-
+    <a href="{{ path('app_instrument_new') }}" class="btn btn-primary">
+        Créer un nouvelle instrument
+    </a>
     <table class="table">
         <thead>
             <tr>
@@ -45,6 +47,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_instrument_new') }}">Ajouter un instrument</a>
+    
  
 {% endblock %}
