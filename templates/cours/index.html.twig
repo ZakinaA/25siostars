@@ -4,8 +4,8 @@
 
 {% block body %}
     <h1>Liste des cours</h1>
-<h5>Aucun cour ne vous convient prenez un cour particulier.</h5>
-    <a href="http://localhost/emusic/public/rerserverCour">Reserver</a>
+<h5>Si aucun cours ne vous convient, prenez un cours particulier.</h5>
+    <a href="http://localhost/emusic/public/reserverCours">Réserver</a>
     <table class="table">
         <thead>
             <tr>
@@ -32,6 +32,7 @@
                 <td>{{ cour.heureFin ? cour.heureFin|date('H:i') : '' }}</td>
                 <td>
                     <a href="{{ path('app_cours_show', {'id': cour.id}) }}">Afficher</a>
+                     | 
                     <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">Modifier</a>
                 </td>
               </tr>

@@ -53,12 +53,13 @@
 
                 <td>
                     <a href="{{ path('app_intervention_show', {'id': intervention.id}) }}">Afficher</a>
+                     | 
                     <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucune intervention trouvée</td>
             </tr>
         {% endfor %}
         </tbody>
