@@ -3,43 +3,34 @@
 {% block title %}Compte index{% endblock %}
 
 {% block body %}
+    <h1>Liste des comptes</h1>
 
-    <h2>Vos Cours</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Libelle</th>
-            <th>Âge mini</th>
-            <th>Âge maxi</th>
-            <th>Places</th>
-            <th>Début</th>
-            <th>Fin</th>
-        </tr>
-    </thead>
-
-    <tbody>
-    {% if cours is not empty %}
-        {% for cour in cours %}
+    <table class="table">
+        <thead>
             <tr>
-                <td>{{ cour.id }}</td>
-                <td>{{ cour.libelle }}</td>
-                <td>{{ cour.ageMini }}</td>
-                <td>{{ cour.ageMaxi }}</td>
-                <td>{{ cour.nbPlaces }}</td>
-                <td>{{ cour.heureDebut|date('H:i') }}</td>
-                <td>{{ cour.heureFin|date('H:i') }}</td>
+                <th>Id</th>
+                <th>Identifiant</th>
+                <th>Role</th>
+                <th>Mot de passe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for compte in comptes %}
+            <tr>
+                <td>{{ compte.id }}</td>
+                <td>{{ compte.identifiant }}</td>
+                <td>{{ compte.roles ? compte.roles|json_encode : '' }}</td>
+                <td>{{ compte.password }}</td>
+                <td>
+                    <a href="{{ path('app_compte_edit', {'id': compte.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun compte trouvé</td>
             </tr>
         {% endfor %}
-    {% else %}
-        <tr>
-            <td colspan="7">Vous n’êtes inscrit à aucun cours</td>
-        </tr>
-    {% endif %}
-    </tbody>
-</table>
-
-
+        </tbody>
+    </table>
 {% endblock %}
-
