@@ -55,9 +55,8 @@
     </table>
     <img src="../../assets/images/{{ instrument.cheminImage }}" /></br>
 
-    <a href="{{ path('app_instrument_index') }}">Retour à la liste</a>
-     | 
-    <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}">Modifier</a>
+    <a href="{{ path('app_instrument_index') }}" class="btn btn-secondary">Retour à la liste</a>
+    <a href="{{ path('app_instrument_edit', {'id': instrument.id}) }}" class="btn btn-primary">Modifier</a>
 
     {{ include('instrument/_delete_form.html.twig') }}
 {% endblock %}
