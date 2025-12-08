@@ -3,17 +3,21 @@
 
 ## Comptes:
 
-testEleve
+testEleve </br>
 MPeleve
 
-testProfesseur
+testProfesseur </br>
 MPprofesseur
 
-testGestionnaire
+testGestionnaire </br>
 MPgestionnaire
 
-ana.leroy
+ana.leroy </br>
 MPleroy
 
-claire.martin
+claire.martin </br>
 MPmartin
+
+Chaque compte utilisateur existant utilise le format suivant: </br>
+Identifiant: prenom.nom </br>
+MDP: MP[nom]
